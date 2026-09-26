@@ -1,0 +1,194 @@
+{
+  "title": "사업 요청에서 검증까지",
+  "scenes": [
+    {
+      "id": "opening",
+      "title": "사업 요청을 작동하는 변화로",
+      "narration": "기존 견적 업무에 이익률 정책을 적용합니다. 실제 코파일럿 실행과 검증 결과를 살펴보겠습니다.",
+      "duration": 10,
+      "kind": "card",
+      "approval": false
+    },
+    {
+      "id": "before-motion",
+      "title": "변경 전 · 기준 미달도 모의 전송",
+      "narration": "변경 전에는 기준 미달 견적도 전송됩니다.",
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/01-baseline-q1001-10-send.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 제작 세션의 실제 앱",
+      "in": 0,
+      "out": 6.6
+    },
+    {
+      "id": "before-detail",
+      "title": "이익은 남지만 · 정책 기준에는 미달",
+      "narration": "할인 십 퍼센트, 순매출 구백만 원, 이익 백만 원입니다. 적자는 아니지만 최소 이익률 십오 퍼센트에는 미달합니다.",
+      "duration": 13.4,
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/02-baseline-q1001-10-sent.png",
+      "kind": "app",
+      "approval": false
+    },
+    {
+      "id": "analysis",
+      "title": "서버와 UI 조사 · 실제 병렬 위임",
+      "narration": "서버와 화면 조사를 두 역할에 나눴습니다. 기존 코드의 재사용 지점과 검증 방법을 모아 하나의 계획으로 통합했습니다.",
+      "duration": 14,
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/2d880a3b-35b4-4136-b7da-9c9c1030fa45.png",
+      "kind": "terminal",
+      "approval": false
+    },
+    {
+      "id": "plan",
+      "title": "계획과 로컬 실행 범위를 사람이 승인",
+      "narration": "사용자가 대화에서 계획과 로컬 실행을 승인했습니다. 다음 도구 요청은 그 범위 안에서 제작자가 대행합니다.",
+      "duration": 12,
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/07fd04ec-ec6f-4745-9dfc-1496fd1d6700.png",
+      "kind": "terminal",
+      "approval": false
+    },
+    {
+      "id": "permission",
+      "title": "서버 수정 요청 → 범위 확인 → 대행",
+      "narration": "지금은 실제 서버 수정 권한 요청입니다. 사용자는 앞서 구현 계획과 범위 안의 로컬 실행을 함께 승인했습니다. 제작자는 요청 내용을 확인하고 이번 실행에만 허용을 전달합니다. 각 요청을 사용자가 직접 승인한 장면은 아닙니다. 이 구간은 대기 시간을 포함해 정속으로 보존했습니다. 서버는 화면에서 받은 금액을 믿지 않고 등록된 원가와 견적으로 다시 계산합니다. 반올림해 표시한 비율이 아니라 실제 원 단위 금액으로 정책을 판정합니다. 기준 미달은 전송 단계에서 차단하고, 정상 업무 흐름은 유지합니다. 구현 승인과 운영 출시 승인은 별개입니다.",
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/video/capture.webm",
+      "kind": "terminal",
+      "approval": true,
+      "speed": 1,
+      "editLabel": "사전 일괄 승인 범위에서 제작자 대행",
+      "in": 3148,
+      "out": 3248
+    },
+    {
+      "id": "red",
+      "title": "변경 전 · 회귀 17건 실패",
+      "narration": "구현 전 새 회귀 검사에서 열일곱 건이 실패했습니다. 직접 전송 차단과 화면 잠금이 아직 없다는 것을 실행으로 확인했습니다.",
+      "duration": 12,
+      "kind": "card",
+      "approval": false
+    },
+    {
+      "id": "implementation",
+      "title": "422 본문을 읽기 전에 허용 폐기",
+      "narration": "차단 응답의 본문을 읽지 못해도 새 허용 판정 전까지 전송 잠금을 유지하도록 구현했습니다.",
+      "duration": 10,
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/669c4be8-ed59-4408-a8ab-cebf51e1338b.png",
+      "kind": "terminal",
+      "approval": false
+    },
+    {
+      "id": "green",
+      "title": "변경 후 · 전체 55건 통과",
+      "narration": "같은 실행에서 기존 스물두 건과 새 회귀 서른세 건, 모두 쉰다섯 건이 통과했습니다. 건너뛴 테스트는 없습니다.",
+      "duration": 16,
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/346746fe-0cf2-45b1-91dd-5baa76aa6fd5.png",
+      "kind": "terminal",
+      "approval": false
+    },
+    {
+      "id": "blocked-motion",
+      "title": "같은 견적 · 이제는 전송 차단",
+      "narration": "같은 입력의 전송이 차단됩니다.",
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/02-final-q1001-10-blocked.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 제작 세션의 실제 앱",
+      "in": 0,
+      "out": 5.2
+    },
+    {
+      "id": "blocked-detail",
+      "title": "화면에는 이유 · API에는 HTTP 422",
+      "narration": "화면에 이유를 표시하고 버튼을 잠급니다. 화면을 거치지 않은 직접 요청도 서버에서 차단하는 것을 확인했습니다.",
+      "duration": 12.8,
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/03-final-q1001-10-blocked.png",
+      "kind": "app",
+      "approval": false
+    },
+    {
+      "id": "allowed-motion",
+      "title": "정상 견적의 모의 전송은 유지",
+      "narration": "할인을 없애면 이익률 이십 퍼센트로 정상 전송됩니다.",
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/03-final-q1001-0-allowed-sent.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 제작 세션의 실제 앱",
+      "in": 0,
+      "out": 7.4
+    },
+    {
+      "id": "allowed-detail",
+      "title": "정책 적용과 정상 흐름을 함께 확인",
+      "narration": "차단 기능만 확인하지 않았습니다. 정상 견적의 성공 안내와 입력 변경 후 상태 갱신도 검증했습니다. 외부 발송은 없습니다.",
+      "duration": 12.6,
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/05-final-q1001-0-sent.png",
+      "kind": "app",
+      "approval": false
+    },
+    {
+      "id": "exact",
+      "title": "정확히 15% · 허용",
+      "narration": "",
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/04-final-q1500-exact15-allowed.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 제작 세션의 실제 앱",
+      "in": 0,
+      "out": 4.2
+    },
+    {
+      "id": "rounded",
+      "title": "표시가 15.0%여도 · 미달이면 차단",
+      "narration": "",
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/05-final-q1499-rounded15-blocked.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 제작 세션의 실제 앱",
+      "in": 0,
+      "out": 4.2
+    },
+    {
+      "id": "boundary",
+      "title": "원가 1원 차이도 실제 금액으로 판정",
+      "narration": "원가가 경계보다 일 원 높으면 표시가 같아도 기준 미달입니다. 정확한 경계는 허용하고 실제 미달은 차단합니다.",
+      "duration": 11.6,
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/05-final-q1499-rounded15-blocked.png",
+      "kind": "app",
+      "approval": false
+    },
+    {
+      "id": "async",
+      "title": "빠른 입력 · 늦은 응답 · 작은 화면",
+      "narration": "늦게 도착한 이전 허용 응답이 최신 차단 상태를 덮지 않는지 확인했습니다. 작은 화면의 업무 흐름도 검사했습니다.",
+      "duration": 12,
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/12-final-stale-preview-ignored.png",
+      "kind": "app",
+      "approval": false
+    },
+    {
+      "id": "review",
+      "title": "읽기 전용 검토와 한계를 함께 기록",
+      "narration": "검토 범위에서 확정 결함은 없었습니다. 다만 검토자가 읽지 못한 테스트 로그와 독립 재확인 범위는 그대로 밝혔습니다.",
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/video/capture.webm",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "검토 한계 포함 · 원본 구간 발췌",
+      "in": 6320,
+      "out": 6335
+    },
+    {
+      "id": "pilot",
+      "title": "업무 하나로 시작하고\n효과는 측정합니다",
+      "narration": "업무 책임자는 정책과 범위를 정하고, 개발자는 변경을 검증하며, 검토 책임자가 채택을 판단합니다. 파일럿에서는 리드타임과 검토 시간, 재작업을 비교하세요. 이번 영상은 개발 시간이나 생산성 효과를 측정한 자료가 아닙니다.",
+      "duration": 21,
+      "kind": "card",
+      "approval": false
+    }
+  ]
+}

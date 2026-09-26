@@ -1,0 +1,1961 @@
+{
+  "schemaVersion": 1,
+  "executor": "Claude production session outside filmed Copilot",
+  "executionStatus": "passed",
+  "startedAt": "2026-09-26T13:36:18.253Z",
+  "description": "Real app browser interactions using isolated ephemeral loopback servers; app fixtures are synthetic, transmissions are simulations. No Copilot/recorder/shared MCP browser controlled.",
+  "outputDirectory": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866",
+  "command": [
+    "node",
+    "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/scripts/capture-live-app.mjs",
+    "--workspace",
+    "/Users/junwoojeong/ghcp-headless-demo-H976Zg",
+    "--contract",
+    "eligibility",
+    "--output-root",
+    "evidence/ghcp-live/retake-20260926/app"
+  ],
+  "captureScriptSha256": "9d53db76cb74e7e0dc681b7b7319ca510ff6b1451efa55e99a0b777f6763f8e9",
+  "codeBefore": {
+    "baseline": {
+      "root": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/evidence/ghcp-live/baseline-snapshot",
+      "files": [
+        {
+          "path": "package.json",
+          "sha256": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805"
+        },
+        {
+          "path": "src/server.mjs",
+          "sha256": "7025cb7a577f3a74200ef97c3cc757aea5127b5784c9ce51c8139fbea7913a6b"
+        },
+        {
+          "path": "src/quote.mjs",
+          "sha256": "e6eab853413324ac0281495b19e7f6fcdcfe2aa9b5323342779035a36b40f6fc"
+        },
+        {
+          "path": "public/app.js",
+          "sha256": "a35948c375901f55ed909ebf710919ef9df82f13b11494d3c1bde41a4482a1b0"
+        },
+        {
+          "path": "public/index.html",
+          "sha256": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41"
+        },
+        {
+          "path": "public/style.css",
+          "sha256": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b"
+        }
+      ],
+      "aggregateSha256": "eb79a3d5fdaf25d1f2757b7480cde5361dab21ed0144a892ba5aef6dee4b75b5"
+    },
+    "final": {
+      "root": "/Users/junwoojeong/ghcp-headless-demo-H976Zg",
+      "files": [
+        {
+          "path": "package.json",
+          "sha256": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805"
+        },
+        {
+          "path": "src/server.mjs",
+          "sha256": "60ccb2a41f4a414645fb09af5ae4cbd39859c8a12ab0aea427b04569633dd96d"
+        },
+        {
+          "path": "src/quote.mjs",
+          "sha256": "81cefe0c75d1732da5eaa6558c0b41254e5b79b55e106d7e8f96f1957c0f201f"
+        },
+        {
+          "path": "public/app.js",
+          "sha256": "1ef5093a5a2782880a341573fcc1960ae5b22a1cd9f7fa61c64a6305a890586b"
+        },
+        {
+          "path": "public/index.html",
+          "sha256": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41"
+        },
+        {
+          "path": "public/style.css",
+          "sha256": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b"
+        }
+      ],
+      "aggregateSha256": "805f2ab3605c11998ad770f598aeeb064011560ba47ef8e14b9d6659042c721f"
+    }
+  },
+  "codeAfter": {
+    "baseline": {
+      "root": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/evidence/ghcp-live/baseline-snapshot",
+      "files": [
+        {
+          "path": "package.json",
+          "sha256": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805"
+        },
+        {
+          "path": "src/server.mjs",
+          "sha256": "7025cb7a577f3a74200ef97c3cc757aea5127b5784c9ce51c8139fbea7913a6b"
+        },
+        {
+          "path": "src/quote.mjs",
+          "sha256": "e6eab853413324ac0281495b19e7f6fcdcfe2aa9b5323342779035a36b40f6fc"
+        },
+        {
+          "path": "public/app.js",
+          "sha256": "a35948c375901f55ed909ebf710919ef9df82f13b11494d3c1bde41a4482a1b0"
+        },
+        {
+          "path": "public/index.html",
+          "sha256": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41"
+        },
+        {
+          "path": "public/style.css",
+          "sha256": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b"
+        }
+      ],
+      "aggregateSha256": "eb79a3d5fdaf25d1f2757b7480cde5361dab21ed0144a892ba5aef6dee4b75b5"
+    },
+    "final": {
+      "root": "/Users/junwoojeong/ghcp-headless-demo-H976Zg",
+      "files": [
+        {
+          "path": "package.json",
+          "sha256": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805"
+        },
+        {
+          "path": "src/server.mjs",
+          "sha256": "60ccb2a41f4a414645fb09af5ae4cbd39859c8a12ab0aea427b04569633dd96d"
+        },
+        {
+          "path": "src/quote.mjs",
+          "sha256": "81cefe0c75d1732da5eaa6558c0b41254e5b79b55e106d7e8f96f1957c0f201f"
+        },
+        {
+          "path": "public/app.js",
+          "sha256": "1ef5093a5a2782880a341573fcc1960ae5b22a1cd9f7fa61c64a6305a890586b"
+        },
+        {
+          "path": "public/index.html",
+          "sha256": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41"
+        },
+        {
+          "path": "public/style.css",
+          "sha256": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b"
+        }
+      ],
+      "aggregateSha256": "805f2ab3605c11998ad770f598aeeb064011560ba47ef8e14b9d6659042c721f"
+    }
+  },
+  "serverOrigins": {
+    "baseline": "http://127.0.0.1:55852",
+    "final": "http://127.0.0.1:55853"
+  },
+  "scenes": [
+    {
+      "id": "01-baseline-q1001-10-send",
+      "version": "baseline",
+      "startedAt": "2026-09-26T13:36:18.579Z",
+      "status": "completed",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshots": [
+        "01-baseline-q1001-10-enabled.png",
+        "02-baseline-q1001-10-sent.png"
+      ],
+      "states": [
+        {
+          "quoteId": "Q-1001",
+          "discount": "10",
+          "margin": "11.11%",
+          "net": "9,000,000원",
+          "profit": "1,000,000원",
+          "sendDisabled": false,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "",
+          "status": "금액을 확인한 뒤 모의 전송을 실행하세요.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        },
+        {
+          "quoteId": "Q-1001",
+          "discount": "10",
+          "margin": "11.11%",
+          "net": "9,000,000원",
+          "profit": "1,000,000원",
+          "sendDisabled": false,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "모의 전송 완료 — 외부 발송 없음",
+          "status": "현재 입력값으로 모의 전송을 완료했습니다.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        }
+      ],
+      "apiResponses": [
+        {
+          "url": "http://127.0.0.1:55852/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55852/api/send",
+          "status": 200,
+          "body": {
+            "sent": true,
+            "simulation": true,
+            "message": "모의 전송 완료 — 외부 발송 없음",
+            "quote": {
+              "quoteId": "Q-1001",
+              "title": "업무 시스템 구축",
+              "customer": "가상 고객 A",
+              "listPriceWon": 10000000,
+              "costWon": 8000000,
+              "discountBps": 1000,
+              "netWon": 9000000,
+              "profitWon": 1000000,
+              "marginPercent": 11.11111111111111
+            }
+          }
+        }
+      ],
+      "video": "01-baseline-q1001-10-send.webm",
+      "sourceInSeconds": 0,
+      "sourceOutSeconds": 6.64,
+      "timingBasis": "ffprobe complete per-scene recording; includes real navigation/input transitions",
+      "finishedAt": "2026-09-26T13:36:24.321Z"
+    },
+    {
+      "id": "02-final-q1001-10-blocked",
+      "version": "final",
+      "startedAt": "2026-09-26T13:36:24.322Z",
+      "status": "completed",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshots": [
+        "03-final-q1001-10-blocked.png"
+      ],
+      "states": [
+        {
+          "quoteId": "Q-1001",
+          "discount": "10",
+          "margin": "11.11%",
+          "net": "9,000,000원",
+          "profit": "1,000,000원",
+          "sendDisabled": true,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+          "status": "전송 기준을 충족하지 못했습니다.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        }
+      ],
+      "apiResponses": [
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/send",
+          "status": 422,
+          "body": {
+            "error": {
+              "code": "MARGIN_BELOW_MINIMUM",
+              "message": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            },
+            "quote": {
+              "quoteId": "Q-1001",
+              "title": "업무 시스템 구축",
+              "customer": "가상 고객 A",
+              "listPriceWon": 10000000,
+              "costWon": 8000000,
+              "discountBps": 1000,
+              "netWon": 9000000,
+              "profitWon": 1000000,
+              "marginPercent": 11.11111111111111,
+              "eligibility": {
+                "canSend": false,
+                "minimumMarginPercent": 15,
+                "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+              }
+            }
+          }
+        }
+      ],
+      "video": "02-final-q1001-10-blocked.webm",
+      "sourceInSeconds": 0,
+      "sourceOutSeconds": 5.28,
+      "timingBasis": "ffprobe complete per-scene recording; includes real navigation/input transitions",
+      "finishedAt": "2026-09-26T13:36:28.490Z"
+    },
+    {
+      "id": "03-final-q1001-0-allowed-sent",
+      "version": "final",
+      "startedAt": "2026-09-26T13:36:28.490Z",
+      "status": "completed",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshots": [
+        "04-final-q1001-0-allowed.png",
+        "05-final-q1001-0-sent.png"
+      ],
+      "states": [
+        {
+          "quoteId": "Q-1001",
+          "discount": "0",
+          "margin": "20.0%",
+          "net": "10,000,000원",
+          "profit": "2,000,000원",
+          "sendDisabled": false,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "",
+          "status": "금액을 확인한 뒤 모의 전송을 실행하세요.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        },
+        {
+          "quoteId": "Q-1001",
+          "discount": "0",
+          "margin": "20.0%",
+          "net": "10,000,000원",
+          "profit": "2,000,000원",
+          "sendDisabled": false,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "모의 전송 완료 — 외부 발송 없음",
+          "status": "현재 입력값으로 모의 전송을 완료했습니다.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        }
+      ],
+      "apiResponses": [
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 0,
+            "netWon": 10000000,
+            "profitWon": 2000000,
+            "marginPercent": 20,
+            "eligibility": {
+              "canSend": true,
+              "minimumMarginPercent": 15,
+              "reason": null
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/send",
+          "status": 200,
+          "body": {
+            "sent": true,
+            "simulation": true,
+            "message": "모의 전송 완료 — 외부 발송 없음",
+            "quote": {
+              "quoteId": "Q-1001",
+              "title": "업무 시스템 구축",
+              "customer": "가상 고객 A",
+              "listPriceWon": 10000000,
+              "costWon": 8000000,
+              "discountBps": 0,
+              "netWon": 10000000,
+              "profitWon": 2000000,
+              "marginPercent": 20,
+              "eligibility": {
+                "canSend": true,
+                "minimumMarginPercent": 15,
+                "reason": null
+              }
+            }
+          }
+        }
+      ],
+      "video": "03-final-q1001-0-allowed-sent.webm",
+      "sourceInSeconds": 0,
+      "sourceOutSeconds": 7.56,
+      "timingBasis": "ffprobe complete per-scene recording; includes real navigation/input transitions",
+      "finishedAt": "2026-09-26T13:36:34.740Z"
+    },
+    {
+      "id": "04-final-q1500-exact15-allowed",
+      "version": "final",
+      "startedAt": "2026-09-26T13:36:34.740Z",
+      "status": "completed",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshots": [
+        "04-final-q1500-exact15-allowed.png"
+      ],
+      "states": [
+        {
+          "quoteId": "Q-1500",
+          "discount": "0",
+          "margin": "15.0%",
+          "net": "10,000,000원",
+          "profit": "1,500,000원",
+          "sendDisabled": false,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "",
+          "status": "금액을 확인한 뒤 모의 전송을 실행하세요.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        }
+      ],
+      "apiResponses": [
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1500",
+            "title": "사내 포털 구축",
+            "customer": "가상 고객 B",
+            "listPriceWon": 10000000,
+            "costWon": 8500000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 500000,
+            "marginPercent": 5.555555555555555,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1500",
+            "title": "사내 포털 구축",
+            "customer": "가상 고객 B",
+            "listPriceWon": 10000000,
+            "costWon": 8500000,
+            "discountBps": 0,
+            "netWon": 10000000,
+            "profitWon": 1500000,
+            "marginPercent": 15,
+            "eligibility": {
+              "canSend": true,
+              "minimumMarginPercent": 15,
+              "reason": null
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/send",
+          "status": 200,
+          "body": {
+            "sent": true,
+            "simulation": true,
+            "message": "모의 전송 완료 — 외부 발송 없음",
+            "quote": {
+              "quoteId": "Q-1500",
+              "title": "사내 포털 구축",
+              "customer": "가상 고객 B",
+              "listPriceWon": 10000000,
+              "costWon": 8500000,
+              "discountBps": 0,
+              "netWon": 10000000,
+              "profitWon": 1500000,
+              "marginPercent": 15,
+              "eligibility": {
+                "canSend": true,
+                "minimumMarginPercent": 15,
+                "reason": null
+              }
+            }
+          }
+        }
+      ],
+      "video": "04-final-q1500-exact15-allowed.webm",
+      "sourceInSeconds": 0,
+      "sourceOutSeconds": 4.24,
+      "timingBasis": "ffprobe complete per-scene recording; includes real navigation/input transitions",
+      "finishedAt": "2026-09-26T13:36:37.830Z"
+    },
+    {
+      "id": "05-final-q1499-rounded15-blocked",
+      "version": "final",
+      "startedAt": "2026-09-26T13:36:37.831Z",
+      "status": "completed",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshots": [
+        "05-final-q1499-rounded15-blocked.png"
+      ],
+      "states": [
+        {
+          "quoteId": "Q-1499",
+          "discount": "0",
+          "margin": "15.0%",
+          "net": "10,000,000원",
+          "profit": "1,499,999원",
+          "sendDisabled": true,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+          "status": "전송 기준을 충족하지 못했습니다.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        }
+      ],
+      "apiResponses": [
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1499",
+            "title": "문서 관리 시스템 구축",
+            "customer": "가상 고객 C",
+            "listPriceWon": 10000000,
+            "costWon": 8500001,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 499999,
+            "marginPercent": 5.555544444444444,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1499",
+            "title": "문서 관리 시스템 구축",
+            "customer": "가상 고객 C",
+            "listPriceWon": 10000000,
+            "costWon": 8500001,
+            "discountBps": 0,
+            "netWon": 10000000,
+            "profitWon": 1499999,
+            "marginPercent": 14.999989999999999,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/send",
+          "status": 422,
+          "body": {
+            "error": {
+              "code": "MARGIN_BELOW_MINIMUM",
+              "message": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            },
+            "quote": {
+              "quoteId": "Q-1499",
+              "title": "문서 관리 시스템 구축",
+              "customer": "가상 고객 C",
+              "listPriceWon": 10000000,
+              "costWon": 8500001,
+              "discountBps": 0,
+              "netWon": 10000000,
+              "profitWon": 1499999,
+              "marginPercent": 14.999989999999999,
+              "eligibility": {
+                "canSend": false,
+                "minimumMarginPercent": 15,
+                "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+              }
+            }
+          }
+        }
+      ],
+      "video": "05-final-q1499-rounded15-blocked.webm",
+      "sourceInSeconds": 0,
+      "sourceOutSeconds": 4.24,
+      "timingBasis": "ffprobe complete per-scene recording; includes real navigation/input transitions",
+      "finishedAt": "2026-09-26T13:36:40.910Z"
+    },
+    {
+      "id": "06-final-q1501-above15-allowed",
+      "version": "final",
+      "startedAt": "2026-09-26T13:36:40.911Z",
+      "status": "completed",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshots": [
+        "06-final-q1501-above15-allowed.png"
+      ],
+      "states": [
+        {
+          "quoteId": "Q-1501",
+          "discount": "0",
+          "margin": "15.0%",
+          "net": "10,000,000원",
+          "profit": "1,500,001원",
+          "sendDisabled": false,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "",
+          "status": "금액을 확인한 뒤 모의 전송을 실행하세요.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        }
+      ],
+      "apiResponses": [
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1501",
+            "title": "협업 시스템 구축",
+            "customer": "가상 고객 D",
+            "listPriceWon": 10000000,
+            "costWon": 8499999,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 500001,
+            "marginPercent": 5.555566666666667,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1501",
+            "title": "협업 시스템 구축",
+            "customer": "가상 고객 D",
+            "listPriceWon": 10000000,
+            "costWon": 8499999,
+            "discountBps": 0,
+            "netWon": 10000000,
+            "profitWon": 1500001,
+            "marginPercent": 15.00001,
+            "eligibility": {
+              "canSend": true,
+              "minimumMarginPercent": 15,
+              "reason": null
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/send",
+          "status": 200,
+          "body": {
+            "sent": true,
+            "simulation": true,
+            "message": "모의 전송 완료 — 외부 발송 없음",
+            "quote": {
+              "quoteId": "Q-1501",
+              "title": "협업 시스템 구축",
+              "customer": "가상 고객 D",
+              "listPriceWon": 10000000,
+              "costWon": 8499999,
+              "discountBps": 0,
+              "netWon": 10000000,
+              "profitWon": 1500001,
+              "marginPercent": 15.00001,
+              "eligibility": {
+                "canSend": true,
+                "minimumMarginPercent": 15,
+                "reason": null
+              }
+            }
+          }
+        }
+      ],
+      "video": "06-final-q1501-above15-allowed.webm",
+      "sourceInSeconds": 0,
+      "sourceOutSeconds": 4.2,
+      "timingBasis": "ffprobe complete per-scene recording; includes real navigation/input transitions",
+      "finishedAt": "2026-09-26T13:36:44.010Z"
+    },
+    {
+      "id": "07-final-invalid-zero-rapid-delayed",
+      "version": "final",
+      "startedAt": "2026-09-26T13:36:44.010Z",
+      "status": "completed",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "screenshots": [
+        "09-final-invalid-discount.png",
+        "10-final-zero-net.png",
+        "11-final-preview-held.png",
+        "12-final-stale-preview-ignored.png"
+      ],
+      "states": [
+        {
+          "case": "empty",
+          "quoteId": "Q-1001",
+          "discount": "",
+          "margin": "—",
+          "net": "—",
+          "profit": "—",
+          "sendDisabled": true,
+          "busy": "false",
+          "label": "확인 필요",
+          "feedback": "할인율은 0%부터 100%까지 소수 둘째 자리 이내로 입력해 주세요.",
+          "status": "견적 계산을 완료한 뒤 전송할 수 있습니다.",
+          "invalid": "true",
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        },
+        {
+          "case": "negative",
+          "quoteId": "Q-1001",
+          "discount": "-1",
+          "margin": "—",
+          "net": "—",
+          "profit": "—",
+          "sendDisabled": true,
+          "busy": "false",
+          "label": "확인 필요",
+          "feedback": "할인율은 0%부터 100%까지 소수 둘째 자리 이내로 입력해 주세요.",
+          "status": "견적 계산을 완료한 뒤 전송할 수 있습니다.",
+          "invalid": "true",
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        },
+        {
+          "case": "out-of-range",
+          "quoteId": "Q-1001",
+          "discount": "100.01",
+          "margin": "—",
+          "net": "—",
+          "profit": "—",
+          "sendDisabled": true,
+          "busy": "false",
+          "label": "확인 필요",
+          "feedback": "할인율은 0%부터 100%까지 소수 둘째 자리 이내로 입력해 주세요.",
+          "status": "견적 계산을 완료한 뒤 전송할 수 있습니다.",
+          "invalid": "true",
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        },
+        {
+          "case": "too-precise",
+          "quoteId": "Q-1001",
+          "discount": "1.001",
+          "margin": "—",
+          "net": "—",
+          "profit": "—",
+          "sendDisabled": true,
+          "busy": "false",
+          "label": "확인 필요",
+          "feedback": "할인율은 0%부터 100%까지 소수 둘째 자리 이내로 입력해 주세요.",
+          "status": "견적 계산을 완료한 뒤 전송할 수 있습니다.",
+          "invalid": "true",
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        },
+        {
+          "case": "zero-net",
+          "quoteId": "Q-1001",
+          "discount": "100",
+          "margin": "—",
+          "net": "—",
+          "profit": "—",
+          "sendDisabled": true,
+          "busy": "false",
+          "label": "확인 필요",
+          "feedback": "최종 견적 금액이 1원 이상이 되도록 할인율을 낮춰 주세요.",
+          "status": "견적 계산을 완료한 뒤 전송할 수 있습니다.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        },
+        {
+          "case": "rapid-input",
+          "quoteId": "Q-1001",
+          "discount": "10",
+          "margin": "11.11%",
+          "net": "9,000,000원",
+          "profit": "1,000,000원",
+          "sendDisabled": true,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+          "status": "전송 기준을 충족하지 못했습니다.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        },
+        {
+          "case": "delayed-allowed-preview",
+          "quoteId": "Q-1001",
+          "discount": "0",
+          "margin": "—",
+          "net": "—",
+          "profit": "—",
+          "sendDisabled": true,
+          "busy": "true",
+          "label": "계산 중",
+          "feedback": "",
+          "status": "입력한 할인율로 금액을 계산하고 있습니다.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        },
+        {
+          "case": "obsolete-preview-released",
+          "quoteId": "Q-1001",
+          "discount": "10",
+          "margin": "11.11%",
+          "net": "9,000,000원",
+          "profit": "1,000,000원",
+          "sendDisabled": true,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+          "status": "전송 기준을 충족하지 못했습니다.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        }
+      ],
+      "apiResponses": [
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 400,
+          "body": {
+            "error": {
+              "code": "INVALID_INPUT",
+              "message": "최종 견적 금액이 1원 이상이 되도록 할인율을 낮춰 주세요."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 0,
+            "netWon": 10000000,
+            "profitWon": 2000000,
+            "marginPercent": 20,
+            "eligibility": {
+              "canSend": true,
+              "minimumMarginPercent": 15,
+              "reason": null
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 0,
+            "netWon": 10000000,
+            "profitWon": 2000000,
+            "marginPercent": 20,
+            "eligibility": {
+              "canSend": true,
+              "minimumMarginPercent": 15,
+              "reason": null
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        },
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        }
+      ],
+      "video": "07-final-invalid-zero-rapid-delayed.webm",
+      "sourceInSeconds": 0,
+      "sourceOutSeconds": 5.4,
+      "timingBasis": "ffprobe complete per-scene recording; includes real navigation/input transitions",
+      "finishedAt": "2026-09-26T13:36:48.284Z"
+    },
+    {
+      "id": "08-final-mobile390",
+      "version": "final",
+      "startedAt": "2026-09-26T13:36:48.284Z",
+      "status": "completed",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshots": [
+        "13-final-mobile390-fullpage.png",
+        "14-final-mobile390-summary.png"
+      ],
+      "states": [
+        {
+          "quoteId": "Q-1001",
+          "discount": "10",
+          "margin": "11.11%",
+          "net": "9,000,000원",
+          "profit": "1,000,000원",
+          "sendDisabled": true,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+          "status": "전송 기준을 충족하지 못했습니다.",
+          "invalid": null,
+          "viewportWidth": 390,
+          "documentWidth": 390
+        }
+      ],
+      "apiResponses": [
+        {
+          "url": "http://127.0.0.1:55853/api/preview",
+          "status": 200,
+          "body": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        }
+      ],
+      "video": "08-final-mobile390.webm",
+      "sourceInSeconds": 0,
+      "sourceOutSeconds": 4.28,
+      "timingBasis": "ffprobe complete per-scene recording; includes real navigation/input transitions",
+      "finishedAt": "2026-09-26T13:36:50.765Z"
+    }
+  ],
+  "checks": [
+    {
+      "name": "baseline Q-1001 10% send enabled",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "10",
+        "margin": "11.11%",
+        "net": "9,000,000원",
+        "profit": "1,000,000원",
+        "sendDisabled": false,
+        "busy": "false",
+        "label": "현재 입력 기준",
+        "feedback": "",
+        "status": "금액을 확인한 뒤 모의 전송을 실행하세요.",
+        "invalid": null,
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "baseline Q-1001 10% actually simulated sent",
+      "passed": true,
+      "actual": {
+        "status": 200,
+        "result": {
+          "sent": true,
+          "simulation": true,
+          "message": "모의 전송 완료 — 외부 발송 없음",
+          "quote": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111
+          }
+        },
+        "state": {
+          "quoteId": "Q-1001",
+          "discount": "10",
+          "margin": "11.11%",
+          "net": "9,000,000원",
+          "profit": "1,000,000원",
+          "sendDisabled": false,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "모의 전송 완료 — 외부 발송 없음",
+          "status": "현재 입력값으로 모의 전송을 완료했습니다.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        }
+      }
+    },
+    {
+      "name": "final Q-1001 10% blocked in UI",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "10",
+        "margin": "11.11%",
+        "net": "9,000,000원",
+        "profit": "1,000,000원",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "현재 입력 기준",
+        "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+        "status": "전송 기준을 충족하지 못했습니다.",
+        "invalid": null,
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "final Q-1001 10% direct send rejected by real server",
+      "passed": true,
+      "actual": {
+        "status": 422,
+        "body": {
+          "error": {
+            "code": "MARGIN_BELOW_MINIMUM",
+            "message": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+          },
+          "quote": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "final Q-1001 0% allowed",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "0",
+        "margin": "20.0%",
+        "net": "10,000,000원",
+        "profit": "2,000,000원",
+        "sendDisabled": false,
+        "busy": "false",
+        "label": "현재 입력 기준",
+        "feedback": "",
+        "status": "금액을 확인한 뒤 모의 전송을 실행하세요.",
+        "invalid": null,
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "final Q-1001 0% simulated sent",
+      "passed": true,
+      "actual": {
+        "status": 200,
+        "result": {
+          "sent": true,
+          "simulation": true,
+          "message": "모의 전송 완료 — 외부 발송 없음",
+          "quote": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 0,
+            "netWon": 10000000,
+            "profitWon": 2000000,
+            "marginPercent": 20,
+            "eligibility": {
+              "canSend": true,
+              "minimumMarginPercent": 15,
+              "reason": null
+            }
+          }
+        },
+        "state": {
+          "quoteId": "Q-1001",
+          "discount": "0",
+          "margin": "20.0%",
+          "net": "10,000,000원",
+          "profit": "2,000,000원",
+          "sendDisabled": false,
+          "busy": "false",
+          "label": "현재 입력 기준",
+          "feedback": "모의 전송 완료 — 외부 발송 없음",
+          "status": "현재 입력값으로 모의 전송을 완료했습니다.",
+          "invalid": null,
+          "viewportWidth": 1920,
+          "documentWidth": 1920
+        }
+      }
+    },
+    {
+      "name": "Q-1500 displays 15.0% and is allowed",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1500",
+        "discount": "0",
+        "margin": "15.0%",
+        "net": "10,000,000원",
+        "profit": "1,500,000원",
+        "sendDisabled": false,
+        "busy": "false",
+        "label": "현재 입력 기준",
+        "feedback": "",
+        "status": "금액을 확인한 뒤 모의 전송을 실행하세요.",
+        "invalid": null,
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "Q-1500 real send API boundary",
+      "passed": true,
+      "actual": {
+        "status": 200,
+        "body": {
+          "sent": true,
+          "simulation": true,
+          "message": "모의 전송 완료 — 외부 발송 없음",
+          "quote": {
+            "quoteId": "Q-1500",
+            "title": "사내 포털 구축",
+            "customer": "가상 고객 B",
+            "listPriceWon": 10000000,
+            "costWon": 8500000,
+            "discountBps": 0,
+            "netWon": 10000000,
+            "profitWon": 1500000,
+            "marginPercent": 15,
+            "eligibility": {
+              "canSend": true,
+              "minimumMarginPercent": 15,
+              "reason": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Q-1499 displays 15.0% and is blocked",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1499",
+        "discount": "0",
+        "margin": "15.0%",
+        "net": "10,000,000원",
+        "profit": "1,499,999원",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "현재 입력 기준",
+        "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+        "status": "전송 기준을 충족하지 못했습니다.",
+        "invalid": null,
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "Q-1499 real send API boundary",
+      "passed": true,
+      "actual": {
+        "status": 422,
+        "body": {
+          "error": {
+            "code": "MARGIN_BELOW_MINIMUM",
+            "message": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+          },
+          "quote": {
+            "quoteId": "Q-1499",
+            "title": "문서 관리 시스템 구축",
+            "customer": "가상 고객 C",
+            "listPriceWon": 10000000,
+            "costWon": 8500001,
+            "discountBps": 0,
+            "netWon": 10000000,
+            "profitWon": 1499999,
+            "marginPercent": 14.999989999999999,
+            "eligibility": {
+              "canSend": false,
+              "minimumMarginPercent": 15,
+              "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "Q-1501 displays 15.0% and is allowed",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1501",
+        "discount": "0",
+        "margin": "15.0%",
+        "net": "10,000,000원",
+        "profit": "1,500,001원",
+        "sendDisabled": false,
+        "busy": "false",
+        "label": "현재 입력 기준",
+        "feedback": "",
+        "status": "금액을 확인한 뒤 모의 전송을 실행하세요.",
+        "invalid": null,
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "Q-1501 real send API boundary",
+      "passed": true,
+      "actual": {
+        "status": 200,
+        "body": {
+          "sent": true,
+          "simulation": true,
+          "message": "모의 전송 완료 — 외부 발송 없음",
+          "quote": {
+            "quoteId": "Q-1501",
+            "title": "협업 시스템 구축",
+            "customer": "가상 고객 D",
+            "listPriceWon": 10000000,
+            "costWon": 8499999,
+            "discountBps": 0,
+            "netWon": 10000000,
+            "profitWon": 1500001,
+            "marginPercent": 15.00001,
+            "eligibility": {
+              "canSend": true,
+              "minimumMarginPercent": 15,
+              "reason": null
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "invalid empty disabled with feedback",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "",
+        "margin": "—",
+        "net": "—",
+        "profit": "—",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "확인 필요",
+        "feedback": "할인율은 0%부터 100%까지 소수 둘째 자리 이내로 입력해 주세요.",
+        "status": "견적 계산을 완료한 뒤 전송할 수 있습니다.",
+        "invalid": "true",
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "invalid negative disabled with feedback",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "-1",
+        "margin": "—",
+        "net": "—",
+        "profit": "—",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "확인 필요",
+        "feedback": "할인율은 0%부터 100%까지 소수 둘째 자리 이내로 입력해 주세요.",
+        "status": "견적 계산을 완료한 뒤 전송할 수 있습니다.",
+        "invalid": "true",
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "invalid out-of-range disabled with feedback",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "100.01",
+        "margin": "—",
+        "net": "—",
+        "profit": "—",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "확인 필요",
+        "feedback": "할인율은 0%부터 100%까지 소수 둘째 자리 이내로 입력해 주세요.",
+        "status": "견적 계산을 완료한 뒤 전송할 수 있습니다.",
+        "invalid": "true",
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "invalid too-precise disabled with feedback",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "1.001",
+        "margin": "—",
+        "net": "—",
+        "profit": "—",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "확인 필요",
+        "feedback": "할인율은 0%부터 100%까지 소수 둘째 자리 이내로 입력해 주세요.",
+        "status": "견적 계산을 완료한 뒤 전송할 수 있습니다.",
+        "invalid": "true",
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "zero-net blocked with explanatory feedback",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "100",
+        "margin": "—",
+        "net": "—",
+        "profit": "—",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "확인 필요",
+        "feedback": "최종 견적 금액이 1원 이상이 되도록 할인율을 낮춰 주세요.",
+        "status": "견적 계산을 완료한 뒤 전송할 수 있습니다.",
+        "invalid": null,
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "rapid input latest 10% wins",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "10",
+        "margin": "11.11%",
+        "net": "9,000,000원",
+        "profit": "1,000,000원",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "현재 입력 기준",
+        "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+        "status": "전송 기준을 충족하지 못했습니다.",
+        "invalid": null,
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "send disabled while real preview response held",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "0",
+        "margin": "—",
+        "net": "—",
+        "profit": "—",
+        "sendDisabled": true,
+        "busy": "true",
+        "label": "계산 중",
+        "feedback": "",
+        "status": "입력한 할인율로 금액을 계산하고 있습니다.",
+        "invalid": null,
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "obsolete allowed preview cannot override latest blocked input",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "10",
+        "margin": "11.11%",
+        "net": "9,000,000원",
+        "profit": "1,000,000원",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "현재 입력 기준",
+        "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+        "status": "전송 기준을 충족하지 못했습니다.",
+        "invalid": null,
+        "viewportWidth": 1920,
+        "documentWidth": 1920
+      }
+    },
+    {
+      "name": "390px mobile no document horizontal overflow",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "10",
+        "margin": "11.11%",
+        "net": "9,000,000원",
+        "profit": "1,000,000원",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "현재 입력 기준",
+        "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+        "status": "전송 기준을 충족하지 못했습니다.",
+        "invalid": null,
+        "viewportWidth": 390,
+        "documentWidth": 390
+      }
+    },
+    {
+      "name": "390px mobile Q-1001 10% still blocked",
+      "passed": true,
+      "actual": {
+        "quoteId": "Q-1001",
+        "discount": "10",
+        "margin": "11.11%",
+        "net": "9,000,000원",
+        "profit": "1,000,000원",
+        "sendDisabled": true,
+        "busy": "false",
+        "label": "현재 입력 기준",
+        "feedback": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다.",
+        "status": "전송 기준을 충족하지 못했습니다.",
+        "invalid": null,
+        "viewportWidth": 390,
+        "documentWidth": 390
+      }
+    },
+    {
+      "name": "baseline source code unchanged by capture",
+      "passed": true,
+      "actual": {
+        "before": "eb79a3d5fdaf25d1f2757b7480cde5361dab21ed0144a892ba5aef6dee4b75b5",
+        "after": "eb79a3d5fdaf25d1f2757b7480cde5361dab21ed0144a892ba5aef6dee4b75b5"
+      }
+    },
+    {
+      "name": "final source code unchanged by capture",
+      "passed": true,
+      "actual": {
+        "before": "805f2ab3605c11998ad770f598aeeb064011560ba47ef8e14b9d6659042c721f",
+        "after": "805f2ab3605c11998ad770f598aeeb064011560ba47ef8e14b9d6659042c721f"
+      }
+    },
+    {
+      "name": "owned ephemeral servers shut down",
+      "passed": true,
+      "actual": true
+    }
+  ],
+  "errors": [],
+  "files": [
+    {
+      "filename": "01-baseline-q1001-10-enabled.png",
+      "kind": "screenshot",
+      "bytes": 100139,
+      "sha256": "68500776cda953d04abf469230edbd86886083f87b8b5bfe0ca9c10e00d8d564",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "02-baseline-q1001-10-sent.png",
+      "kind": "screenshot",
+      "bytes": 103613,
+      "sha256": "6235b0053421c44fa86fac05af53141391970496ba39d4fe9882556f91725ef2",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "01-baseline-q1001-10-send.webm",
+      "kind": "real-browser-video",
+      "bytes": 507337,
+      "sha256": "79d891743e394335ef8b61705b1e7d57c1c41b99621c33b8d1f0f904d457bdef",
+      "durationSeconds": 6.64,
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ]
+    },
+    {
+      "filename": "03-final-q1001-10-blocked.png",
+      "kind": "screenshot",
+      "bytes": 109374,
+      "sha256": "ab21f884790c224ac1975e501bf93cab145973a8a4f90f6b1346fad92bbeb421",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "02-final-q1001-10-blocked.webm",
+      "kind": "real-browser-video",
+      "bytes": 435455,
+      "sha256": "e6f614821c2d60674149186b54afc399cad4d69a83edbd70bd611afcd9a6432b",
+      "durationSeconds": 5.28,
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ]
+    },
+    {
+      "filename": "04-final-q1001-0-allowed.png",
+      "kind": "screenshot",
+      "bytes": 101041,
+      "sha256": "b44bb356d3ed6dd461f2b1f8885368bf5a08bb5dbcfb63b2471896ae9ab1a530",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "05-final-q1001-0-sent.png",
+      "kind": "screenshot",
+      "bytes": 104096,
+      "sha256": "f51987801d0ec56a9fc75ffcea57a7537eb3c463ec42aacb1705bea90ee50216",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "03-final-q1001-0-allowed-sent.webm",
+      "kind": "real-browser-video",
+      "bytes": 537177,
+      "sha256": "ea48b9070fad530c5da4ee40720ae3a76d2fbb56a99ed1a28a8492bb33392361",
+      "durationSeconds": 7.56,
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ]
+    },
+    {
+      "filename": "04-final-q1500-exact15-allowed.png",
+      "kind": "screenshot",
+      "bytes": 100538,
+      "sha256": "ac35d930a40f477c6294ed5238821d461ec1d6a56ea28f939f15c0fd2be5b0aa",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "04-final-q1500-exact15-allowed.webm",
+      "kind": "real-browser-video",
+      "bytes": 298386,
+      "sha256": "d6eb47479b1abe72e2e99df491a93f45902c664428ce643f261026d481935899",
+      "durationSeconds": 4.24,
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ]
+    },
+    {
+      "filename": "05-final-q1499-rounded15-blocked.png",
+      "kind": "screenshot",
+      "bytes": 111351,
+      "sha256": "cab1d530c303168402f79ebf96ed9f55a7d06364a60c5073b7be392b9dbe1593",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "05-final-q1499-rounded15-blocked.webm",
+      "kind": "real-browser-video",
+      "bytes": 310352,
+      "sha256": "217df75f883aee6488f8fbb6752dbfa703c31bf9feeb23702363291f4efc3c16",
+      "durationSeconds": 4.24,
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ]
+    },
+    {
+      "filename": "06-final-q1501-above15-allowed.png",
+      "kind": "screenshot",
+      "bytes": 101092,
+      "sha256": "a197ff041b9403133aa28421759a37ec8873756f7f1414b2966f09fc2297dc9b",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "06-final-q1501-above15-allowed.webm",
+      "kind": "real-browser-video",
+      "bytes": 292530,
+      "sha256": "dae415b053a5c2e31836b8d9117d8f9ad6959bff5233d7143f58b8ff4213921d",
+      "durationSeconds": 4.2,
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ]
+    },
+    {
+      "filename": "09-final-invalid-discount.png",
+      "kind": "screenshot",
+      "bytes": 97849,
+      "sha256": "99d9b22d84a037dc831e2e08de2cf1424a7890c823d8065a0d0eb22cd4f9c043",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "10-final-zero-net.png",
+      "kind": "screenshot",
+      "bytes": 97338,
+      "sha256": "bcef23c1e9aa903ea3dec4ec83a421f87ae5e30d2bd224ba4a734588ed068e27",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "11-final-preview-held.png",
+      "kind": "screenshot",
+      "bytes": 91311,
+      "sha256": "044a788a9e3606fe56e02a526590db1591a3f84f037015fb3079ee91f1fbc684",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "12-final-stale-preview-ignored.png",
+      "kind": "screenshot",
+      "bytes": 109711,
+      "sha256": "7cab463d3857d8eab8cc51e518dc6854a788839b95e061342e2608f6a5044f52",
+      "viewport": {
+        "width": 1920,
+        "height": 1080
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "07-final-invalid-zero-rapid-delayed.webm",
+      "kind": "real-browser-video",
+      "bytes": 444267,
+      "sha256": "e0397bab1d3c84e35469c87757650dfecf8b905b25f552c672ecbcb6fee5b79e",
+      "durationSeconds": 5.4,
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 1920,
+          "height": 1080,
+          "r_frame_rate": "25/1"
+        }
+      ]
+    },
+    {
+      "filename": "13-final-mobile390-fullpage.png",
+      "kind": "screenshot",
+      "bytes": 92231,
+      "sha256": "56171633ff3b2999263a00782a2da89784a4b40e0de54569b8d2bcdc3cd2456b",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": true
+    },
+    {
+      "filename": "14-final-mobile390-summary.png",
+      "kind": "screenshot",
+      "bytes": 52268,
+      "sha256": "993b6a04308337dd0f390e80ca37a2afbf70590d10e2c6cf6132740571683d46",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "fullPage": false
+    },
+    {
+      "filename": "08-final-mobile390.webm",
+      "kind": "real-browser-video",
+      "bytes": 94455,
+      "sha256": "50f728b019f25874f4953f65135091cde297bacddc1c1f745c9b0b7f8a9bc068",
+      "durationSeconds": 4.28,
+      "streams": [
+        {
+          "codec_name": "vp8",
+          "width": 390,
+          "height": 844,
+          "r_frame_rate": "25/1"
+        }
+      ]
+    }
+  ],
+  "productionNotes": [
+    "Unmodified app DOM and CSS; native 1920x1080 desktop viewport and video.",
+    "Each WebM is a separate real page recording. Source in/out refer to its complete probed media timeline, not fabricated replay.",
+    "Network route holds, if used, delay genuine server responses; no fabricated payloads.",
+    "Existing automated test suites were not rerun."
+  ],
+  "browserVersion": "153.0.8010.12",
+  "ownServersShutdown": true,
+  "finishedAt": "2026-09-26T13:36:50.782Z",
+  "summary": {
+    "passed": 25,
+    "failed": 0,
+    "scenes": 8,
+    "screenshots": 14,
+    "videos": 8
+  }
+}

@@ -1,0 +1,107 @@
+--- filmed/test/margin.test.mjs
++++ repaired/test/margin.test.mjs
+@@ -250,6 +250,12 @@
+           invalidJson() {
+             resolve({ ok: true, status: 200, json: async () => { throw new SyntaxError('Invalid JSON'); } });
+           },
++          pendingBody(status) {
++            let rejectBody;
++            const body = new Promise((resolveBody, reject) => { rejectBody = reject; });
++            resolve({ ok: status >= 200 && status < 300, status, json: () => body });
++            return rejectBody;
++          },
+         });
+       });
+     },
+@@ -529,6 +535,51 @@
+   }
+ });
+ 
++for (const failure of ['json', 'network', 'timeout']) {
++  for (const stale of [false, true]) {
++    test(`422 response body ${failure} preserves the current lock; stale=${stale}`, async (t) => {
++      const ui = await startUi(t);
++      await showPreview(ui, 'Q-1001', '0');
++      const sending = ui.get('#quote-form').dispatch('submit');
++      const request = ui.requests.at(-1);
++      const rejectBody = request.pendingBody(422);
++      await settleUi();
++      assert.equal(ui.get('#send-quote').disabled, true);
++      const [timer] = ui.timers;
++      if (stale) await showPreview(ui, 'Q-1500', '0');
++      let error;
++      if (failure === 'json') error = new SyntaxError('Invalid response JSON');
++      if (failure === 'network') error = new TypeError('Response stream disconnected');
++      if (failure === 'timeout') {
++        timer.callback();
++        assert.equal(request.signal.aborted, true);
++        error = new Error('Response body timed out');
++        error.name = 'AbortError';
++      }
++      rejectBody(error);
++      await sending;
++      assert.equal(ui.get('#send-quote').disabled, !stale);
++      assert.equal(ui.get('#quote-summary').getAttribute('aria-busy'), 'false');
++      assert.equal(ui.timers.size, 0);
++      if (stale) {
++        assert.equal(ui.get('#margin-value').textContent, '15.0%');
++        assert.equal(ui.get('#feedback').textContent, '');
++      } else {
++        assert.equal(ui.get('#margin-value').textContent, '—');
++        assert.equal(ui.get('#feedback').dataset.tone, 'error');
++        assert.ok(ui.get('#feedback').textContent.length > 0);
++        const count = ui.requests.length;
++        await ui.get('#quote-form').dispatch('submit');
++        assert.equal(ui.requests.length, count);
++        await showPreview(ui, 'Q-1001', '10');
++        assert.equal(ui.get('#send-quote').disabled, true);
++        await showPreview(ui, 'Q-1001', '0');
++        assert.equal(ui.get('#send-quote').disabled, false);
++      }
++    });
++  }
++}
++
+ test('UI keeps the existing quote-list error and retry flow', async (t) => {
+   const base = await startServer(t);
+   const ui = createUi();
+--- filmed/public/app.js
++++ repaired/public/app.js
+@@ -34,6 +34,7 @@
+ }
+ 
+ async function requestJson(path, controller, body) {
++  let responseStatus;
+   const timeout = setTimeout(() => controller.abort(), 10_000);
+   try {
+     const response = await fetch(path, {
+@@ -43,6 +44,7 @@
+       cache: 'no-store',
+       signal: controller.signal,
+     });
++    responseStatus = response.status;
+     const result = await response.json();
+     if (!response.ok) {
+       const error = new Error(result?.error?.message ?? '요청을 처리하지 못했습니다. 다시 시도해 주세요.');
+@@ -52,13 +54,15 @@
+     }
+     return result;
+   } catch (error) {
++    let failure = error;
+     if (error.name === 'AbortError') {
+-      throw new Error('응답을 받지 못했습니다. 입력값을 확인하고 다시 시도해 주세요.');
+-    }
+-    if (error instanceof TypeError || error instanceof SyntaxError) {
+-      throw new Error('서버에 연결할 수 없습니다. 서버 실행 상태를 확인해 주세요.');
+-    }
+-    throw error;
++      failure = new Error('응답을 받지 못했습니다. 입력값을 확인하고 다시 시도해 주세요.');
++    } else if (error instanceof TypeError || error instanceof SyntaxError) {
++      failure = new Error('서버에 연결할 수 없습니다. 서버 실행 상태를 확인해 주세요.');
++    }
++    // Headers remain authoritative even if reading the response body fails.
++    if (responseStatus !== undefined) failure.status = responseStatus;
++    throw failure;
+   } finally {
+     clearTimeout(timeout);
+   }

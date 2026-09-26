@@ -1,0 +1,352 @@
+
+> synthetic-quote-starter@1.0.0 test
+> node --test
+
+TAP version 13
+# Subtest: direct send enforces the margin boundary: Q-1001, 1000 BPS
+ok 1 - direct send enforces the margin boundary: Q-1001, 1000 BPS
+  ---
+  duration_ms: 14.761583
+  type: 'test'
+  ...
+# Subtest: direct send enforces the margin boundary: Q-1001, 0 BPS
+ok 2 - direct send enforces the margin boundary: Q-1001, 0 BPS
+  ---
+  duration_ms: 4.927417
+  type: 'test'
+  ...
+# Subtest: direct send enforces the margin boundary: Q-1500, 0 BPS
+ok 3 - direct send enforces the margin boundary: Q-1500, 0 BPS
+  ---
+  duration_ms: 2.18075
+  type: 'test'
+  ...
+# Subtest: direct send enforces the margin boundary: Q-1499, 0 BPS
+ok 4 - direct send enforces the margin boundary: Q-1499, 0 BPS
+  ---
+  duration_ms: 1.635625
+  type: 'test'
+  ...
+# Subtest: direct send enforces the margin boundary: Q-1501, 0 BPS
+ok 5 - direct send enforces the margin boundary: Q-1501, 0 BPS
+  ---
+  duration_ms: 1.927833
+  type: 'test'
+  ...
+# Subtest: preview and send share the server decision: Q-1001, 1000 BPS
+ok 6 - preview and send share the server decision: Q-1001, 1000 BPS
+  ---
+  duration_ms: 4.064041
+  type: 'test'
+  ...
+# Subtest: preview and send share the server decision: Q-1001, 0 BPS
+ok 7 - preview and send share the server decision: Q-1001, 0 BPS
+  ---
+  duration_ms: 3.504
+  type: 'test'
+  ...
+# Subtest: preview and send share the server decision: Q-1500, 0 BPS
+ok 8 - preview and send share the server decision: Q-1500, 0 BPS
+  ---
+  duration_ms: 3.513916
+  type: 'test'
+  ...
+# Subtest: preview and send share the server decision: Q-1499, 0 BPS
+ok 9 - preview and send share the server decision: Q-1499, 0 BPS
+  ---
+  duration_ms: 5.980125
+  type: 'test'
+  ...
+# Subtest: preview and send share the server decision: Q-1501, 0 BPS
+ok 10 - preview and send share the server decision: Q-1501, 0 BPS
+  ---
+  duration_ms: 2.057666
+  type: 'test'
+  ...
+# Subtest: the policy uses rounded whole won and preserves single-BPS discounts
+ok 11 - the policy uses rounded whole won and preserves single-BPS discounts
+  ---
+  duration_ms: 5.90025
+  type: 'test'
+  ...
+# Subtest: one-won boundaries remain exact at the money limits
+ok 12 - one-won boundaries remain exact at the money limits
+  ---
+  duration_ms: 6.436625
+  type: 'test'
+  ...
+# Subtest: client policy overrides and invalid inputs keep their 400/404 precedence
+ok 13 - client policy overrides and invalid inputs keep their 400/404 precedence
+  ---
+  duration_ms: 14.282916
+  type: 'test'
+  ...
+# Subtest: send recalculates both the discount and the current server-owned cost
+ok 14 - send recalculates both the discount and the current server-owned cost
+  ---
+  duration_ms: 2.343709
+  type: 'test'
+  ...
+# Subtest: UI follows the real server decision: Q-1001, 1000 BPS
+ok 15 - UI follows the real server decision: Q-1001, 1000 BPS
+  ---
+  duration_ms: 23.524041
+  type: 'test'
+  ...
+# Subtest: UI follows the real server decision: Q-1001, 0 BPS
+ok 16 - UI follows the real server decision: Q-1001, 0 BPS
+  ---
+  duration_ms: 2.285958
+  type: 'test'
+  ...
+# Subtest: UI follows the real server decision: Q-1500, 0 BPS
+ok 17 - UI follows the real server decision: Q-1500, 0 BPS
+  ---
+  duration_ms: 2.116125
+  type: 'test'
+  ...
+# Subtest: UI follows the real server decision: Q-1499, 0 BPS
+ok 18 - UI follows the real server decision: Q-1499, 0 BPS
+  ---
+  duration_ms: 2.5285
+  type: 'test'
+  ...
+# Subtest: UI follows the real server decision: Q-1501, 0 BPS
+ok 19 - UI follows the real server decision: Q-1501, 0 BPS
+  ---
+  duration_ms: 3.517167
+  type: 'test'
+  ...
+# Subtest: UI preserves BPS input and invalidates prior success for invalid or zero-net input
+ok 20 - UI preserves BPS input and invalidates prior success for invalid or zero-net input
+  ---
+  duration_ms: 2.89925
+  type: 'test'
+  ...
+# Subtest: UI ignores an older preview after Q-1001/10%
+ok 21 - UI ignores an older preview after Q-1001/10%
+  ---
+  duration_ms: 2.084959
+  type: 'test'
+  ...
+# Subtest: UI ignores an older preview after Q-1001/0%
+ok 22 - UI ignores an older preview after Q-1001/0%
+  ---
+  duration_ms: 2.02325
+  type: 'test'
+  ...
+# Subtest: UI ignores an older preview after Q-1499/0%
+ok 23 - UI ignores an older preview after Q-1499/0%
+  ---
+  duration_ms: 1.911167
+  type: 'test'
+  ...
+# Subtest: UI ignores an older preview error and clears success as soon as input changes
+ok 24 - UI ignores an older preview error and clears success as soon as input changes
+  ---
+  duration_ms: 2.324875
+  type: 'test'
+  ...
+# Subtest: UI ignores stale send success; latest preview completed=false
+ok 25 - UI ignores stale send success; latest preview completed=false
+  ---
+  duration_ms: 2.795917
+  type: 'test'
+  ...
+# Subtest: UI ignores stale send success; latest preview completed=true
+ok 26 - UI ignores stale send success; latest preview completed=true
+  ---
+  duration_ms: 2.69625
+  type: 'test'
+  ...
+# Subtest: UI ignores stale send error; latest preview completed=false
+ok 27 - UI ignores stale send error; latest preview completed=false
+  ---
+  duration_ms: 2.2195
+  type: 'test'
+  ...
+# Subtest: UI ignores stale send error; latest preview completed=true
+ok 28 - UI ignores stale send error; latest preview completed=true
+  ---
+  duration_ms: 3.444125
+  type: 'test'
+  ...
+# Subtest: a latest send 422 discards permission until a new allowed preview
+ok 29 - a latest send 422 discards permission until a new allowed preview
+  ---
+  duration_ms: 2.568459
+  type: 'test'
+  ...
+# Subtest: UI rejects missing, malformed, contradictory, or mismatched preview decisions
+ok 30 - UI rejects missing, malformed, contradictory, or mismatched preview decisions
+  ---
+  duration_ms: 2.085792
+  type: 'test'
+  ...
+# Subtest: UI does not report success for malformed send responses
+ok 31 - UI does not report success for malformed send responses
+  ---
+  duration_ms: 1.664416
+  type: 'test'
+  ...
+# Subtest: UI prevents duplicate sends and re-previews input changed without an event
+ok 32 - UI prevents duplicate sends and re-previews input changed without an event
+  ---
+  duration_ms: 2.651125
+  type: 'test'
+  ...
+# Subtest: UI surfaces current preview transport, JSON and timeout failures and can recover
+ok 33 - UI surfaces current preview transport, JSON and timeout failures and can recover
+  ---
+  duration_ms: 2.607458
+  type: 'test'
+  ...
+# Subtest: UI keeps the existing quote-list error and retry flow
+ok 34 - UI keeps the existing quote-list error and retry flow
+  ---
+  duration_ms: 1.40525
+  type: 'test'
+  ...
+# Subtest: the prepared fixtures contain only named synthetic customers
+ok 35 - the prepared fixtures contain only named synthetic customers
+  ---
+  duration_ms: 1.017959
+  type: 'test'
+  ...
+# Subtest: calculates the complete undiscounted quotation without changing its source
+ok 36 - calculates the complete undiscounted quotation without changing its source
+  ---
+  duration_ms: 0.133916
+  type: 'test'
+  ...
+# Subtest: calculates the editable discount and descriptive margin
+ok 37 - calculates the editable discount and descriptive margin
+  ---
+  duration_ms: 0.051375
+  type: 'test'
+  ...
+# Subtest: rounds exact half-won values upward and values below a half downward
+ok 38 - rounds exact half-won values upward and values below a half downward
+  ---
+  duration_ms: 0.101458
+  type: 'test'
+  ...
+# Subtest: supports the documented upper money bound and negative calculated profit
+ok 39 - supports the documented upper money bound and negative calculated profit
+  ---
+  duration_ms: 0.050958
+  type: 'test'
+  ...
+# Subtest: rejects a zero net amount including values rounded down to zero
+ok 40 - rejects a zero net amount including values rounded down to zero
+  ---
+  duration_ms: 0.161625
+  type: 'test'
+  ...
+# Subtest: requires positive bounded safe integer money for both amounts
+ok 41 - requires positive bounded safe integer money for both amounts
+  ---
+  duration_ms: 0.232708
+  type: 'test'
+  ...
+# Subtest: rejects invalid discount types and ranges in both input and calculation
+ok 42 - rejects invalid discount types and ranges in both input and calculation
+  ---
+  duration_ms: 0.120541
+  type: 'test'
+  ...
+# Subtest: parses only the exact two-field request schema and copies the input
+ok 43 - parses only the exact two-field request schema and copies the input
+  ---
+  duration_ms: 0.269125
+  type: 'test'
+  ...
+# Subtest: requires an actual quote with string identity fields
+ok 44 - requires an actual quote with string identity fields
+  ---
+  duration_ms: 0.303375
+  type: 'test'
+  ...
+# Subtest: the server factory does not listen automatically
+ok 45 - the server factory does not listen automatically
+  ---
+  duration_ms: 0.556084
+  type: 'test'
+  ...
+# Subtest: lists synthetic quotes as uncached JSON
+ok 46 - lists synthetic quotes as uncached JSON
+  ---
+  duration_ms: 12.38775
+  type: 'test'
+  ...
+# Subtest: previews the server-calculated quote for a decimal percentage
+ok 47 - previews the server-calculated quote for a decimal percentage
+  ---
+  duration_ms: 5.634792
+  type: 'test'
+  ...
+# Subtest: simulates sending an undiscounted quotation without an external dispatch
+ok 48 - simulates sending an undiscounted quotation without an external dispatch
+  ---
+  duration_ms: 2.841917
+  type: 'test'
+  ...
+# Subtest: uses injected server data for calculations
+ok 49 - uses injected server data for calculations
+  ---
+  duration_ms: 1.852458
+  type: 'test'
+  ...
+# Subtest: rejects malformed JSON and non-object payloads with structured input errors
+ok 50 - rejects malformed JSON and non-object payloads with structured input errors
+  ---
+  duration_ms: 8.784583
+  type: 'test'
+  ...
+# Subtest: rejects wrong types, extra client amounts, and zero-net input on both POST routes
+ok 51 - rejects wrong types, extra client amounts, and zero-net input on both POST routes
+  ---
+  duration_ms: 13.50975
+  type: 'test'
+  ...
+# Subtest: returns 404 JSON for unknown quotes and unknown routes
+ok 52 - returns 404 JSON for unknown quotes and unknown routes
+  ---
+  duration_ms: 4.778875
+  type: 'test'
+  ...
+# Subtest: serves only the explicit static allowlist with content types and security headers
+ok 53 - serves only the explicit static allowlist with content types and security headers
+  ---
+  duration_ms: 3.768959
+  type: 'test'
+  ...
+# Subtest: accepts the 16KB limit and rejects an oversized body without stopping the server
+ok 54 - accepts the 16KB limit and rejects an oversized body without stopping the server
+  ---
+  duration_ms: 2.690666
+  type: 'test'
+  ...
+# Subtest: applies the size limit to chunked uploads as well
+ok 55 - applies the size limit to chunked uploads as well
+  ---
+  duration_ms: 2.151875
+  type: 'test'
+  ...
+# Subtest: survives a disconnected upload and still answers the next request
+ok 56 - survives a disconnected upload and still answers the next request
+  ---
+  duration_ms: 1.27475
+  type: 'test'
+  ...
+1..56
+# tests 56
+# suites 0
+# pass 56
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 187.952834
+
+STDERR:

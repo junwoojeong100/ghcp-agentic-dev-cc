@@ -1,0 +1,166 @@
+{
+  "startedAt": "2026-09-26T13:50:03.718Z",
+  "workspace": "/Users/junwoojeong/ghcp-headless-demo-H976Zg",
+  "status": "passed",
+  "checks": [
+    {
+      "scenario": "malformed-json",
+      "status": "passed",
+      "faultInjectedByLocalProxy": true,
+      "httpStatus": 422,
+      "elapsedMs": 55,
+      "noResendAfterFailure": {
+        "before": 1,
+        "after": 1,
+        "attempts": [
+          "Enter",
+          "disabled-button-click",
+          "form-requestSubmit"
+        ]
+      },
+      "feedback": "서버에 연결할 수 없습니다. 서버 실행 상태를 확인해 주세요.",
+      "displayedMarginObserved": "20.0%",
+      "blockedPreviewNoResend": {
+        "before": 1,
+        "after": 1,
+        "attempts": [
+          "Enter",
+          "disabled-button-click",
+          "form-requestSubmit"
+        ]
+      },
+      "changedAllowedPreviewUnlocks": true
+    },
+    {
+      "scenario": "body-disconnect",
+      "status": "passed",
+      "faultInjectedByLocalProxy": true,
+      "httpStatus": 422,
+      "elapsedMs": 792,
+      "noResendAfterFailure": {
+        "before": 2,
+        "after": 2,
+        "attempts": [
+          "Enter",
+          "disabled-button-click",
+          "form-requestSubmit"
+        ]
+      },
+      "feedback": "서버에 연결할 수 없습니다. 서버 실행 상태를 확인해 주세요.",
+      "displayedMarginObserved": "20.0%",
+      "blockedPreviewNoResend": {
+        "before": 2,
+        "after": 2,
+        "attempts": [
+          "Enter",
+          "disabled-button-click",
+          "form-requestSubmit"
+        ]
+      },
+      "changedAllowedPreviewUnlocks": true
+    },
+    {
+      "scenario": "body-timeout",
+      "status": "passed",
+      "faultInjectedByLocalProxy": true,
+      "httpStatus": 422,
+      "revokedWhileBodyPending": true,
+      "elapsedMs": 10044,
+      "noResendAfterFailure": {
+        "before": 3,
+        "after": 3,
+        "attempts": [
+          "Enter",
+          "disabled-button-click",
+          "form-requestSubmit"
+        ]
+      },
+      "feedback": "응답을 받지 못했습니다. 입력값을 확인하고 다시 시도해 주세요.",
+      "displayedMarginObserved": "20.0%",
+      "blockedPreviewNoResend": {
+        "before": 3,
+        "after": 3,
+        "attempts": [
+          "Enter",
+          "disabled-button-click",
+          "form-requestSubmit"
+        ]
+      },
+      "changedAllowedPreviewUnlocks": true
+    },
+    {
+      "scenario": "normal-simulated-send",
+      "status": "passed",
+      "httpStatus": 200,
+      "body": {
+        "sent": true,
+        "simulation": true,
+        "message": "모의 전송 완료 — 외부 발송 없음",
+        "quote": {
+          "quoteId": "Q-1001",
+          "title": "업무 시스템 구축",
+          "customer": "가상 고객 A",
+          "listPriceWon": 10000000,
+          "costWon": 8000000,
+          "discountBps": 0,
+          "netWon": 10000000,
+          "profitWon": 2000000,
+          "marginPercent": 20,
+          "eligibility": {
+            "canSend": true,
+            "minimumMarginPercent": 15,
+            "reason": null
+          }
+        }
+      }
+    },
+    {
+      "scenario": "direct-api-policy-422",
+      "status": "passed",
+      "faultInjectedByLocalProxy": false,
+      "httpStatus": 422,
+      "body": {
+        "error": {
+          "code": "MARGIN_BELOW_MINIMUM",
+          "message": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+        },
+        "quote": {
+          "quoteId": "Q-1001",
+          "title": "업무 시스템 구축",
+          "customer": "가상 고객 A",
+          "listPriceWon": 10000000,
+          "costWon": 8000000,
+          "discountBps": 1000,
+          "netWon": 9000000,
+          "profitWon": 1000000,
+          "marginPercent": 11.11111111111111,
+          "eligibility": {
+            "canSend": false,
+            "minimumMarginPercent": 15,
+            "reason": "매출총이익률이 15% 미만이므로 전송할 수 없습니다. 반올림된 표시 비율이 아닌 실제 금액으로 판정합니다."
+          }
+        }
+      }
+    }
+  ],
+  "executor": "Independent final verification, outside the ended filmed CLI session",
+  "note": "Real Chromium and loopback HTTP. Three 422 body faults are deliberately injected by a local proxy; not production outages. Normal send is simulated; direct policy 422 uses the actual app server. Displayed amounts are not required to clear.",
+  "sourceHashesBefore": {
+    "public/app.js": "1ef5093a5a2782880a341573fcc1960ae5b22a1cd9f7fa61c64a6305a890586b",
+    "public/index.html": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41",
+    "public/style.css": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b",
+    "src/quote.mjs": "81cefe0c75d1732da5eaa6558c0b41254e5b79b55e106d7e8f96f1957c0f201f",
+    "src/server.mjs": "60ccb2a41f4a414645fb09af5ae4cbd39859c8a12ab0aea427b04569633dd96d"
+  },
+  "appSha256": "1ef5093a5a2782880a341573fcc1960ae5b22a1cd9f7fa61c64a6305a890586b",
+  "chromiumVersion": "153.0.8010.12",
+  "sourceHashesAfter": {
+    "public/app.js": "1ef5093a5a2782880a341573fcc1960ae5b22a1cd9f7fa61c64a6305a890586b",
+    "public/index.html": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41",
+    "public/style.css": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b",
+    "src/quote.mjs": "81cefe0c75d1732da5eaa6558c0b41254e5b79b55e106d7e8f96f1957c0f201f",
+    "src/server.mjs": "60ccb2a41f4a414645fb09af5ae4cbd39859c8a12ab0aea427b04569633dd96d"
+  },
+  "sourceHashesUnchanged": true,
+  "finishedAt": "2026-09-26T13:50:17.864Z"
+}

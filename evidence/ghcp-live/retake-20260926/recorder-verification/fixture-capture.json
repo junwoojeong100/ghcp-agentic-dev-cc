@@ -1,0 +1,33 @@
+{
+  "takeId": "bf189be5-84f5-454d-9715-9984ad11092f",
+  "fixture": true,
+  "cols": 110,
+  "rows": 28,
+  "seq": 6,
+  "ack": 6,
+  "started": true,
+  "childExit": {
+    "type": "exited",
+    "exitCode": 0,
+    "signal": null,
+    "seq": 6,
+    "stopped": false
+  },
+  "failure": null,
+  "evidenceError": null,
+  "closing": true,
+  "bridgeClosed": true,
+  "renderedSeq": 6,
+  "rendererEnded": true,
+  "finalized": true,
+  "workspace": "/var/folders/f8/0kmxhvhd2sv0r29schsswphm0000gn/T/recorder-failure-fixture-PZ0pMp",
+  "status": "recorded",
+  "startedAt": "2026-09-26T11:40:20.698Z",
+  "finishedAt": "2026-09-26T11:40:30.993Z",
+  "rawVideo": "/var/folders/f8/0kmxhvhd2sv0r29schsswphm0000gn/T/recorder-failure-fixture-PZ0pMp/video/capture.webm",
+  "localVideo": "/var/folders/f8/0kmxhvhd2sv0r29schsswphm0000gn/T/recorder-failure-fixture-PZ0pMp/video/page@5a958d4d5aa2201a182d1e5b206c81d4.webm",
+  "originalVideoSha256": "03a2fef1ce4eba1671709d6106b22b8ac42cd99d78350d47a31550d445070dd9",
+  "videoBytes": 111200,
+  "videoCopyVerified": true,
+  "note": "FIXTURE ONLY; never Copilot success evidence"
+}

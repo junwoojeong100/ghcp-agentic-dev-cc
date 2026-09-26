@@ -1,0 +1,75 @@
+{
+  "status": "technical-checks-passed",
+  "productionStatus": "review-draft",
+  "durationSeconds": 300.0,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "audio": "aac",
+    "fps": 30,
+    "fullDecode": "passed"
+  },
+  "subtitles": {
+    "cues": 48,
+    "timing": "passed"
+  },
+  "presentation": {
+    "slides": 12,
+    "notes": 12,
+    "editableText": true,
+    "relativeMp4Link": true,
+    "pdfPages": 12,
+    "draftNoticeEveryPage": true
+  },
+  "sourceMapping": {
+    "scenes": 22,
+    "factsAndTimelinePresent": true
+  },
+  "files": [
+    {
+      "path": "deliverables/ghcp-live/ghcp-cxo-demo-ko.mp4",
+      "bytes": 8725761,
+      "sha256": "849af2e0edef12ed0e2338c9d6ef001cc473a5c7721663e1aa2737406a057d17"
+    },
+    {
+      "path": "deliverables/ghcp-live/ghcp-cxo-demo-ko.srt",
+      "bytes": 5168,
+      "sha256": "6c899077f2860f30ce9b7658b66c09689e3e57ad50faf58a24df77dfdb20e29d"
+    },
+    {
+      "path": "deliverables/ghcp-live/ghcp-agentic-development.pptx",
+      "bytes": 1474871,
+      "sha256": "a73d7b7e3aa54423c4e225ab47caab55eaa04a647849116f655486463f0aa146"
+    },
+    {
+      "path": "deliverables/ghcp-live/ghcp-agentic-development.pdf",
+      "bytes": 1648014,
+      "sha256": "0321ed0b4aaa9f8095183ac94ded57658f6295d576215e7da445b1012c19dc55"
+    }
+  ],
+  "visualInspection": {
+    "status": "checked",
+    "scope": "All 12 slide renderings and one representative frame from each of 22 video scenes inspected as contact sheets; slide 12 and video open-finding frame also inspected at full image size.",
+    "result": "No visible blank scene, clipped heading or caption overlap found in inspected frames; draft and open-finding disclosures visible. This is not full continuous viewing.",
+    "evidence": ["production/ghcp-live/inspection/slides-contact.png", "production/ghcp-live/inspection/video-contact.png"]
+  },
+  "browserPlayback": {
+    "status": "passed",
+    "scope": "Muted Chromium playback and seeking at beginning, middle and end; reached video end without media error.",
+    "evidence": "production/ghcp-live/video-qa/playback-report.json"
+  },
+  "pdfExport": {
+    "method": "LibreOffice headless impress_pdf_Export with UseTaggedPDF=false",
+    "pages": 12,
+    "finalTextAndRenderWarnings": [],
+    "taggedAccessibility": false,
+    "note": "Initial tagged export produced MuPDF structure-tree errors; replaced with untagged PDF and rechecked every page without those warnings."
+  },
+  "humanListeningPerformed": false,
+  "powerPointLinkPlayback": "not-checked",
+  "captureComplete": false,
+  "requirementsSatisfied": false,
+  "openFindings": 1,
+  "note": "Media checks do not establish complete filming, application correctness, final adoption or publication approval."
+}

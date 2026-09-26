@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 1,
+  "cli": {
+    "name": "GitHub Copilot CLI",
+    "version": "1.0.88",
+    "model": "GPT-6 Astra (CLI 표시)"
+  },
+  "requirementsSatisfied": true,
+  "requirementsScope": "Recorded synthetic-demo conditions only; not operational acceptance",
+  "finalAdoption": "not-approved",
+  "openFindings": [],
+  "production": {
+    "status": "capture-complete",
+    "captureComplete": true,
+    "captureManifest": [
+      {
+        "path": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+        "sha256": "21eedb833adad077f86d7a47ff59c14686032b933a14cd25feae9f9d6e36d0ec"
+      }
+    ],
+    "evidence": [
+      "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json"
+    ]
+  },
+  "implementation": {
+    "status": "verified",
+    "changedFiles": [
+      "demo/ghcp-live/final/src/quote.mjs",
+      "demo/ghcp-live/final/src/server.mjs",
+      "demo/ghcp-live/final/public/app.js",
+      "demo/ghcp-live/final/test/margin.test.mjs"
+    ],
+    "codeHash": "4e56e08c3f059716725b6dad60248b48fc3f4613ddf30be572d83fe08ba5e0f5",
+    "evidence": [
+      "evidence/ghcp-live/retake-20260926/implementation-record.json",
+      "evidence/ghcp-live/retake-20260926/native-session/cxo-review-a7318c5a-d459-420f-96e6-dca91627dfdc.json"
+    ]
+  },
+  "baselineTests": {
+    "passed": 22,
+    "failed": 0,
+    "executor": "촬영 밖 준비 세션",
+    "evidence": [
+      "evidence/ghcp-live/baseline-test-record.json"
+    ]
+  },
+  "redTests": {
+    "passed": 16,
+    "failed": 17,
+    "skipped": 0,
+    "total": 33,
+    "exitCode": 1,
+    "executor": "촬영 중 Copilot CLI",
+    "evidence": [
+      "evidence/ghcp-live/retake-20260926/native-session/test-run-40e8f954-e235-4462-afde-d156e5aacfe8.json"
+    ]
+  },
+  "tests": {
+    "passed": 55,
+    "failed": 0,
+    "skipped": 0,
+    "total": 55,
+    "exitCode": 0,
+    "executor": "촬영 중 Copilot CLI",
+    "evidence": [
+      "evidence/ghcp-live/retake-20260926/native-session/test-run-a5e9a708-338d-4237-8ac3-8bfbc30274b2.json"
+    ]
+  },
+  "browserChecks": {
+    "passed": 36,
+    "failed": 0,
+    "executor": "촬영 중 Copilot의 Chromium 검사",
+    "counting": "6 viewport widths × 6 states; not 36 separate test files",
+    "evidence": [
+      "evidence/ghcp-live/retake-20260926/native-session/browser_run_code_unsafe-a1f25958-5174-4399-b66e-9b13b0730657.json"
+    ]
+  },
+  "bodyVerification": {
+    "status": "passed",
+    "executor": "촬영 종료 후 별도 제작 세션의 Chromium·로컬 HTTP 검사",
+    "scenarios": ["422 JSON 오류", "422 본문 단절", "422 본문 타임아웃", "정상 모의 전송", "실제 서버 직접 요청 차단"],
+    "faultsInjected": true,
+    "evidence": ["evidence/ghcp-live/retake-20260926/body-verification/report.json"]
+  },
+  "delegation": {
+    "status": "completed",
+    "summary": "서버/API와 UI/검증의 읽기 전용 조사를 병렬 위임하고 결과를 통합했습니다.",
+    "intervals": [
+      [
+        "2026-09-26T11:50:56.077Z",
+        "2026-09-26T11:52:39.606Z"
+      ],
+      [
+        "2026-09-26T11:50:56.076Z",
+        "2026-09-26T11:54:35.463Z"
+      ]
+    ],
+    "evidence": [
+      "evidence/ghcp-live/retake-20260926/native-session/cxo-server-analysis-ecd70971-252d-44ef-a638-4b682dcd3922.json",
+      "evidence/ghcp-live/retake-20260926/native-session/cxo-ui-analysis-872e4450-f81b-410e-a538-8f2f54707b76.json"
+    ]
+  },
+  "review": {
+    "status": "completed",
+    "summary": "확정 결함 **0건**(확인 범위 내 미충족 없음). 읽기 전용 AI 검토이며 독립 감사·인수·배포 승인이 아닙니다.\n- 충족—정수 경계: 반올림 후 `profitWon×100 ≥ netWon×15`, 금액 상한 내 곱셈 안전; Q-1001 0/10%, 정확히15%·원가±1원 처리 일치(`src/quote.mjs:48–50,82–114`).\n- 충족—API: 서버 값 재계산, 정상200/미달422 `MARGIN_BELOW_MINIMUM`, 위조 필드 거부·400/404 유지(`src/quote.mjs:54–70`, `src/server.mjs:76–99,119–124`).\n- 충족—UI 소스: 최신422 JSON 전 허용·입력 폐기, 본문 오류/단절/타임아웃에도 새 허용 전 잠금·자동재전송 없음, 오래된 응답/finally 보호(`public/app.js:36–47,98–201`); 내부 허용 폐기를 직접 검사하는 assertion 확인(`test/margin.test.mjs:405–430`).\n- 현재 기존22개·신규33개 정의와 skip 미사용, 반환계약 assertion·러너 확인(`test/quote.test.mjs:19–26`, `test/server.test.mjs`, `package.json:10–13`); diff·원본 없어 변경 전 대비 완전 보존·수정4파일 한정은 미검증.\n- 로그 증거: `.playwright-mcp/margin-browser.log:1–3`에 Chromium 320/375/700/701/850/851px·36상태, 문서폭 일치·overflow=[]·오류0·전송요청6 기록.\n- 미검증: 화면 잘림·6회의 수동 조작/개별 전송 성공·실제 브라우저 본문 장애 재현; 본문 실패·시간제어는 node:vm 모의 회귀 소스만 확인(`test/margin.test.mjs:386–468`).\n- 미검증: 작업공간 밖 TAP 3종은 미열람하여 RED17실패/16통과→GREEN33통과·전체55통과/skip0 실행 주장을 확인하지 못했습니다. 테스트는 직접 실행하지 않았습니다.",
+    "evidence": [
+      "evidence/ghcp-live/retake-20260926/native-session/cxo-review-a7318c5a-d459-420f-96e6-dca91627dfdc.json"
+    ]
+  },
+  "approvals": [
+    {
+      "kind": "implementation-plan",
+      "status": "approved",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/implementation-approval.json"
+      ]
+    },
+    {
+      "kind": "scoped-server-edit-relay",
+      "status": "approved",
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/video/capture.webm",
+      "in": 3148,
+      "out": 3248,
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/implementation-approval.json",
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture-events.jsonl"
+      ]
+    }
+  ],
+  "captures": {
+    "before": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/02-baseline-q1001-10-sent.png",
+    "analysis": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/2d880a3b-35b4-4136-b7da-9c9c1030fa45.png",
+    "approval": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/07fd04ec-ec6f-4745-9dfc-1496fd1d6700.png",
+    "implementation": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/669c4be8-ed59-4408-a8ab-cebf51e1338b.png",
+    "tests": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/346746fe-0cf2-45b1-91dd-5baa76aa6fd5.png",
+    "blocked": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/03-final-q1001-10-blocked.png",
+    "allowed": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/05-final-q1001-0-sent.png",
+    "boundary": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/05-final-q1499-rounded15-blocked.png",
+    "review": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/169f561f-aff2-416f-bec8-bd3b2c67d9dc.png"
+  },
+  "sources": [
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/01-baseline-q1001-10-enabled.png",
+      "kind": "app",
+      "sha256": "68500776cda953d04abf469230edbd86886083f87b8b5bfe0ca9c10e00d8d564",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/02-baseline-q1001-10-sent.png",
+      "kind": "app",
+      "sha256": "6235b0053421c44fa86fac05af53141391970496ba39d4fe9882556f91725ef2",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/01-baseline-q1001-10-send.webm",
+      "kind": "app",
+      "sha256": "79d891743e394335ef8b61705b1e7d57c1c41b99621c33b8d1f0f904d457bdef",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/03-final-q1001-10-blocked.png",
+      "kind": "app",
+      "sha256": "ab21f884790c224ac1975e501bf93cab145973a8a4f90f6b1346fad92bbeb421",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/02-final-q1001-10-blocked.webm",
+      "kind": "app",
+      "sha256": "e6f614821c2d60674149186b54afc399cad4d69a83edbd70bd611afcd9a6432b",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/04-final-q1001-0-allowed.png",
+      "kind": "app",
+      "sha256": "b44bb356d3ed6dd461f2b1f8885368bf5a08bb5dbcfb63b2471896ae9ab1a530",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/05-final-q1001-0-sent.png",
+      "kind": "app",
+      "sha256": "f51987801d0ec56a9fc75ffcea57a7537eb3c463ec42aacb1705bea90ee50216",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/03-final-q1001-0-allowed-sent.webm",
+      "kind": "app",
+      "sha256": "ea48b9070fad530c5da4ee40720ae3a76d2fbb56a99ed1a28a8492bb33392361",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/04-final-q1500-exact15-allowed.png",
+      "kind": "app",
+      "sha256": "ac35d930a40f477c6294ed5238821d461ec1d6a56ea28f939f15c0fd2be5b0aa",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/04-final-q1500-exact15-allowed.webm",
+      "kind": "app",
+      "sha256": "d6eb47479b1abe72e2e99df491a93f45902c664428ce643f261026d481935899",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/05-final-q1499-rounded15-blocked.png",
+      "kind": "app",
+      "sha256": "cab1d530c303168402f79ebf96ed9f55a7d06364a60c5073b7be392b9dbe1593",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/05-final-q1499-rounded15-blocked.webm",
+      "kind": "app",
+      "sha256": "217df75f883aee6488f8fbb6752dbfa703c31bf9feeb23702363291f4efc3c16",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/06-final-q1501-above15-allowed.png",
+      "kind": "app",
+      "sha256": "a197ff041b9403133aa28421759a37ec8873756f7f1414b2966f09fc2297dc9b",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/06-final-q1501-above15-allowed.webm",
+      "kind": "app",
+      "sha256": "dae415b053a5c2e31836b8d9117d8f9ad6959bff5233d7143f58b8ff4213921d",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/09-final-invalid-discount.png",
+      "kind": "app",
+      "sha256": "99d9b22d84a037dc831e2e08de2cf1424a7890c823d8065a0d0eb22cd4f9c043",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/10-final-zero-net.png",
+      "kind": "app",
+      "sha256": "bcef23c1e9aa903ea3dec4ec83a421f87ae5e30d2bd224ba4a734588ed068e27",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/11-final-preview-held.png",
+      "kind": "app",
+      "sha256": "044a788a9e3606fe56e02a526590db1591a3f84f037015fb3079ee91f1fbc684",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/12-final-stale-preview-ignored.png",
+      "kind": "app",
+      "sha256": "7cab463d3857d8eab8cc51e518dc6854a788839b95e061342e2608f6a5044f52",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/07-final-invalid-zero-rapid-delayed.webm",
+      "kind": "app",
+      "sha256": "e0397bab1d3c84e35469c87757650dfecf8b905b25f552c672ecbcb6fee5b79e",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/13-final-mobile390-fullpage.png",
+      "kind": "app",
+      "sha256": "56171633ff3b2999263a00782a2da89784a4b40e0de54569b8d2bcdc3cd2456b",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/14-final-mobile390-summary.png",
+      "kind": "app",
+      "sha256": "993b6a04308337dd0f390e80ca37a2afbf70590d10e2c6cf6132740571683d46",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/08-final-mobile390.webm",
+      "kind": "app",
+      "sha256": "50f728b019f25874f4953f65135091cde297bacddc1c1f745c9b0b7f8a9bc068",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/app/2026-09-26T13-36-18-252Z-3613f866/manifest.json"
+      ]
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/07fd04ec-ec6f-4745-9dfc-1496fd1d6700.png",
+      "kind": "terminal",
+      "sha256": "b6dce071790157463d6aa23337cbefe59472fb04a0dc5c2dc882839fb90ce29d",
+      "captureManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/07fd04ec-ec6f-4745-9dfc-1496fd1d6700.json"
+      ],
+      "snapshotManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/07fd04ec-ec6f-4745-9dfc-1496fd1d6700.json"
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/169f561f-aff2-416f-bec8-bd3b2c67d9dc.png",
+      "kind": "terminal",
+      "sha256": "6a7a06260ffd6f8dcc33fa341028813263dd67013d97fb72af5a15a1ec85b298",
+      "captureManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/169f561f-aff2-416f-bec8-bd3b2c67d9dc.json"
+      ],
+      "snapshotManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/169f561f-aff2-416f-bec8-bd3b2c67d9dc.json"
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/2d880a3b-35b4-4136-b7da-9c9c1030fa45.png",
+      "kind": "terminal",
+      "sha256": "98eac3ed4bd0a98d36475a4de435b3a1aad8a233073d6c32a973ba863ca2293e",
+      "captureManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/2d880a3b-35b4-4136-b7da-9c9c1030fa45.json"
+      ],
+      "snapshotManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/2d880a3b-35b4-4136-b7da-9c9c1030fa45.json"
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/346746fe-0cf2-45b1-91dd-5baa76aa6fd5.png",
+      "kind": "terminal",
+      "sha256": "e1ae9f488f9ad0d3046653d62a28c65bc301995b684e46e5ec908f26e32b6abe",
+      "captureManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/346746fe-0cf2-45b1-91dd-5baa76aa6fd5.json"
+      ],
+      "snapshotManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/346746fe-0cf2-45b1-91dd-5baa76aa6fd5.json"
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/669c4be8-ed59-4408-a8ab-cebf51e1338b.png",
+      "kind": "terminal",
+      "sha256": "4811fcef022e20ba64d187f28bfc800936cba76f7fdb2cb80b10dd23cdfb4280",
+      "captureManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/669c4be8-ed59-4408-a8ab-cebf51e1338b.json"
+      ],
+      "snapshotManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/669c4be8-ed59-4408-a8ab-cebf51e1338b.json"
+    },
+    {
+      "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/video/capture.webm",
+      "kind": "terminal",
+      "sha256": "a83d1d03342d5a6340673ec3b02ef735e4cbc90c26fb6058d19e4cb25dbcec3b",
+      "captureManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+      "evidence": [
+        "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json"
+      ]
+    }
+  ],
+  "limitations": [
+    "사용자는 대화에서 계획과 로컬 실행을 승인했고 제작자가 CLI에 전달했습니다. 이후 도구 요청은 일괄 승인 범위에서 대행했습니다.",
+    "합성 견적·모의 전송입니다. 운영 채택·외부 발송·배포는 수행하지 않았습니다.",
+    "5분 본편의 권한 장면은 사전 승인 범위 내 서버 수정 요청과 대행을 연속·정속으로 보존합니다. 계획 승인 전체 구간은 별도 보충 영상으로 제공합니다.",
+    "실제 CLI 녹화, 표시된 정지 캡처, 별도 제작 세션의 앱 녹화와 설명 카드를 구분했습니다. 원본 구간 외 대기는 생략했습니다.",
+    "검토 역할은 TAP 로그 3종을 읽지 못했습니다. 테스트 실행 수치는 동일 세션의 원시 도구 반환에서 별도로 확인했습니다. 검토자의 독립 재확인으로 표현하지 않습니다.",
+    "촬영 중 본문 오류 검사는 node:vm 모의 회귀입니다. 촬영 종료 후 별도 제작 세션에서 실제 Chromium·로컬 프록시로 422 JSON 오류·본문 단절·타임아웃을 주입해 잠금과 복구를 확인했습니다. 실제 운영 장애나 촬영 중 검증으로 표현하지 않습니다.",
+    "최초 브라우저 스크립트의 동적 import와 로그 저장 경로가 실패했으며 수정된 호출로 검증·로그 보존을 완료했습니다. 실패 기록을 남겼습니다.",
+    "Firefox/WebKit, 실제 모바일 기기, 스크린리더, 브라우저 확대 및 모든 운영 조건은 미검증입니다.",
+    "한국어 합성 내레이션입니다. 사람 청취와 PowerPoint 앱의 실제 링크 재생은 별도 확인 사항입니다. 시간·비용·생산성 효과는 미측정입니다.",
+    "원본 터미널에 로컬 사용자 경로가 포함돼 있습니다. 자료는 로컬 전달용이며 외부 게시하지 않았습니다."
+  ],
+  "video": {
+    "path": "deliverables/ghcp-live/final/ghcp-cxo-demo-ko.mp4"
+  }
+}

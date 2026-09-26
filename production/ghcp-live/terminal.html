@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="ko" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CLI Live Capture</title>
+<link rel="stylesheet" href="/xterm.css">
+<style>
+:root{color-scheme:dark;--bg:#10151c;--ink:#e3eaf2;--muted:#a9b9cc;--line:#344355;--accent:#7fdbce;--terminal:#11161d}
+*{box-sizing:border-box}body{margin:0;padding:24px 32px;background:var(--bg);color:var(--ink);font:20px/1.4 system-ui,sans-serif}header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:22px}h1{font-size:25px;letter-spacing:-.02em;margin:0;font-weight:600}#state{color:var(--accent);font-size:19px}.terminal-shell{overflow:auto;border:1px solid var(--line);border-radius:8px;padding:20px;background:var(--terminal)}#terminal{width:max-content}footer{color:var(--muted);font-size:18px;display:flex;justify-content:space-between;gap:20px;margin-top:20px}#failure{white-space:pre-wrap;color:#ffb3ad}p{margin:0}@media(max-width:600px){body{padding:16px}header,footer{display:block}footer p{margin-top:8px}}
+</style>
+</head>
+<body>
+<header><h1 id="title">실제 CLI · 실시간 화면</h1><span id="state" role="status">연결 준비 중</span></header>
+<div class="terminal-shell"><div id="terminal" aria-label="실제 터미널 출력"></div></div>
+<p id="failure" hidden></p>
+<footer><p id="disclosure">브라우저 터미널 실시간 중계 · 사용자 결정은 대화에서 확인 후 전달</p><p>합성 견적 사례 · 모의 전송 · 로컬 녹화</p></footer>
+<script src="/xterm.js"></script>
+<script src="/terminal.js"></script>
+</body>
+</html>

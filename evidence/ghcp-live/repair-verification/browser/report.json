@@ -1,0 +1,41 @@
+{
+  "executor": "Claude production session; outside filmed Copilot",
+  "status": "passed",
+  "app": "demo/ghcp-live/repaired",
+  "appSha256": "2509b68c602e795421762fa406c5d3a0d77950edbe22b81dd8b62b3fb752b20b",
+  "checks": [
+    {
+      "scenario": "json",
+      "httpStatus": 422,
+      "faultInjectedByLocalProxy": true,
+      "lockPreserved": true,
+      "noAutomaticResend": true,
+      "blockedPreviewStaysLocked": true,
+      "allowedPreviewRecovers": true
+    },
+    {
+      "scenario": "disconnect",
+      "httpStatus": 422,
+      "faultInjectedByLocalProxy": true,
+      "lockPreserved": true,
+      "noAutomaticResend": true,
+      "blockedPreviewStaysLocked": true,
+      "allowedPreviewRecovers": true
+    },
+    {
+      "scenario": "timeout",
+      "httpStatus": 422,
+      "faultInjectedByLocalProxy": true,
+      "lockPreserved": true,
+      "noAutomaticResend": true,
+      "blockedPreviewStaysLocked": true,
+      "allowedPreviewRecovers": true
+    },
+    {
+      "scenario": "normal-send-and-direct-policy",
+      "simulatedSend": true,
+      "directPolicy422": true
+    }
+  ],
+  "note": "Real Chromium and HTTP. Malformed/stalled/disconnected 422 responses deliberately injected by local proxy; not real production outages."
+}

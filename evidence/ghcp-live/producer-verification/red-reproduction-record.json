@@ -1,0 +1,13 @@
+{
+  "executor": "Claude production session, outside filmed Copilot",
+  "kind": "post-hoc baseline regression reproduction",
+  "timestamp": "2026-09-26T09:00:43.631498+00:00",
+  "command": "node --test test/margin.test.mjs",
+  "exitCode": 1,
+  "sourceBaseline": "evidence/ghcp-live/baseline-snapshot",
+  "baselineHashMatched": true,
+  "testSource": "First five direct-send cases copied unchanged from current test/margin.test.mjs; original files not modified",
+  "testSha256": "5ce183831a871c2b86ec1a3a202f673fa1e755d05fb061b12ff8835803b8167c",
+  "output": "evidence/ghcp-live/producer-verification/red-reproduction-output.txt",
+  "note": "Not recovered raw output from the filmed RED command; a separately executed baseline reproduction after implementation."
+}

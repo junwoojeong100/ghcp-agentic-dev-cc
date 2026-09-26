@@ -1,0 +1,25 @@
+{
+  "status": "verified",
+  "sourceWorkspace": "/Users/junwoojeong/ghcp-headless-demo-H976Zg",
+  "snapshot": "demo/ghcp-live/final",
+  "codeHashes": {
+    "package.json": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805",
+    "src/quote.mjs": "81cefe0c75d1732da5eaa6558c0b41254e5b79b55e106d7e8f96f1957c0f201f",
+    "src/server.mjs": "60ccb2a41f4a414645fb09af5ae4cbd39859c8a12ab0aea427b04569633dd96d",
+    "public/app.js": "1ef5093a5a2782880a341573fcc1960ae5b22a1cd9f7fa61c64a6305a890586b",
+    "public/index.html": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41",
+    "public/style.css": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b",
+    "test/quote.test.mjs": "394818c115f8fef1b0c7612af26501fb741dc08cf27085565e10bb7f19631a3a",
+    "test/server.test.mjs": "6a96aa935ce4d099258652db7d3e11c1f239b5c57a4da1b045cd87f6d273fd28",
+    "test/margin.test.mjs": "d3e7394613a710220c0f4c4fd8f6657cbd5faffaca40e29fb649ce578b655b4a"
+  },
+  "codeHash": "4e56e08c3f059716725b6dad60248b48fc3f4613ddf30be572d83fe08ba5e0f5",
+  "protectedFilesUnchanged": true,
+  "changedFiles": [
+    "demo/ghcp-live/final/src/quote.mjs",
+    "demo/ghcp-live/final/src/server.mjs",
+    "demo/ghcp-live/final/public/app.js",
+    "demo/ghcp-live/final/test/margin.test.mjs"
+  ],
+  "note": "Producer hash comparison after the filmed run, not independent review or adoption."
+}

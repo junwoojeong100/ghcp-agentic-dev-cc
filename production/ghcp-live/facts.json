@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "cli": {
+    "name": "GitHub Copilot CLI",
+    "version": "1.0.88",
+    "model": "GPT-6 Astra (CLI 표시)"
+  },
+  "requirementsSatisfied": false,
+  "finalAdoption": "not-approved",
+  "openFindings": [
+    {
+      "status": "unresolved",
+      "summary": "HTTP 422 본문 JSON 읽기·타임아웃 실패 시 상태 코드가 유실되어 이전 허용 preview가 남고 전송 버튼이 다시 활성화될 수 있습니다. 새 허용 preview 전 잠금 유지 요건 미충족입니다.",
+      "verification": "static-code-review",
+      "executedReproduction": false,
+      "serverBlockingBypassed": false,
+      "evidence": [
+        "evidence/ghcp-live/native-session/cxo-review-607ee6f6-9e5d-4482-bfec-78ac26c9ce3e.json"
+      ]
+    }
+  ],
+  "production": {
+    "status": "review-draft",
+    "captureComplete": false,
+    "evidence": [
+      "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+    ]
+  },
+  "implementation": {
+    "status": "verified-with-open-finding",
+    "changedFiles": [
+      "demo/ghcp-live/run/src/quote.mjs",
+      "demo/ghcp-live/run/src/server.mjs",
+      "demo/ghcp-live/run/public/app.js",
+      "demo/ghcp-live/run/public/index.html",
+      "demo/ghcp-live/run/public/style.css",
+      "demo/ghcp-live/run/test/margin.test.mjs"
+    ],
+    "codeHash": "a623fc8655de7da8460910b53e79c0414aa581e0fb615288f8d99f63a55ce3ef",
+    "evidence": [
+      "evidence/ghcp-live/producer-verification/implementation-record.json",
+      "evidence/ghcp-live/native-session/cxo-review-607ee6f6-9e5d-4482-bfec-78ac26c9ce3e.json"
+    ]
+  },
+  "baselineTests": {
+    "passed": 22,
+    "failed": 0,
+    "executor": "촬영 밖 제작 세션",
+    "evidence": [
+      "evidence/ghcp-live/baseline-test-record.json"
+    ]
+  },
+  "redTests": {
+    "passed": 3,
+    "failed": 2,
+    "skipped": 0,
+    "total": 5,
+    "exitCode": 1,
+    "executor": "촬영 중 Copilot CLI",
+    "evidence": [
+      "evidence/ghcp-live/native-session/red-tests-19f6046c-e2e3-4677-9695-aeb3999cbf5b.json"
+    ]
+  },
+  "tests": {
+    "passed": 56,
+    "failed": 0,
+    "skipped": 0,
+    "total": 56,
+    "exitCode": 0,
+    "executor": "촬영 중 Copilot CLI",
+    "evidence": [
+      "evidence/ghcp-live/native-session/green-tests-da92ccd2-df7c-46f9-afb4-234eb92d4c25.json"
+    ]
+  },
+  "browserChecks": {
+    "passed": 31,
+    "failed": 0,
+    "executor": "촬영 중 Copilot의 Chromium 검사",
+    "counting": "5 업무 사례 + 18 레이아웃 조합 + 키보드 1 + 지연 3 + 잘못된 입력 3 + 복구 1",
+    "earlierToolFailures": [
+      "evidence/ghcp-live/native-session/browser_run_code_unsafe-20485d19-414c-4ba1-89c8-af41cc4f1786.json"
+    ],
+    "evidence": [
+      "evidence/ghcp-live/native-session/browser_run_code_unsafe-756cc3ef-8eaf-4571-88f8-63d087c90da6.json",
+      "evidence/ghcp-live/native-session/browser_run_code_unsafe-f4757425-392d-4108-b3d2-6dfd8ae5a804.json"
+    ]
+  },
+  "delegation": {
+    "status": "completed",
+    "summary": "서버/API와 UI/검증 조사를 두 전용 에이전트에 병렬 위임하고 결과를 통합했습니다.",
+    "intervals": [
+      [
+        "2026-09-26T07:11:57.306Z",
+        "2026-09-26T07:15:09.664Z"
+      ],
+      [
+        "2026-09-26T07:11:57.307Z",
+        "2026-09-26T07:15:59.193Z"
+      ]
+    ],
+    "evidence": [
+      "evidence/ghcp-live/native-session/cxo-server-analysis-5cb0c094-152d-48cf-b7e8-31f71c57328d.json",
+      "evidence/ghcp-live/native-session/cxo-ui-analysis-b7fc27cc-5747-4239-a76d-567c1dc1a1a2.json"
+    ]
+  },
+  "review": {
+    "status": "completed",
+    "summary": "## 미충족 — 422 복구 예외 경로 1건\n\n**최신 전송 응답이 HTTP 422여도, 본문 JSON 읽기에 실패하면 이전 허용 상태로 버튼이 다시 활성화됩니다.**\n\n- `public/app.js:46-60`: JSON 파싱을 먼저 완료해야 오류에 HTTP 상태를 붙입니다. 본문 파싱 실패·본문 수신 중 타임아웃은 `status` 없는 오류로 전달됩니다.\n- `public/app.js:205-216`: `error.status === 422`일 때만 이전 preview를 폐기하므로, 위 경로에서는 기존 `allowed: true`가 남아 버튼이 재활성화됩니다.\n- 이는 **새 허용 preview 전까지 잠금을 유지한다는 복구 요건의 누락**입니다. 서버의 15% 차단을 우회하는 결함은 아닙니다.\n- 코드상 확인한 조건부 결함이며, 해당 오류 경로의 실행 증거는 없습니다. 현재 422 회귀 테스트는 정상 JSON 응답을 다룹니다(`test/margin.test.mjs:419-440`).\n\n## 충족 — 현재 코드에서 확인\n\n- **정수 경계·계산:** 금액 1~10억 원, 정수 BPS, 원 단위 반올림을 유지합니다. `profitWon * 100 >= netWon * 15`이므로 정확히 15%는 허용하고, 표시상 15.0%인 Q-1499는 차단합니다. 곱셈도 안전 정수 범위입니다(`src/quote.mjs:42-70,82-117`).\n- **서버 소유·직접 API 차단:** 요청은 두 필드만 허용하며 매 send마다 서버 데이터로 재계산합니다. 미달 422/`MARGIN_BELOW_MINIMUM`, 입력 오류 400, 없는 ID의 기존 404 순서가 유지됩니다(`src/server.mjs:76-96,118-123`).\n- **UI 일치·오래된 응답:** 입력 변경 즉시 허용·성공 표시를 비우고, revision으로 오래된 성공·오류·완료 처리를 배제합니다. 정상 JSON 422의 잠금·복구, 중복 제출 방지도 확인했습니다(`public/app.js:119-177,188-218`). 이유·계산 설명·접근성 연결과 줄바꿈 보강도 존재합니다(`public/index.html:84-99`, `public/style.css:114-129,196-218`).\n- **테스트·범위:** 기존 계산·입력·서버 오류 assertions가 현존하고, 신규 테스트는 실제 서버와 실제 `app.js`를 사용합니다. `package.json`은 여전히 전체 `node --test`이며 새 의존성 선언은 없습니다.\n\n## 제공된 실행 증거 / 미검증\n\n- **제공 로그 기준:** 기능적 RED 2건 실패 → GREEN 56/56, Chromium 경계 사례 5개·레이아웃 18조합·지연 응답 검증이 보고되었습니다. 위 결함 경로를 검증한 결과는 아닙니다. 최초 `URL` ReferenceError는 검증 하네스 실패이며, 주입한 503도 실제 서버 장애로 계산하지 않았습니다.\n- **직접 읽은 보존 자료:** 지정된 `.playwright-mcp` 두 파일이 읽혔고, 내용은 preview 400 한 건과 초기 Q-1001/10% 차단 스냅샷입니다. 전체 실행 로그를 대신하지는 않습니다.\n- **검증 한계:** 전후 diff·수정 전 사본이 없어 허용 파일 외 변경 부재와 기존 테스트의 완전한 동일성은 직접 대조하지 못했습니다. 제공된 동일 SHA-256 결과가 이를 뒷받침합니다. Firefox/WebKit, 실제 모바일·스크린리더·브라우저 확대는 미검증입니다.\n\n명령·테스트 실행이나 파일 변경 없이 수행한 역할별 AI 검토입니다. 독립 감사·최종 채택·배포 승인이 아닙니다.",
+    "evidence": [
+      "evidence/ghcp-live/native-session/cxo-review-607ee6f6-9e5d-4482-bfec-78ac26c9ce3e.json"
+    ]
+  },
+  "approvals": [
+    {
+      "kind": "implementation-plan",
+      "status": "approved",
+      "evidence": [
+        "evidence/ghcp-live/raw/headless.GuKDBv/implementation-approval.json"
+      ]
+    }
+  ],
+  "captures": {
+    "before": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/02-baseline-q1001-10-sent.png",
+    "analysis": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d08e1e04-27e9-47d8-aaae-820c4c66305d.png",
+    "approval": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/ef542e73-13a8-47a5-9dc6-9716af1926fd.png",
+    "implementation": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a6e96364-ca54-4650-a343-853072be68fd.png",
+    "tests": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a278fe75-a803-4da6-9eff-f397946ba9d4.png",
+    "blocked": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/03-final-q1001-10-blocked.png",
+    "allowed": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1001-0-sent.png",
+    "boundary": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1499-rounded15-blocked.png",
+    "review": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d0c289d3-789a-40d3-945f-0cfde2216913.png"
+  },
+  "sources": [
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/01-baseline-q1001-10-enabled.png",
+      "sha256": "68500776cda953d04abf469230edbd86886083f87b8b5bfe0ca9c10e00d8d564"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/02-baseline-q1001-10-sent.png",
+      "sha256": "6235b0053421c44fa86fac05af53141391970496ba39d4fe9882556f91725ef2"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/01-baseline-q1001-10-send.webm",
+      "sha256": "dc52644392e4fbb8a00d77c2580217b036d1d4f22ca77ffdc7655f6ed6979f73"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/03-final-q1001-10-blocked.png",
+      "sha256": "fdc32dcf9ccce63af5525b9336ad27f927d74406785bbea92c2c6e350349ed10"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/02-final-q1001-10-blocked.webm",
+      "sha256": "9b6db70b133ff633eb7c3fee864e9e2536b2a93cd62fd75ec9dab30e7e77fc1e"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/04-final-q1001-0-allowed.png",
+      "sha256": "cb3b7543e5bd4e8c78fff38ec70ad35a9abdb62694a70fc3cbcdbcdb17ca2499"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1001-0-sent.png",
+      "sha256": "03017aa8fcba28ac6d015ec316792dd4dbf2bbd4d8126aed0766712fd03b4d08"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/03-final-q1001-0-allowed-sent.webm",
+      "sha256": "b70cfc811bce6cfc0f3773011d1fce757bfbe2641d3791dd8bb94d80c1190d9a"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/04-final-q1500-exact15-allowed.png",
+      "sha256": "1bed68f761364500cb7eb18aa16937ab69680ca564a23e5c2769b9bb523dff6f"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/04-final-q1500-exact15-allowed.webm",
+      "sha256": "9df6245cbd72f0fc5bf20a23062e6e6f418edc071a4b6c6c70e529c947d35922"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1499-rounded15-blocked.png",
+      "sha256": "9abfeeeea76789d0019fa903f8afeff45a41ab9bebca17f1763ccfaa6a41bbb7"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1499-rounded15-blocked.webm",
+      "sha256": "364305acc8f0060bdb60a16f6f5aeab57c68dde6a3c4c134e7aec494979a7405"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/06-final-q1501-above15-allowed.png",
+      "sha256": "45a8fdd2c6591a8505a1196a874bebfd14bfac21fde7b19c9e548e534969c55d"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/06-final-q1501-above15-allowed.webm",
+      "sha256": "ceac0382ae4f51d12d1a6b9b0a9acee55dfb36ab12fee09c8171ef69a4cb296e"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/09-final-invalid-discount.png",
+      "sha256": "c8d8cb7601721719ea080e348a64eb4f0a77bb7d9ac9733ea427d1e49f2139c3"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/10-final-zero-net.png",
+      "sha256": "b4d74bbae10bdaf47263c905ee0d51568a66b625602c4cf4624510dbc2e4e667"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/11-final-preview-held.png",
+      "sha256": "420c65b077b5f8e54e18f93ad5e3730b8801c52f9ce0fcd8bafb5396acc80b72"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/12-final-stale-preview-ignored.png",
+      "sha256": "ed87c3e6831333d66cc62959904e5c9db8d36d9c77211b66353cb59fb2cd5684"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/07-final-invalid-zero-rapid-delayed.webm",
+      "sha256": "dfaf1e9c835c19fb2b7bd568377e5cb9ac7a11ea0fbaac2a9ad6d683aa8e9933"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/13-final-mobile390-fullpage.png",
+      "sha256": "314bf7180d0ef74ec66b8dcaa742ee716cd949d779e9697782e574cb56dfa50a"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/14-final-mobile390-summary.png",
+      "sha256": "f752e34efb48cc21a8eedc2f77dd426fb41a54904bd97a4955be1c9008bafdfb"
+    },
+    {
+      "kind": "app",
+      "evidence": [
+        "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json"
+      ],
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/08-final-mobile390.webm",
+      "sha256": "dece20f24705237780a5d0834265ca22c64f1072279f69019acf9d44bc3005e8"
+    },
+    {
+      "kind": "terminal",
+      "snapshotManifest": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d08e1e04-27e9-47d8-aaae-820c4c66305d.json",
+      "evidence": [
+        "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d08e1e04-27e9-47d8-aaae-820c4c66305d.json",
+        "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+      ],
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d08e1e04-27e9-47d8-aaae-820c4c66305d.png",
+      "sha256": "3516906a936659ac66eb9afd703f3d6a550f5cce57db18836fcd244c91e2c107",
+      "captureFailureManifest": "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+    },
+    {
+      "kind": "terminal",
+      "snapshotManifest": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/ef542e73-13a8-47a5-9dc6-9716af1926fd.json",
+      "evidence": [
+        "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/ef542e73-13a8-47a5-9dc6-9716af1926fd.json",
+        "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+      ],
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/ef542e73-13a8-47a5-9dc6-9716af1926fd.png",
+      "sha256": "9673f1573594f03676ffc5506b40cdb870026a1cbf73cd292379c88e66eaf9ca",
+      "captureFailureManifest": "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+    },
+    {
+      "kind": "terminal",
+      "snapshotManifest": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a6e96364-ca54-4650-a343-853072be68fd.json",
+      "evidence": [
+        "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a6e96364-ca54-4650-a343-853072be68fd.json",
+        "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+      ],
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a6e96364-ca54-4650-a343-853072be68fd.png",
+      "sha256": "7fdd55e64a3e9c20d94bbab2663444d13136623e87304e61dc9cc86af9721e50",
+      "captureFailureManifest": "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+    },
+    {
+      "kind": "terminal",
+      "snapshotManifest": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a278fe75-a803-4da6-9eff-f397946ba9d4.json",
+      "evidence": [
+        "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a278fe75-a803-4da6-9eff-f397946ba9d4.json",
+        "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+      ],
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a278fe75-a803-4da6-9eff-f397946ba9d4.png",
+      "sha256": "8263f81e61c453fbc845201b2f4a8a77d865478032df6084c414e7a407468ccc",
+      "captureFailureManifest": "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+    },
+    {
+      "kind": "terminal",
+      "snapshotManifest": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d0c289d3-789a-40d3-945f-0cfde2216913.json",
+      "evidence": [
+        "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d0c289d3-789a-40d3-945f-0cfde2216913.json",
+        "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+      ],
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d0c289d3-789a-40d3-945f-0cfde2216913.png",
+      "sha256": "a4f2e1f10dd300b655d91fd74529c53369dcc4284563264b01b1a87e3a47a5f4",
+      "captureFailureManifest": "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+    }
+  ],
+  "video": {
+    "path": "deliverables/ghcp-live/ghcp-cxo-demo-ko.mp4"
+  },
+  "limitations": [
+    "보완 필요 1건 · 운영 적용 보류. 422 본문 읽기 실패 때 이전 허용 상태가 남는 코드상 결함이며 실행 재현은 미검증입니다. 서버 차단 우회는 아닙니다.",
+    "촬영 불완전: 승인 연속 영상 미확보. 검토용 초안은 실제 터미널 PNG와 별도 앱 영상만 사용하며 잘린 터미널 영상은 제외합니다.",
+    "실제 CLI를 브라우저 터미널로 중계했습니다. 사용자 선택은 대화에서 확인 후 전달했으며 직접 CLI 키 입력이 아닙니다.",
+    "합성 견적·모의 전송 사례입니다. 운영 채택·외부 발송·배포는 승인되지 않았습니다.",
+    "실제 캡처 정지 화면과 별도 앱 영상을 편집한 검토용 초안입니다. 승인 요청–응답–후속 실행의 연속 영상은 없습니다.",
+    "남은 로컬 검증은 사용자 일괄 승인 범위에서 대행했습니다. 각각의 도구 호출을 사용자가 직접 승인한 것으로 표현하지 않습니다.",
+    "첫 Playwright 검사는 URL 전역 객체 오류로 실패했습니다. 수정된 검증 호출은 통과했고 실패 기록도 보존했습니다.",
+    "브라우저 콘솔의 HTTP 400 한 건은 순매출 0원 입력을 검사하며 발생한 예상 응답입니다. 콘솔 오류가 전혀 없었다고 주장하지 않습니다.",
+    "앱 결과 화면은 촬영 밖 제작 세션에서 같은 코드로 별도 녹화했습니다. Copilot 자체 화면 녹화와 구분됩니다.",
+    "한국어 내레이션은 합성 음성입니다. 사람의 청취 검수와 PowerPoint에서 실제 링크 재생은 미검증입니다.",
+    "시간·비용·생산성 효과는 측정하지 않았습니다. 영상 길이는 개발 소요시간이 아닙니다."
+  ]
+}

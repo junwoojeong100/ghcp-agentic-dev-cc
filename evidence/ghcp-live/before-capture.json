@@ -1,0 +1,852 @@
+{
+  "executor": "production-session Playwright baseline capture, not Copilot implementation/test",
+  "startedAt": "2026-09-26T06:46:52.991Z",
+  "status": "passed",
+  "source": {
+    "snapshot": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/evidence/ghcp-live/baseline-snapshot",
+    "hashManifest": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/evidence/ghcp-live/baseline-hashes.json",
+    "verifiedBeforeLaunch": {
+      "at": "2026-09-26T06:46:52.997Z",
+      "manifestSha256": "325c21f69958589369fc27b9ff9cbf70d741fe867dc83f87f104fa8c9e591b2e",
+      "matched": 8,
+      "files": [
+        {
+          "path": "package.json",
+          "expectedSha256": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805",
+          "actualSha256": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805",
+          "match": true
+        },
+        {
+          "path": "src/quote.mjs",
+          "expectedSha256": "e6eab853413324ac0281495b19e7f6fcdcfe2aa9b5323342779035a36b40f6fc",
+          "actualSha256": "e6eab853413324ac0281495b19e7f6fcdcfe2aa9b5323342779035a36b40f6fc",
+          "match": true
+        },
+        {
+          "path": "src/server.mjs",
+          "expectedSha256": "7025cb7a577f3a74200ef97c3cc757aea5127b5784c9ce51c8139fbea7913a6b",
+          "actualSha256": "7025cb7a577f3a74200ef97c3cc757aea5127b5784c9ce51c8139fbea7913a6b",
+          "match": true
+        },
+        {
+          "path": "public/app.js",
+          "expectedSha256": "a35948c375901f55ed909ebf710919ef9df82f13b11494d3c1bde41a4482a1b0",
+          "actualSha256": "a35948c375901f55ed909ebf710919ef9df82f13b11494d3c1bde41a4482a1b0",
+          "match": true
+        },
+        {
+          "path": "public/index.html",
+          "expectedSha256": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41",
+          "actualSha256": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41",
+          "match": true
+        },
+        {
+          "path": "public/style.css",
+          "expectedSha256": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b",
+          "actualSha256": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b",
+          "match": true
+        },
+        {
+          "path": "test/quote.test.mjs",
+          "expectedSha256": "394818c115f8fef1b0c7612af26501fb741dc08cf27085565e10bb7f19631a3a",
+          "actualSha256": "394818c115f8fef1b0c7612af26501fb741dc08cf27085565e10bb7f19631a3a",
+          "match": true
+        },
+        {
+          "path": "test/server.test.mjs",
+          "expectedSha256": "6a96aa935ce4d099258652db7d3e11c1f239b5c57a4da1b045cd87f6d273fd28",
+          "actualSha256": "6a96aa935ce4d099258652db7d3e11c1f239b5c57a4da1b045cd87f6d273fd28",
+          "match": true
+        }
+      ]
+    },
+    "verifiedAfterCapture": {
+      "at": "2026-09-26T06:47:06.603Z",
+      "manifestSha256": "325c21f69958589369fc27b9ff9cbf70d741fe867dc83f87f104fa8c9e591b2e",
+      "matched": 8,
+      "files": [
+        {
+          "path": "package.json",
+          "expectedSha256": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805",
+          "actualSha256": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805",
+          "match": true
+        },
+        {
+          "path": "src/quote.mjs",
+          "expectedSha256": "e6eab853413324ac0281495b19e7f6fcdcfe2aa9b5323342779035a36b40f6fc",
+          "actualSha256": "e6eab853413324ac0281495b19e7f6fcdcfe2aa9b5323342779035a36b40f6fc",
+          "match": true
+        },
+        {
+          "path": "src/server.mjs",
+          "expectedSha256": "7025cb7a577f3a74200ef97c3cc757aea5127b5784c9ce51c8139fbea7913a6b",
+          "actualSha256": "7025cb7a577f3a74200ef97c3cc757aea5127b5784c9ce51c8139fbea7913a6b",
+          "match": true
+        },
+        {
+          "path": "public/app.js",
+          "expectedSha256": "a35948c375901f55ed909ebf710919ef9df82f13b11494d3c1bde41a4482a1b0",
+          "actualSha256": "a35948c375901f55ed909ebf710919ef9df82f13b11494d3c1bde41a4482a1b0",
+          "match": true
+        },
+        {
+          "path": "public/index.html",
+          "expectedSha256": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41",
+          "actualSha256": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41",
+          "match": true
+        },
+        {
+          "path": "public/style.css",
+          "expectedSha256": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b",
+          "actualSha256": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b",
+          "match": true
+        },
+        {
+          "path": "test/quote.test.mjs",
+          "expectedSha256": "394818c115f8fef1b0c7612af26501fb741dc08cf27085565e10bb7f19631a3a",
+          "actualSha256": "394818c115f8fef1b0c7612af26501fb741dc08cf27085565e10bb7f19631a3a",
+          "match": true
+        },
+        {
+          "path": "test/server.test.mjs",
+          "expectedSha256": "6a96aa935ce4d099258652db7d3e11c1f239b5c57a4da1b045cd87f6d273fd28",
+          "actualSha256": "6a96aa935ce4d099258652db7d3e11c1f239b5c57a4da1b045cd87f6d273fd28",
+          "match": true
+        }
+      ]
+    }
+  },
+  "scope": {
+    "application": "BEFORE baseline only",
+    "syntheticQuotationOnly": true,
+    "browserClickRepresentsHumanApproval": false,
+    "externalQuotationSent": false,
+    "copilotOrModelLaunched": false,
+    "mutableFilmedWorkspaceUsed": false,
+    "applicationFilesModified": false,
+    "completedSolutionUsed": false
+  },
+  "capture": {
+    "viewport": {
+      "width": 1280,
+      "height": 740
+    },
+    "headless": true,
+    "locale": "ko-KR",
+    "colorScheme": "light",
+    "deviceScaleFactor": 1,
+    "plannedBaselineHoldSeconds": 5,
+    "plannedSuccessHoldSeconds": 7,
+    "screenshotState": "after successful synthetic send",
+    "screenshotVisualReview": {
+      "status": "passed",
+      "method": "Production-session Read tool visual inspection; not a human approval",
+      "observations": "before.png is readable at 1280x740: Q-1001, discount 10%, net 9,000,000원, profit 1,000,000원, margin 11.11%, enabled send button, and successful simulation feedback are visible without clipping.",
+      "encodedClipFrameReview": {
+        "status": "passed",
+        "sampledOutputSeconds": [0, 11.6],
+        "observations": "Decoded first MP4 frame shows the baseline values and enabled send button before the send; the 11.6-second frame shows the same values with successful simulated-send feedback. Both frames were viewed with Read."
+      }
+    },
+    "rawDirectory": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/production/ghcp-live/clips/raw/before-ht6cFs",
+    "browserVersion": "153.0.8010.12",
+    "playwrightVersion": "1.63.0",
+    "ffmpegVersion": "ffmpeg version 8.0.1 Copyright (c) 2000-2025 the FFmpeg developers",
+    "recordingAnchorAt": "2026-09-26T06:46:53.440Z",
+    "baselineBoxes": {
+      "#quote-reference": {
+        "x": 117,
+        "y": 270.921875,
+        "width": 491.3125,
+        "height": 18.59375,
+        "fontSize": "12px",
+        "fullyInViewport": true
+      },
+      "#quote-id": {
+        "x": 117,
+        "y": 196.921875,
+        "width": 491.3125,
+        "height": 48,
+        "fontSize": "15px",
+        "fullyInViewport": true
+      },
+      "#discount": {
+        "x": 477.3125,
+        "y": 568.265625,
+        "width": 95.109375,
+        "height": 38.75,
+        "fontSize": "25px",
+        "fullyInViewport": true
+      },
+      "#net-amount": {
+        "x": 689.3125,
+        "y": 201.921875,
+        "width": 473.6875,
+        "height": 47.625,
+        "fontSize": "39.68px",
+        "fullyInViewport": true
+      },
+      "#profit-amount": {
+        "x": 1042.0625,
+        "y": 291.546875,
+        "width": 120.9375,
+        "height": 34.09375,
+        "fontSize": "22px",
+        "fullyInViewport": true
+      },
+      "#margin-value": {
+        "x": 1105.375,
+        "y": 339.640625,
+        "width": 57.625,
+        "height": 34.09375,
+        "fontSize": "22px",
+        "fullyInViewport": true
+      },
+      "#send-quote": {
+        "x": 689.3125,
+        "y": 493.421875,
+        "width": 473.6875,
+        "height": 56,
+        "fontSize": "18px",
+        "fullyInViewport": true
+      }
+    },
+    "initialScrollY": 252,
+    "successBoxes": {
+      "#quote-reference": {
+        "x": 117,
+        "y": 270.921875,
+        "width": 491.3125,
+        "height": 18.59375,
+        "fontSize": "12px",
+        "fullyInViewport": true
+      },
+      "#discount": {
+        "x": 477.3125,
+        "y": 581.953125,
+        "width": 95.109375,
+        "height": 38.75,
+        "fontSize": "25px",
+        "fullyInViewport": true
+      },
+      "#net-amount": {
+        "x": 689.3125,
+        "y": 201.921875,
+        "width": 473.6875,
+        "height": 47.625,
+        "fontSize": "39.68px",
+        "fullyInViewport": true
+      },
+      "#profit-amount": {
+        "x": 1042.0625,
+        "y": 291.546875,
+        "width": 120.9375,
+        "height": 34.09375,
+        "fontSize": "22px",
+        "fullyInViewport": true
+      },
+      "#margin-value": {
+        "x": 1105.375,
+        "y": 339.640625,
+        "width": 57.625,
+        "height": 34.09375,
+        "fontSize": "22px",
+        "fullyInViewport": true
+      },
+      "#send-quote": {
+        "x": 689.3125,
+        "y": 493.421875,
+        "width": 473.6875,
+        "height": 56,
+        "fontSize": "18px",
+        "fullyInViewport": true
+      },
+      "#feedback": {
+        "x": 689.3125,
+        "y": 588.015625,
+        "width": 473.6875,
+        "height": 41.6875,
+        "fontSize": "14px",
+        "fullyInViewport": true
+      },
+      ".simulation-note": {
+        "x": 689.3125,
+        "y": 559.421875,
+        "width": 473.6875,
+        "height": 18.59375,
+        "fontSize": "12px",
+        "fullyInViewport": true
+      }
+    },
+    "screenshotAt": "2026-09-26T06:47:06.096Z",
+    "contextClosedAt": "2026-09-26T06:47:06.601Z",
+    "rawPreserved": true,
+    "conversionStartedAt": "2026-09-26T06:47:06.652Z",
+    "originalToTrim": {
+      "originalPath": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/production/ghcp-live/clips/raw/before-ht6cFs/page@a40f814d40001730f029a0c8e073074e.webm",
+      "trimmedPath": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/production/ghcp-live/clips/before.mp4",
+      "originalDurationSeconds": 14.44,
+      "originalIntervalSeconds": {
+        "start": 0.571,
+        "end": 12.657
+      },
+      "outputIntervalSeconds": {
+        "start": 0,
+        "requestedEnd": 12.086,
+        "measuredEnd": 12.08
+      },
+      "timestampMapping": "output_seconds = original_seconds - 0.571",
+      "speed": 1,
+      "visualChanges": "Leading/trailing time trim and H.264 encoding only: no spatial crop, resize, overlays, replacement content, or speed changes.",
+      "frameBoundaryRounding": "ffmpeg rounds to available video frames; measured output duration is authoritative.",
+      "ffmpegExecutable": "/opt/homebrew/bin/ffmpeg",
+      "ffmpegArguments": [
+        "-v",
+        "error",
+        "-n",
+        "-i",
+        "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/production/ghcp-live/clips/raw/before-ht6cFs/page@a40f814d40001730f029a0c8e073074e.webm",
+        "-ss",
+        "0.571",
+        "-t",
+        "12.086",
+        "-c:v",
+        "libx264",
+        "-crf",
+        "18",
+        "-preset",
+        "veryfast",
+        "-pix_fmt",
+        "yuv420p",
+        "-an",
+        "-movflags",
+        "+faststart",
+        "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/production/ghcp-live/clips/before.mp4"
+      ],
+      "rawProbe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "vp8",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 740,
+            "r_frame_rate": "25/1"
+          }
+        ],
+        "format": {
+          "duration": "14.440000",
+          "size": "775785"
+        }
+      },
+      "mp4Probe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "h264",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 740,
+            "r_frame_rate": "25/1"
+          }
+        ],
+        "format": {
+          "duration": "12.080000",
+          "size": "300377"
+        }
+      }
+    }
+  },
+  "checks": [
+    {
+      "name": "All eight immutable snapshot hashes match before launch",
+      "actual": 8,
+      "expected": 8,
+      "passed": true,
+      "at": "2026-09-26T06:46:52.997Z"
+    },
+    {
+      "name": "Baseline server readiness HTTP status",
+      "actual": 200,
+      "expected": 200,
+      "passed": true,
+      "at": "2026-09-26T06:46:53.012Z"
+    },
+    {
+      "name": "Displayed quote ID",
+      "actual": "Q-1001",
+      "expected": "Q-1001",
+      "passed": true,
+      "at": "2026-09-26T06:46:54.004Z"
+    },
+    {
+      "name": "Selected quote ID",
+      "actual": "Q-1001",
+      "expected": "Q-1001",
+      "passed": true,
+      "at": "2026-09-26T06:46:54.005Z"
+    },
+    {
+      "name": "Displayed discount percent",
+      "actual": "10",
+      "expected": "10",
+      "passed": true,
+      "at": "2026-09-26T06:46:54.006Z"
+    },
+    {
+      "name": "Displayed net amount",
+      "actual": "9,000,000원",
+      "expected": "9,000,000원",
+      "passed": true,
+      "at": "2026-09-26T06:46:54.007Z"
+    },
+    {
+      "name": "Displayed profit",
+      "actual": "1,000,000원",
+      "expected": "1,000,000원",
+      "passed": true,
+      "at": "2026-09-26T06:46:54.007Z"
+    },
+    {
+      "name": "Displayed margin",
+      "actual": "11.11%",
+      "expected": "11.11%",
+      "passed": true,
+      "at": "2026-09-26T06:46:54.008Z"
+    },
+    {
+      "name": "Send button enabled before simulated send",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:54.009Z"
+    },
+    {
+      "name": "No horizontal page overflow",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:54.009Z"
+    },
+    {
+      "name": "#quote-reference fully visible before click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:54.010Z"
+    },
+    {
+      "name": "#quote-id fully visible before click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:54.010Z"
+    },
+    {
+      "name": "#discount fully visible before click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:54.010Z"
+    },
+    {
+      "name": "#net-amount fully visible before click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:54.010Z"
+    },
+    {
+      "name": "#profit-amount fully visible before click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:54.010Z"
+    },
+    {
+      "name": "#margin-value fully visible before click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:54.010Z"
+    },
+    {
+      "name": "#send-quote fully visible before click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:54.010Z"
+    },
+    {
+      "name": "Browser send request uses Q-1001 and discount 1000 bps",
+      "actual": {
+        "quoteId": "Q-1001",
+        "discountBps": 1000
+      },
+      "expected": {
+        "quoteId": "Q-1001",
+        "discountBps": 1000
+      },
+      "passed": true,
+      "at": "2026-09-26T06:46:59.060Z"
+    },
+    {
+      "name": "Browser simulated-send HTTP status",
+      "actual": 200,
+      "expected": 200,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.060Z"
+    },
+    {
+      "name": "Browser response sent flag",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.060Z"
+    },
+    {
+      "name": "Browser response simulation flag",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.060Z"
+    },
+    {
+      "name": "Server-calculated net won",
+      "actual": 9000000,
+      "expected": 9000000,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.060Z"
+    },
+    {
+      "name": "Server-calculated profit won",
+      "actual": 1000000,
+      "expected": 1000000,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.060Z"
+    },
+    {
+      "name": "Server-calculated margin displayed to two decimals",
+      "actual": "11.11",
+      "expected": "11.11",
+      "passed": true,
+      "at": "2026-09-26T06:46:59.060Z"
+    },
+    {
+      "name": "Successful simulated-send feedback",
+      "actual": "모의 전송 완료 — 외부 발송 없음",
+      "expected": "모의 전송 완료 — 외부 발송 없음",
+      "passed": true,
+      "at": "2026-09-26T06:46:59.064Z"
+    },
+    {
+      "name": "Send button re-enabled after synthetic send",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.066Z"
+    },
+    {
+      "name": "#quote-reference fully visible after click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.067Z"
+    },
+    {
+      "name": "#discount fully visible after click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.067Z"
+    },
+    {
+      "name": "#net-amount fully visible after click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.067Z"
+    },
+    {
+      "name": "#profit-amount fully visible after click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.067Z"
+    },
+    {
+      "name": "#margin-value fully visible after click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.067Z"
+    },
+    {
+      "name": "#send-quote fully visible after click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.067Z"
+    },
+    {
+      "name": "#feedback fully visible after click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.067Z"
+    },
+    {
+      "name": ".simulation-note fully visible after click",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:46:59.067Z"
+    },
+    {
+      "name": "All eight immutable snapshot hashes match after capture",
+      "actual": 8,
+      "expected": 8,
+      "passed": true,
+      "at": "2026-09-26T06:47:06.603Z"
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "actual": 0,
+      "expected": 0,
+      "passed": true,
+      "at": "2026-09-26T06:47:06.603Z"
+    },
+    {
+      "name": "No browser console errors",
+      "actual": 0,
+      "expected": 0,
+      "passed": true,
+      "at": "2026-09-26T06:47:06.603Z"
+    },
+    {
+      "name": "No failed or uncaptured requests",
+      "actual": 0,
+      "expected": 0,
+      "passed": true,
+      "at": "2026-09-26T06:47:06.603Z"
+    },
+    {
+      "name": "No external browser requests",
+      "actual": 0,
+      "expected": 0,
+      "passed": true,
+      "at": "2026-09-26T06:47:06.603Z"
+    },
+    {
+      "name": "Exactly one observed browser send request",
+      "actual": 1,
+      "expected": 1,
+      "passed": true,
+      "at": "2026-09-26T06:47:06.603Z"
+    },
+    {
+      "name": "Readable content target is 10–15 seconds",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:47:06.652Z"
+    },
+    {
+      "name": "Converted clip duration is 10–15 seconds",
+      "actual": true,
+      "expected": true,
+      "passed": true,
+      "at": "2026-09-26T06:47:06.921Z"
+    },
+    {
+      "name": "MP4 dimensions preserved",
+      "actual": {
+        "width": 1280,
+        "height": 740
+      },
+      "expected": {
+        "width": 1280,
+        "height": 740
+      },
+      "passed": true,
+      "at": "2026-09-26T06:47:06.921Z"
+    }
+  ],
+  "http": [
+    {
+      "observedAt": "2026-09-26T06:46:53.618Z",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:62427/api/quotes",
+        "path": "/api/quotes",
+        "body": null,
+        "rawBody": null
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "quotes": [
+            {
+              "id": "Q-1001",
+              "title": "업무 시스템 구축",
+              "customer": "가상 고객 A",
+              "listPriceWon": 10000000,
+              "costWon": 8000000
+            },
+            {
+              "id": "Q-1500",
+              "title": "사내 포털 구축",
+              "customer": "가상 고객 B",
+              "listPriceWon": 10000000,
+              "costWon": 8500000
+            },
+            {
+              "id": "Q-1499",
+              "title": "문서 관리 시스템 구축",
+              "customer": "가상 고객 C",
+              "listPriceWon": 10000000,
+              "costWon": 8500001
+            },
+            {
+              "id": "Q-1501",
+              "title": "협업 시스템 구축",
+              "customer": "가상 고객 D",
+              "listPriceWon": 10000000,
+              "costWon": 8499999
+            }
+          ]
+        },
+        "rawBody": "{\"quotes\":[{\"id\":\"Q-1001\",\"title\":\"업무 시스템 구축\",\"customer\":\"가상 고객 A\",\"listPriceWon\":10000000,\"costWon\":8000000},{\"id\":\"Q-1500\",\"title\":\"사내 포털 구축\",\"customer\":\"가상 고객 B\",\"listPriceWon\":10000000,\"costWon\":8500000},{\"id\":\"Q-1499\",\"title\":\"문서 관리 시스템 구축\",\"customer\":\"가상 고객 C\",\"listPriceWon\":10000000,\"costWon\":8500001},{\"id\":\"Q-1501\",\"title\":\"협업 시스템 구축\",\"customer\":\"가상 고객 D\",\"listPriceWon\":10000000,\"costWon\":8499999}]}"
+      }
+    },
+    {
+      "observedAt": "2026-09-26T06:46:53.623Z",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:62427/api/preview",
+        "path": "/api/preview",
+        "body": {
+          "quoteId": "Q-1001",
+          "discountBps": 1000
+        },
+        "rawBody": "{\"quoteId\":\"Q-1001\",\"discountBps\":1000}"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "quoteId": "Q-1001",
+          "title": "업무 시스템 구축",
+          "customer": "가상 고객 A",
+          "listPriceWon": 10000000,
+          "costWon": 8000000,
+          "discountBps": 1000,
+          "netWon": 9000000,
+          "profitWon": 1000000,
+          "marginPercent": 11.11111111111111
+        },
+        "rawBody": "{\"quoteId\":\"Q-1001\",\"title\":\"업무 시스템 구축\",\"customer\":\"가상 고객 A\",\"listPriceWon\":10000000,\"costWon\":8000000,\"discountBps\":1000,\"netWon\":9000000,\"profitWon\":1000000,\"marginPercent\":11.11111111111111}"
+      }
+    },
+    {
+      "observedAt": "2026-09-26T06:46:59.059Z",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:62427/api/send",
+        "path": "/api/send",
+        "body": {
+          "quoteId": "Q-1001",
+          "discountBps": 1000
+        },
+        "rawBody": "{\"quoteId\":\"Q-1001\",\"discountBps\":1000}"
+      },
+      "response": {
+        "status": 200,
+        "body": {
+          "sent": true,
+          "simulation": true,
+          "message": "모의 전송 완료 — 외부 발송 없음",
+          "quote": {
+            "quoteId": "Q-1001",
+            "title": "업무 시스템 구축",
+            "customer": "가상 고객 A",
+            "listPriceWon": 10000000,
+            "costWon": 8000000,
+            "discountBps": 1000,
+            "netWon": 9000000,
+            "profitWon": 1000000,
+            "marginPercent": 11.11111111111111
+          }
+        },
+        "rawBody": "{\"sent\":true,\"simulation\":true,\"message\":\"모의 전송 완료 — 외부 발송 없음\",\"quote\":{\"quoteId\":\"Q-1001\",\"title\":\"업무 시스템 구축\",\"customer\":\"가상 고객 A\",\"listPriceWon\":10000000,\"costWon\":8000000,\"discountBps\":1000,\"netWon\":9000000,\"profitWon\":1000000,\"marginPercent\":11.11111111111111}}"
+      }
+    }
+  ],
+  "events": [
+    {
+      "name": "readable baseline hold begins",
+      "at": "2026-09-26T06:46:54.011Z",
+      "estimatedRawOffsetSeconds": 0.571
+    },
+    {
+      "name": "automated synthetic send click begins; not human approval",
+      "at": "2026-09-26T06:46:59.013Z",
+      "estimatedRawOffsetSeconds": 5.573
+    },
+    {
+      "name": "successful simulation feedback visible",
+      "at": "2026-09-26T06:46:59.067Z",
+      "estimatedRawOffsetSeconds": 5.627
+    },
+    {
+      "name": "readable content ends",
+      "at": "2026-09-26T06:47:06.097Z",
+      "estimatedRawOffsetSeconds": 12.657
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "requestFailures": [],
+  "blockedExternalRequests": [],
+  "files": {
+    "mp4": {
+      "path": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/production/ghcp-live/clips/before.mp4",
+      "bytes": 300377,
+      "sha256": "3bed78060ced2eadb9f3be68c0342977847e7a6ee1f0cb113c8a2189c45ac66e"
+    },
+    "png": {
+      "path": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/production/ghcp-live/screenshots/before.png",
+      "bytes": 80932,
+      "sha256": "33e2d361caeb6ef5f0bf0b385c04d4fc1c1c92eed284409673f3a34b7a3e34a7"
+    },
+    "evidence": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/evidence/ghcp-live/before-capture.json",
+    "raw": {
+      "path": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/production/ghcp-live/clips/raw/before-ht6cFs/page@a40f814d40001730f029a0c8e073074e.webm",
+      "bytes": 775785,
+      "sha256": "768d61d62d775b690aa699b60cf526124fa1b2c78711916635eba019a84001d6"
+    }
+  },
+  "limitations": [
+    "Production-session browser capture of the immutable baseline; not evidence that Copilot implemented or tested a change.",
+    "Synthetic quotation only. The automated browser click is not human approval and performs no external send.",
+    "Media trim offsets are exact ffmpeg input values. UI event offsets are wall-clock estimates anchored immediately before newPage; they are not frame-accurate Playwright recorder timestamps.",
+    "Single desktop baseline flow only; no completed solution, mobile run, policy boundary tests, audio, overlays, or polished edit."
+  ],
+  "cleanup": {
+    "serverClosed": true,
+    "browserClosed": true
+  },
+  "server": {
+    "baseUrl": "http://127.0.0.1:62427",
+    "owner": "this capture process",
+    "pid": 72708,
+    "binding": "127.0.0.1",
+    "portAllocation": "OS-assigned ephemeral port",
+    "module": "/Users/junwoojeong/GitHub/ghcp-agentic-dev-cc/evidence/ghcp-live/baseline-snapshot/src/server.mjs"
+  },
+  "finishedAt": "2026-09-26T06:47:06.935Z",
+  "passedChecks": 43
+}

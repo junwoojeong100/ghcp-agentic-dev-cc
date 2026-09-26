@@ -1,0 +1,80 @@
+{
+  "status": "technical-checks-passed",
+  "productionStatus": "capture-complete",
+  "durationSeconds": 300.0,
+  "video": {
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "audio": "aac",
+    "fps": 30,
+    "fullDecode": "passed"
+  },
+  "subtitles": {
+    "cues": 39,
+    "timing": "passed"
+  },
+  "presentation": {
+    "slides": 16,
+    "notes": 16,
+    "relativeMp4Link": true,
+    "pdfPages": 16
+  },
+  "sourceMapping": {
+    "scenes": 19,
+    "terminalCaptureEntries": 1,
+    "sourceEvidenceEntries": 35
+  },
+  "files": [
+    {
+      "path": "deliverables/ghcp-live/final/ghcp-cxo-demo-ko.mp4",
+      "bytes": 12624927,
+      "sha256": "2552a2f1629323f0c2b5aea3ce4d04c94b8fa4e20457a38e96e37e941a69b662"
+    },
+    {
+      "path": "deliverables/ghcp-live/final/ghcp-cxo-demo-ko.srt",
+      "bytes": 4375,
+      "sha256": "7c1e58a816681c248830feaa271dc017c758da37812bf38ea87c4b48eee60502"
+    },
+    {
+      "path": "deliverables/ghcp-live/final/ghcp-agentic-development.pptx",
+      "bytes": 1601498,
+      "sha256": "d21cd5d5ab3edb2c0cc2e4867a42621e6da442108cf57bf4630b28fd45e61168"
+    },
+    {
+      "path": "deliverables/ghcp-live/final/ghcp-agentic-development.pdf",
+      "bytes": 1928478,
+      "sha256": "ecea05c81efbdb07c98d3fb7eda0bc2431b59b772895beb43bff706ba3e2af8c"
+    }
+  ],
+  "visualInspection": {
+    "status": "ai-sampled-frames-checked",
+    "scope": "Contact sheets covering 16 slide renderings and one representative frame per 19 video scenes; slides 14 and 16 also inspected individually by a production subagent.",
+    "result": "No visible blank content, heading clipping or overlap reported in the inspected frames. Dense terminal text is not a substitute for the saved native logs.",
+    "evidence": ["production/ghcp-live/retake-20260926/inspection/slides-contact.png", "production/ghcp-live/retake-20260926/inspection/video-contact.png"],
+    "limitation": "AI visual spot check, not human approval, full continuous viewing or audio listening."
+  },
+  "browserPlayback": {
+    "status": "passed",
+    "scope": "Muted Chromium playback and seeking at start, middle and end; reached end without media error.",
+    "evidence": "production/ghcp-live/retake-20260926/video-qa/playback-report.json"
+  },
+  "approvalSupplement": {
+    "status": "verified",
+    "durationSeconds": 380,
+    "speed": 1,
+    "audio": "none",
+    "fullDecode": "passed",
+    "file": "deliverables/ghcp-live/final/ghcp-plan-approval-continuous.mp4",
+    "sha256": "00320c75e43e419b2734a278a87ff4442d3046b1df9e8262612f5f911f27a7fe",
+    "evidence": "production/ghcp-live/retake-20260926/approval-supplement.json"
+  },
+  "pdfExport": {"method": "LibreOffice headless; UseTaggedPDF=false", "taggedAccessibility": false},
+  "humanContinuousViewingPerformed": false,
+  "humanListeningPerformed": false,
+  "powerPointLinkPlayback": "not-checked",
+  "captureComplete": true,
+  "requirementsSatisfied": true,
+  "openFindings": 0,
+  "note": "Automated technical checks passed, followed by recorded AI visual spot checks. Supplement integrity and browser playback were checked separately. Human continuous viewing/listening and native PowerPoint link playback remain unperformed; no production adoption or publication approval is implied."
+}
