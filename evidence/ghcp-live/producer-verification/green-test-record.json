@@ -1,0 +1,22 @@
+{
+  "executor": "Claude production session, outside filmed Copilot",
+  "startedAt": "2026-09-26T08:57:41.730718+00:00",
+  "endedAt": "2026-09-26T08:57:42.113363+00:00",
+  "command": "npm test",
+  "workspace": "/Users/junwoojeong/ghcp-headless-demo-wNmrAn",
+  "exitCode": 0,
+  "codeHashes": {
+    "package.json": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805",
+    "src/quote.mjs": "c725414fd15bad30ae6edf7a3c85d18ef24c8b77b162433eeef7cfce25dfef7a",
+    "src/server.mjs": "508f3a5eba372b5c4caa2490b5db6cd86f04f16d73865205888a9d50279f2923",
+    "public/app.js": "519ce298b4c5974c3d1d6877550c72a2db3f34abdee518a27b95202eae1822ba",
+    "public/index.html": "30e86f8a1f9371b85b1be8da7fd114431cdb3bcef4ef2623322e86d78f6f22bb",
+    "public/style.css": "7b9b875e97413fd51478b8b748a365f9734178534c18c0e3462c95d9b5a14235",
+    "test/quote.test.mjs": "394818c115f8fef1b0c7612af26501fb741dc08cf27085565e10bb7f19631a3a",
+    "test/server.test.mjs": "6a96aa935ce4d099258652db7d3e11c1f239b5c57a4da1b045cd87f6d273fd28",
+    "test/margin.test.mjs": "56ad990ac365b26a702f03355ef50660fbcbfba2be04958bfa49ac5bbbf408de"
+  },
+  "unchangedDuringRun": true,
+  "rawOutput": "evidence/ghcp-live/producer-verification/green-test-output.txt",
+  "note": "Independent producer verification, not raw output recovered from the filmed Copilot tool."
+}

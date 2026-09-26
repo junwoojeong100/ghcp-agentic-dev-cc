@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "checkedDate": "2026-09-26",
+  "scope": "공식 문서를 근거로 작성한 비공식 개념 소개 4장. 기존 12장 검토용 초안의 실행 근거·검토 지적·제약은 갱신하지 않는다.",
+  "sources": {
+    "what": {
+      "title": "What is GitHub Copilot?",
+      "url": "https://docs.github.com/en/copilot/get-started/what-is-github-copilot",
+      "verified": "코드 작성·이해·출하를 돕는 AI assistant이며 코드 제안, 코드베이스 질문, 변경 검토, 맡긴 작업 수행을 설명한다. 기능은 플랜·클라이언트·조직 정책에 따라 다르다."
+    },
+    "matrix": {
+      "title": "Copilot feature matrix",
+      "url": "https://docs.github.com/en/copilot/reference/copilot-feature-matrix",
+      "verified": "VS Code, Visual Studio, JetBrains 등 IDE별 기능·버전 차이를 보여 준다. 표 자체는 public preview이며 변경될 수 있다. 슬라이드의 IDE 목록은 예시이지 전체 지원 목록이 아니다."
+    },
+    "githubChat": {
+      "title": "Asking GitHub Copilot questions in GitHub",
+      "url": "https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-github",
+      "verified": "GitHub.com에서 저장소·이슈·PR 등의 맥락을 이용해 코드와 개발 작업을 질문할 수 있다."
+    },
+    "mobile": {
+      "title": "Asking GitHub Copilot questions in GitHub Mobile",
+      "url": "https://docs.github.com/en/copilot/how-tos/chat-with-copilot/chat-in-mobile",
+      "verified": "GitHub Mobile에서 개발 질문, 저장소 탐색, 파일·코드·PR 관련 도움을 받을 수 있다. 조직 정책·구독·화면 맥락에 따른 제한이 있다."
+    },
+    "cli": {
+      "title": "About GitHub Copilot CLI",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli",
+      "verified": "터미널에서 코드 변경·디버깅·문서·Git 및 GitHub 작업을 수행한다. Interactive와 programmatic 사용을 구분하며, 구현 전 plan mode와 도구 허용·거절 정책을 설명한다."
+    },
+    "roles": {
+      "title": "Agent harnesses in VS Code",
+      "url": "https://code.visualstudio.com/docs/agents/run/agent-harnesses",
+      "verified": "Local 역할로 Agent, Ask, Plan을 설명한다. Agent는 편집·명령·결과 반복, Ask는 코드 변경 없는 안내, Plan은 조사·구현 계획 작성 후 구현 전환을 지원한다. 로컬과 클라우드 실행 환경을 구분한다."
+    },
+    "edit": {
+      "title": "Visual Studio Code January 2026 release notes (version 1.109)",
+      "url": "https://code.visualstudio.com/updates/v1_109",
+      "verified": "Edit mode는 agent dropdown에서 기본 숨김이며 chat.editMode.hidden 설정으로 제어한다. 조직에서 agent mode를 비활성화한 경우 Edit가 계속 보인다고 명시한다. Edit의 표시는 현재 설치 버전·정책에서 확인해야 한다."
+    },
+    "autopilot": {
+      "title": "About autopilot mode for GitHub Copilot CLI",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/copilot-cli/autopilot",
+      "verified": "일반 interactive는 응답 뒤 다음 지시를 주며, autopilot은 매 단계 입력을 기다리지 않고 작업을 이어 간다. Plan에서 계획을 만든 뒤 실행할 수 있다. 완료·차단·중단·계속 실행 횟수 한도에 따라 멈추며 도구 권한은 별개다."
+    },
+    "cliOverview": {
+      "title": "Using GitHub Copilot CLI",
+      "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/use-copilot-cli/overview",
+      "verified": "Custom agents와 필요시 작업을 위임하는 subsidiary subagent process를 구분한다. MCP 서버 확장, custom instructions, agent skills와 코드 리뷰 기능을 설명한다. Cloud sandbox의 원격 CLI 세션과 별도 Copilot cloud agent를 혼동하지 않는다."
+    },
+    "cloud": {
+      "title": "About GitHub Copilot cloud agent",
+      "url": "https://docs.github.com/en/copilot/concepts/agents/coding-agent/about-coding-agent",
+      "verified": "확인 시점의 제품명은 Copilot cloud agent다. GitHub 환경에서 저장소 조사·계획·브랜치 변경을 수행하고 비동기로 검토·반복한 뒤 PR로 연결할 수 있다. IDE agent mode의 로컬 변경과 다르다. 유료 플랜, Business/Enterprise 관리자 활성화, 지정 저장소 범위 등의 조건이 있다. URL에는 이전 coding-agent 경로가 남아 있다."
+    }
+  },
+  "slides": [
+    {
+      "id": "definition",
+      "section": "개념 01 · GitHub Copilot",
+      "title": "GitHub Copilot이란?",
+      "subtitle": "코드 작성·이해·변경 검토에서 여러 단계의 개발 작업까지 돕는 AI입니다.",
+      "headline": "코드를 제안하고,\n개발 작업을 함께 수행합니다.",
+      "items": [
+        {"heading": "제안", "body": "작성 중인 코드에\n다음 코드를 제안"},
+        {"heading": "대화", "body": "코드와 저장소를\n질문하고 이해"},
+        {"heading": "작업 실행", "body": "맡긴 개발 작업을\n여러 단계로 수행"}
+      ],
+      "takeaway": "사용 범위와 권한을 정하고, 결과를 검토하고, 출시를 판단하는 주체는 사람입니다.",
+      "notes": "GitHub Copilot을 자동완성 하나로만 이해하지 않도록 소개합니다. 공식 문서는 코드 제안, 코드베이스에 대한 질문, 변경 검토, 맡긴 작업 수행을 함께 설명합니다. 세 칸은 설명을 위한 기능 묶음이며 공식 모드 이름이나 별도 상품명이 아닙니다. 모든 작업이 항상 자율 실행된다는 뜻이 아니며, 사용자는 기능과 도구 권한을 정하고 결과를 검토해야 합니다. 모델 성능이나 생산성 개선 비율은 이 자료에서 측정하거나 주장하지 않습니다.",
+      "sourceIds": ["what"]
+    },
+    {
+      "id": "surfaces",
+      "section": "개념 02 · 사용 접점",
+      "title": "어디서 쓰는가: 개발 흐름 안의 네 접점",
+      "subtitle": "같은 Copilot이라도 접점마다 맡길 수 있는 일과 지원 범위가 다릅니다.",
+      "items": [
+        {"heading": "IDE", "detail": "VS Code · Visual Studio · JetBrains 등", "body": "코드 제안·질문·편집·에이전트 작업\nIDE·확장 버전에 따라 지원 기능이 다릅니다."},
+        {"heading": "GitHub.com", "detail": "저장소 · 이슈 · PR 맥락", "body": "코드와 저장소를 질문하고,\n지원되는 클라우드 작업을 위임합니다."},
+        {"heading": "GitHub Mobile", "detail": "이동 중 질문과 탐색", "body": "앱에서 코드·저장소·PR에 관해 질문합니다.\n화면 맥락과 이용 정책에 따라 접근이 달라집니다."},
+        {"heading": "Copilot CLI", "detail": "이후 사례에서 사용하는 실행 도구", "body": "터미널에서 파일·명령·GitHub 작업을 수행합니다.\nIDE 화면과는 별도의 사용 경험입니다."}
+      ],
+      "takeaway": "실제 이용 가능 여부는 플랜·클라이언트 버전·조직 정책에서 확인합니다.",
+      "notes": "접점과 모드를 분리해 설명합니다. IDE 목록은 대표 예시이며, 공식 기능 표에는 이외의 IDE도 있습니다. 특정 기능이 VS Code에서 지원된다고 모든 IDE에서 지원된다고 읽지 마세요. GitHub.com은 웹의 저장소·이슈·PR 맥락, GitHub Mobile은 앱의 질문·탐색 경험, Copilot CLI는 터미널의 작업 실행 접점입니다. GitHub.com에서 시작하는 Copilot cloud agent 작업의 실행 위치는 GitHub 환경이며 브라우저 자체가 로컬 IDE와 같은 실행 환경이라는 뜻이 아닙니다. 뒤의 실제 사례는 CLI 기록이지 네 접점을 모두 실증한 결과가 아닙니다.",
+      "sourceIds": ["what", "matrix", "githubChat", "mobile", "cli", "cloud"]
+    },
+    {
+      "id": "modes",
+      "section": "개념 03 · 모드와 실행 방식",
+      "title": "모드는 ‘어떻게 도울지’를 고릅니다",
+      "subtitle": "VS Code의 로컬 역할과 Copilot CLI의 실행 방식은 별개입니다.",
+      "localLabel": "VS Code · 역할 / 모드",
+      "items": [
+        {"heading": "Ask", "body": "질문·설명 중심 · 코드 변경 없이 안내"},
+        {"heading": "Edit*", "body": "대상 파일을 정해 수정 · 표시 여부 확인"},
+        {"heading": "Agent", "body": "파일 편집·명령 실행·결과 확인을 반복"},
+        {"heading": "Plan", "body": "먼저 조사·구현 계획 작성 · 실행은 다음 단계"}
+      ],
+      "availability": "* Edit: v1.109 문서에서 기본 숨김. 조직 정책에 따른 예외가 있습니다.\n현재 로컬 역할 안내는 Agent·Ask·Plan을 중심으로 설명합니다.",
+      "cliLabel": "Copilot CLI",
+      "cliItems": [
+        {"heading": "Interactive", "body": "대화하며 다음 지시"},
+        {"heading": "Plan", "body": "구현 전에 계획 확인"},
+        {"heading": "Autopilot", "body": "매 단계 지시 없이 진행"}
+      ],
+      "takeaway": "자율 실행 ≠ 무제한 권한",
+      "notes": "VS Code의 현재 로컬 역할 안내는 Agent, Ask, Plan을 설명합니다. Ask는 코드 변경 없이 안내하고, Agent는 도구로 편집·명령·결과 반복을 수행하며, Plan은 작업을 조사해 구조화한 계획을 만든 뒤 구현으로 넘깁니다. Plan은 도구를 전혀 쓰지 않는다는 뜻이 아닙니다. Edit는 대상 파일을 정해 수정하던 별도 방식으로 함께 설명하되, 모든 설치에서 네 항목이 동시에 나타난다고 말하지 않습니다. 공식 v1.109 릴리스 노트는 Edit 기본 숨김과 chat.editMode.hidden 설정, 조직에서 Agent를 비활성화했을 때의 표시 예외를 명시합니다. 오른쪽은 IDE 모드 대응표가 아닙니다. CLI는 interactive와 programmatic 진입 방식도 구분하지만 이 슬라이드는 대화형 사용 중 일반 진행·계획·autopilot의 차이만 간단히 보여 줍니다. Autopilot도 차단·중단·계속 실행 횟수 한도 등으로 멈추며 도구 권한을 자동으로 얻지 않습니다. 권한을 전부 허용하는 설정을 권장하는 자료가 아닙니다.",
+      "sourceIds": ["roles", "edit", "cli", "autopilot"]
+    },
+    {
+      "id": "agents",
+      "section": "개념 04 · 에이전트의 범위",
+      "title": "에이전트는 도구로 일하고, 사람은 결과를 검토합니다",
+      "subtitle": "수행·확장·위임 기능을 활용하되, 실행 환경과 권한의 경계를 구분합니다.",
+      "items": [
+        {"heading": "작업 수행", "body": "파일 탐색·편집, 명령·테스트 실행\n결과를 확인하며 다음 작업 수행"},
+        {"heading": "역할·지식 확장", "body": "Custom agents·subagents로 역할 분리\nMCP로 도구 연결 · instructions·skills로 지침 제공"},
+        {"heading": "검토·위임", "body": "변경사항 코드 리뷰\n범위를 정한 작업의 클라우드 위임"}
+      ],
+      "contrastTitle": "IDE Agent와\nCopilot cloud agent는 다릅니다",
+      "contrastItems": [
+        {"heading": "IDE Agent", "body": "로컬 개발환경에서 직접 변경"},
+        {"heading": "Copilot cloud agent", "body": "GitHub 환경에서 비동기 작업\n변경을 검토하고 PR로 연결"}
+      ],
+      "availability": "Cloud agent: 유료 플랜·조직 활성화·\n저장소 범위 등의 조건 확인",
+      "takeaway": "문서에 있는 기능 ≠ 이번 시연에서 모두 실행한 기능 · 도구 권한과 결과 검토 필요",
+      "notes": "도구를 이용한 편집·명령·테스트와 반복 작업은 제품의 일반 기능 설명입니다. 뒤의 데모에서 누가 실제 테스트를 실행했는지는 원래 실행 기록과 발표자 노트를 그대로 따릅니다. Custom agents는 특정 역할을 정의하는 구성이며 subagents는 작업을 위임받는 하위 실행입니다. 구성했다는 사실만으로 실제 위임이나 병렬 실행이 있었다고 추정하지 않습니다. MCP는 도구 연결, instructions와 skills는 지침과 전문 작업 맥락을 제공하는 수단으로 소개하며 모든 접점의 동일 지원을 주장하지 않습니다. 현재 공식명은 Copilot cloud agent입니다. 이전 coding agent 명칭이 URL에 남아 있지만 슬라이드는 현재 이름을 씁니다. Cloud agent는 IDE agent mode와 구별되는 GitHub 환경의 비동기 작업이며, 조사·계획·브랜치 변경을 검토·반복하고 PR로 연결할 수 있습니다. 유료 플랜과 조직 관리자 활성화 및 지정 저장소 범위를 확인해야 합니다. CLI 세션 자체의 cloud sandbox를 Copilot cloud agent와 동일시하지 않습니다. 코드 리뷰는 사람의 최종 승인·보안 보증·운영 출시 승인을 대신하지 않습니다.",
+      "sourceIds": ["roles", "cli", "cliOverview", "cloud"]
+    }
+  ]
+}

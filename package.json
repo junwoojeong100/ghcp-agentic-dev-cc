@@ -7,7 +7,12 @@
     "demo": "npm --prefix demo/run start",
     "capture": "node scripts/capture-demo.mjs",
     "video": "python3 scripts/build-video.py",
-    "slides": "python3 scripts/build-deck.py"
+    "slides": "python3 scripts/build-deck.py",
+    "record:live": "node scripts/record-ghcp-live.mjs --run-dir production/ghcp-live",
+    "test:recorder": "python3 -B -m unittest discover -s test -p 'test_*pty*.py' && node --test test/headless-recording.test.mjs test/terminal-rendering.test.mjs test/recorder-failures.test.mjs"
   },
-  "devDependencies": {"playwright": "1.63.0"}
+  "devDependencies": {
+    "@xterm/xterm": "6.0.0",
+    "playwright": "1.63.0"
+  }
 }

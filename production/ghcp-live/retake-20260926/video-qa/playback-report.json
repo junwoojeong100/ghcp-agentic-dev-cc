@@ -1,0 +1,16 @@
+{
+  "engine": "Playwright Chromium",
+  "metadata": {
+    "duration": 300,
+    "width": 1920,
+    "height": 1080
+  },
+  "testedPositions": [
+    0.272323,
+    150.262126,
+    298.262812
+  ],
+  "reachedEnd": true,
+  "playback": "Muted playback and seeking verified at start, middle and end.",
+  "limitation": "This is not a complete human viewing or Korean narration listening check."
+}

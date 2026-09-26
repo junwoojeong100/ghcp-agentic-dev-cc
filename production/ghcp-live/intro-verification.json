@@ -1,0 +1,22 @@
+{
+  "status": "passed",
+  "slides": 16,
+  "newIntroductionSlides": 4,
+  "speakerNotesSourceUrlsAndDate": true,
+  "relativeVideoLink": "../ghcp-cxo-demo-ko.mp4",
+  "oldDeliverableHashesUnchanged": true,
+  "visualInspection": "Four introduction PDF pages inspected by main session; no visible overflow or clipping.",
+  "newFilmingIntegrated": false,
+  "files": [
+    {
+      "path": "deliverables/ghcp-live/with-intro/ghcp-agentic-development.pptx",
+      "sha256": "93b41d0e0010a7faf2b0abdb2482eedc4a5bab0466bfd7cf34378429fade7be4",
+      "bytes": 1495919
+    },
+    {
+      "path": "deliverables/ghcp-live/with-intro/ghcp-agentic-development.pdf",
+      "sha256": "e2a58ccbe2a5c3d8ff1c4ca871497f71364e772f23b30fd5eb841234ba842867",
+      "bytes": 1842226
+    }
+  ]
+}

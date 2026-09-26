@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "runId": "ghcp-retake-20260926",
+  "status": "final-deliverables-ready",
+  "production": {
+    "status": "generated-and-checked",
+    "captureComplete": true,
+    "captureManifest": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/capture.json",
+    "video": "deliverables/ghcp-live/final/ghcp-cxo-demo-ko.mp4",
+    "subtitles": "deliverables/ghcp-live/final/ghcp-cxo-demo-ko.srt",
+    "pptx": "deliverables/ghcp-live/final/ghcp-agentic-development.pptx",
+    "pdf": "deliverables/ghcp-live/final/ghcp-agentic-development.pdf",
+    "approvalSupplement": "deliverables/ghcp-live/final/ghcp-plan-approval-continuous.mp4",
+    "guide": "deliverables/ghcp-live/final/READ-ME-FIRST.txt",
+    "verification": "production/ghcp-live/retake-20260926/final-retake-verification.json",
+    "presentationRetention": "Only final 16-slide PPTX/PDF pair retained as requested; superseded presentation files removed, videos and original evidence preserved.",
+    "humanListeningPerformed": false,
+    "nativePowerPointPlayback": "not-checked"
+  },
+  "finalResults": {
+    "newRegressionsBefore": {"passed": 16, "failed": 17},
+    "newRegressionsAfter": {"passed": 33, "failed": 0},
+    "fullTests": {"passed": 55, "failed": 0, "skipped": 0},
+    "nativeBrowserStates": 36,
+    "confirmedFindingsInReviewScope": 0,
+    "bodyVerification": "evidence/ghcp-live/retake-20260926/body-verification/report.json",
+    "facts": "production/ghcp-live/retake-20260926/facts.json",
+    "note": "Recorded demo conditions only. Review did not independently inspect the TAP logs; execution totals were recovered from native tool results. Real-browser 422 body faults were injected after filming by the production session. Not operational adoption."
+  },
+  "implementationApprovalEvidence": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/implementation-approval.json",
+  "designChoices": {
+    "userResponse": "두 제안 모두 선택 (Recommended)",
+    "scope": ["Preserve calculateQuote return shape and existing tests; add eligibility to API responses", "Use node:vm UI regressions and real-browser small-screen checks without new dependencies"],
+    "relayInputIds": ["8e354bc3-9a56-4adc-b8ce-184fd092d77e", "d07b1624-46ab-4554-8cd0-064431cff6c9"],
+    "status": "sent",
+    "note": "Actual user design choices relayed once each for this take. Not approval of implementation, command execution, or final adoption."
+  },
+  "permissionMode": {
+    "status": "manual",
+    "verificationSnapshot": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/snapshots/402071c8-2140-42a5-8f66-20126cfe614b.json",
+    "note": "Producer restricted the fresh session from inherited allow-all to manual before submitting any investigation. Not a human approval scene."
+  },
+  "investigation": {
+    "status": "submitted",
+    "inputId": "d9e3d827-41cc-40b9-9f48-35569e3b94e8",
+    "prompt": "production/ghcp-live/retake-20260926/initial-prompt.txt",
+    "scope": "Read-only server and UI investigation; no implementation or test execution approval"
+  },
+  "activeCapture": {
+    "takeId": "3f50637c-4b8d-4fce-91f2-e34b6109aed2",
+    "takeDir": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt",
+    "backgroundTask": "b5pbucjo3",
+    "nativeSessionId": "dcc242f2-ce53-48e2-91b3-74e55674094a",
+    "startedAt": "2026-09-26T11:43:47.360Z",
+    "status": "recorded-and-closed",
+    "finishedAt": "2026-09-26T13:36:26.304Z",
+    "note": "This take's plan and scoped local execution were approved and relayed. Native CLI exited 0, final rendered sequence matched 20636, verified video copy retained and original video decoded completely. No further CLI input or relaunch is pending."
+  },
+  "recorderVerification": {
+    "status": "passed",
+    "pythonPassed": 23,
+    "nodePassed": 21,
+    "failed": 0,
+    "evidence": "evidence/ghcp-live/retake-20260926/recorder-verification/verification.json",
+    "freshTakeStarted": true,
+    "note": "Final full-suite log inspected. Saved delayed-copy fixture original and copied video hashes matched, and full ffmpeg decode passed. Earlier fixture-precondition failures were corrected without weakening preservation assertions. Fixture evidence is not actual Copilot footage."
+  },
+  "producerRepair": {
+    "status": "fixed-and-verified-in-separate-copy",
+    "workspace": "demo/ghcp-live/repaired",
+    "testsPassed": 62,
+    "testsFailed": 0,
+    "evidence": "evidence/ghcp-live/repair-verification/resolution.json",
+    "note": "Completed outside the filmed Copilot session; repaired solution is not supplied to the fresh take."
+  },
+  "introductionSlides": {
+    "status": "generated-and-checked",
+    "topics": ["GitHub Copilot overview", "surfaces", "modes", "agent capabilities"],
+    "addedSlides": 4,
+    "totalSlides": 16,
+    "pptx": "deliverables/ghcp-live/final/ghcp-agentic-development.pptx",
+    "pdf": "deliverables/ghcp-live/final/ghcp-agentic-development.pdf",
+    "sources": "production/ghcp-live/copilot-intro.json",
+    "checkedDate": "2026-09-26",
+    "note": "Four sourced, editable introduction slides precede 12 slides reflecting the completed fresh take. Final 16-page PPT/PDF checked; superseded presentation pair removed at the user's request. Native review limitations remain explicit."
+  },
+  "workspace": "/Users/junwoojeong/ghcp-headless-demo-H976Zg",
+  "baselineDir": "evidence/ghcp-live/baseline-snapshot",
+  "evidenceDir": "evidence/ghcp-live/retake-20260926",
+  "productionDir": "production/ghcp-live/retake-20260926",
+  "outputDir": "deliverables/ghcp-live/final",
+  "previousRun": "production/ghcp-live/run.json",
+  "request": "남은 작업 진행하고, ppt 슬라이드에 github copilot이 무엇이고, 어떤 모드, 서피스가 있는지, 에이전트를 활용하는 기능에는 어떤 것들이 있는지 소개하는 부분을 서두에 넣어줘.",
+  "implementationPlanApproval": "approved-and-relayed-for-this-take",
+  "finalAdoption": "not-approved",
+  "note": "Completed fresh actual CLI take from the original unimplemented baseline, with this take's own approval and execution records. Old recordings, code copies and evidence remain preserved; superseded PPT/PDF files were removed at the user's explicit request. Final media reflect this take's 55 passing tests, browser checks, read-only review limitations and separate real-browser body-failure verification. Human viewing/listening and native PowerPoint playback still require confirmation before presentation; final adoption and publication are not approved."
+}

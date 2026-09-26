@@ -1,0 +1,15 @@
+{
+  "status": "verified",
+  "source": "evidence/ghcp-live/retake-20260926/raw/headless.1FbXjt/video/capture.webm",
+  "sourceSha256": "a83d1d03342d5a6340673ec3b02ef735e4cbc90c26fb6058d19e4cb25dbcec3b",
+  "in": 1820,
+  "out": 2200,
+  "speed": 1,
+  "durationSeconds": 380,
+  "fullDecode": "passed",
+  "audio": "none",
+  "file": "deliverables/ghcp-live/final/ghcp-plan-approval-continuous.mp4",
+  "sha256": "00320c75e43e419b2734a278a87ff4442d3046b1df9e8262612f5f911f27a7fe",
+  "approvalRelayInputId": "07fd04ec-ec6f-4745-9dfc-1496fd1d6700",
+  "note": "Original chronological footage, wait retained; no replay or fabricated approval. Visual source checks: menu at1825s, accepted at2196s. User decision is chat-mediated; still frames alone do not attest consent."
+}

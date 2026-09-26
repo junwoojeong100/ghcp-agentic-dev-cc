@@ -1,0 +1,238 @@
+{
+  "title": "사업 요청에서 검증까지 · 검토용 초안",
+  "scenes": [
+    {
+      "id": "opening",
+      "title": "사업 요청에서 검증까지\n검토용 데모",
+      "narration": "기존 견적 업무에 이익률 정책을 적용한 실제 개발 사례입니다. 테스트 결과와 검토에서 발견한 보완 사항을 함께 보여 드립니다.",
+      "duration": 14,
+      "kind": "card",
+      "approval": false,
+      "speed": 1
+    },
+    {
+      "id": "before-motion",
+      "title": "변경 전 · 기준 미달 견적도 모의 전송",
+      "narration": "변경 전에는 이 견적도 모의 전송됩니다.",
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/01-baseline-q1001-10-send.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "in": 0,
+      "out": 6.6,
+      "editLabel": "촬영 밖 제작 세션의 실제 앱"
+    },
+    {
+      "id": "before-detail",
+      "title": "할인 10% · 매출총이익률 11.11%",
+      "narration": "순매출 구백만 원에 예상 이익 백만 원입니다. 이익은 남지만, 회사가 정한 최소 십오 퍼센트 기준에는 미달합니다.",
+      "duration": 13.4,
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/02-baseline-q1001-10-sent.png",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 앱 캡처"
+    },
+    {
+      "id": "policy",
+      "title": "15% 미만 차단\n정확히 15%는 허용",
+      "narration": "정책은 단순합니다. 기준 미달 견적의 전송은 막고, 정상 견적은 그대로 처리합니다. 화면뿐 아니라 직접 호출한 서버에도 같은 기준을 적용합니다.",
+      "duration": 16,
+      "kind": "card",
+      "approval": false,
+      "speed": 1
+    },
+    {
+      "id": "analysis",
+      "title": "서버와 화면 조사를 병렬 위임",
+      "narration": "코파일럿이 서버와 화면 조사를 두 역할에 나눴습니다. 실제 호출과 보고서 반환이 기록돼 있습니다. 화면은 당시 정지 캡처입니다.",
+      "duration": 16,
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d08e1e04-27e9-47d8-aaae-820c4c66305d.png",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "촬영 당시 정지 캡처"
+    },
+    {
+      "id": "approval",
+      "title": "구현 계획 승인 · 당시 정지 캡처",
+      "narration": "사용자가 대화에서 구현 범위를 승인하고 제작자가 전달했습니다. 승인 연속 영상은 저장 오류로 확보하지 못했습니다. 이 화면은 정지 캡처입니다.",
+      "duration": 16,
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/ef542e73-13a8-47a5-9dc6-9716af1926fd.png",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "촬영 당시 정지 캡처"
+    },
+    {
+      "id": "process",
+      "title": "구현 범위는 제한\n검증 결과는 보존",
+      "narration": "기존 테스트와 의존성은 유지했습니다. 이후 로컬 검증은 일괄 승인 범위에서 진행했습니다. 운영 적용이나 외부 발송은 승인하지 않았습니다.",
+      "duration": 14,
+      "kind": "card",
+      "approval": false,
+      "speed": 1
+    },
+    {
+      "id": "implementation",
+      "title": "표시 비율 대신 실제 금액으로 판정",
+      "narration": "서버는 이익과 순매출을 정수 금액으로 비교합니다. 반올림된 화면 숫자만으로 전송 가능 여부를 결정하지 않습니다.",
+      "duration": 14,
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a6e96364-ca54-4650-a343-853072be68fd.png",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "촬영 당시 정지 캡처"
+    },
+    {
+      "id": "red-green",
+      "title": "변경 전 2건 실패\n변경 후 56건 통과",
+      "narration": "새 회귀 테스트는 변경 전 두 사례에서 실제로 실패했습니다. 예상한 차단 대신 성공 응답이 나왔기 때문입니다. 변경 후에는 기존 테스트를 포함한 쉰여섯 건이 통과했습니다.",
+      "duration": 18,
+      "kind": "card",
+      "approval": false,
+      "speed": 1
+    },
+    {
+      "id": "tests",
+      "title": "테스트 통과가 검토를 대신하지 않습니다",
+      "narration": "실제 실행 로그와 종료 코드를 보존했습니다. 테스트가 모두 통과해도, 빠진 예외 경로는 있을 수 있습니다. 그래서 별도 검토를 진행했습니다.",
+      "duration": 14,
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a278fe75-a803-4da6-9eff-f397946ba9d4.png",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "촬영 당시 정지 캡처"
+    },
+    {
+      "id": "blocked-motion",
+      "title": "변경 후 · 같은 입력의 전송 차단",
+      "narration": "같은 견적은 이제 전송할 수 없습니다.",
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/02-final-q1001-10-blocked.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "in": 0,
+      "out": 5.2,
+      "editLabel": "촬영 밖 제작 세션의 실제 앱"
+    },
+    {
+      "id": "blocked-detail",
+      "title": "화면에는 이유 · 직접 API에는 HTTP 422",
+      "narration": "차단 이유가 화면에 표시됩니다. 버튼을 거치지 않고 서버를 직접 호출해도 이익률 미달 응답을 반환하는 것을 확인했습니다.",
+      "duration": 14.8,
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/03-final-q1001-10-blocked.png",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 앱 캡처"
+    },
+    {
+      "id": "allowed-motion",
+      "title": "정상 견적 · 모의 전송 유지",
+      "narration": "할인을 없애면 기준을 충족하고 정상적으로 모의 전송됩니다.",
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/03-final-q1001-0-allowed-sent.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "in": 0,
+      "out": 7.4,
+      "editLabel": "촬영 밖 제작 세션의 실제 앱"
+    },
+    {
+      "id": "allowed-detail",
+      "title": "20% 견적의 정상 업무는 유지",
+      "narration": "차단만 추가한 것이 아닙니다. 기준을 충족한 견적의 정상 흐름도 확인했습니다. 이 사례의 전송은 외부 발송 없는 모의 처리입니다.",
+      "duration": 12.6,
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1001-0-sent.png",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 앱 캡처"
+    },
+    {
+      "id": "exact-boundary",
+      "title": "정확히 15% · 허용",
+      "narration": "",
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/04-final-q1500-exact15-allowed.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "in": 0,
+      "out": 4.2,
+      "editLabel": "촬영 밖 제작 세션의 실제 앱"
+    },
+    {
+      "id": "rounded-boundary",
+      "title": "표시는 15.0% · 실제 기준 미달이면 차단",
+      "narration": "",
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1499-rounded15-blocked.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "in": 0,
+      "out": 4.2,
+      "editLabel": "촬영 밖 제작 세션의 실제 앱"
+    },
+    {
+      "id": "boundary-detail",
+      "title": "원가 1원 차이도 판정에 반영",
+      "narration": "두 견적 모두 화면에는 십오 퍼센트로 보일 수 있습니다. 하지만 원가가 경계보다 일 원 높으면 실제 이익률은 기준 미달입니다. 서버가 이 차이를 구분합니다.",
+      "duration": 15.6,
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1499-rounded15-blocked.png",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 앱 캡처"
+    },
+    {
+      "id": "async-check",
+      "title": "입력 변경과 늦은 응답도 검사",
+      "narration": "응답이 늦게 도착해도 이전 허용 상태가 최신 차단 상태를 덮지 않는지 검사했습니다. 잘못된 할인과 작은 화면도 확인했습니다.",
+      "duration": 14,
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/12-final-stale-preview-ignored.png",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 앱 캡처"
+    },
+    {
+      "id": "review",
+      "title": "읽기 전용 검토 · 보완 사항 발견",
+      "narration": "검토 역할이 코드와 실행 결과를 대조했습니다. 이 과정에서 테스트가 다루지 않은 응답 본문 오류 경로 한 건이 발견됐습니다.",
+      "duration": 16,
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d0c289d3-789a-40d3-945f-0cfde2216913.png",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "촬영 당시 정지 캡처"
+    },
+    {
+      "id": "open-finding",
+      "title": "보완 필요 1건\n운영 적용 보류",
+      "narration": "서버가 차단 응답을 보냈어도 본문을 읽지 못하면, 화면의 전송 버튼이 다시 켜질 수 있습니다. 서버의 이익률 차단을 우회하는 문제는 아닙니다. 코드 검토에서 발견했으며 실행 재현과 수정은 남아 있습니다.",
+      "duration": 25,
+      "kind": "card",
+      "approval": false,
+      "speed": 1
+    },
+    {
+      "id": "capture-limit",
+      "title": "촬영 종료 오류\n승인 연속 영상 미확보",
+      "narration": "코파일럿은 정상 종료했지만 녹화 파일 저장이 실패했습니다. 이 초안은 보존된 실제 정지 캡처와 별도로 녹화한 앱 동영상을 사용합니다. 완전한 촬영본은 아닙니다.",
+      "duration": 18,
+      "kind": "card",
+      "approval": false,
+      "speed": 1
+    },
+    {
+      "id": "pilot",
+      "title": "업무 하나로 파일럿\n효과는 측정 후 판단",
+      "narration": "다음 단계는 보완 사항을 수정하고 다시 검증하는 것입니다. 파일럿에서는 업무 하나와 책임자를 정하고, 리드타임과 검토 시간, 재작업을 비교하세요. 이번 데모로 생산성이나 비용 절감 효과를 보장하지 않습니다.",
+      "duration": 21,
+      "kind": "card",
+      "approval": false,
+      "speed": 1
+    }
+  ]
+}

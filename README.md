@@ -2,15 +2,48 @@
 
 CXO 대상 한국어 발표 자료입니다. 작은 견적 기능 하나를 실제 Copilot CLI로 변경한 과정과 검증 근거를 담았습니다.
 
-## 바로 발표하기
+## 최신 제작본 · 실제 재촬영 반영
+
+**[5분 영상](deliverables/ghcp-live/final/ghcp-cxo-demo-ko.mp4)과 [16장 PPT](deliverables/ghcp-live/final/ghcp-agentic-development.pptx)를 사용하세요.** Copilot 개요·사용 서피스·IDE와 CLI의 모드·에이전트 기능 4장을 서두에 넣고, 새 실제 촬영 결과를 반영했습니다. 소개의 공식 출처와 확인일(2026-09-26)은 발표자 노트에 있습니다.
+
+| 파일 | 내용 |
+| --- | --- |
+| [영상 MP4](deliverables/ghcp-live/final/ghcp-cxo-demo-ko.mp4) | 5분 · 1080p · 한국어 합성 내레이션·화면 자막 |
+| [편집 가능한 PPT](deliverables/ghcp-live/final/ghcp-agentic-development.pptx) | 소개 4장 + 실제 데모 12장 · 발표자 노트 |
+| [PDF](deliverables/ghcp-live/final/ghcp-agentic-development.pdf) | 16페이지 열람본 |
+| [SRT 자막](deliverables/ghcp-live/final/ghcp-cxo-demo-ko.srt) | 39개 자막 · 본편 자막과 중복 표시하지 않기 |
+| [계획 승인 보충 영상](deliverables/ghcp-live/final/ghcp-plan-approval-continuous.mp4) | 6분 20초 · 대기 포함 연속·정속 · 음성 없음 |
+| [발표·검수 안내](deliverables/ghcp-live/final/READ-ME-FIRST.txt) | 파일 사용법·검증 범위·한계·재생성 |
+
+PPT와 본편 MP4는 같은 폴더에 두세요. **PPT·PDF는 최신 한 쌍만 남겼습니다.** 이전 영상과 원본 근거는 보존했습니다.
+
+- 새 Copilot 실행: 변경 전 회귀 **17건 실패** → 변경 후 신규 33건 통과, 기존 22건을 포함한 **전체 55건 통과**. 실패·건너뜀 0.
+- Chromium: 6개 화면 폭의 **36개 상태** 확인. 촬영 후 별도 실제 브라우저 검사에서 422 JSON 오류·본문 단절·타임아웃의 잠금 유지와 복구도 확인했습니다.
+- 읽기 전용 검토: 확인 범위 내 확정 결함 0건. 검토자의 TAP 미열람 한계는 기록에 남겼으며 실행 수치는 같은 세션의 원시 도구 반환에서 별도 확인했습니다.
+- 녹화기 저장 오류를 수정하고 시험 44건을 통과했습니다. 새 실제 녹화는 정상 저장됐으며 원본·본편·보충 영상 전체 디코딩을 확인했습니다.
+- 본편의 권한 장면은 **사전 일괄 승인 범위에서 제작자가 대행**한 구간입니다. 계획 승인 전체는 보충 영상에 보존했습니다. 정지 캡처·별도 앱 녹화·설명 카드는 구분해 표시합니다.
+- 파일 해시·자막 타이밍·PPT/PDF·음소거 재생·대표 프레임 검사는 완료했습니다. **사람의 전체 시청·청취와 실제 PowerPoint 링크 재생은 미실시**이며 상영 전 확인이 필요합니다.
+
+[최종 검사](production/ghcp-live/retake-20260926/final-retake-verification.json) · [사실·출처](production/ghcp-live/retake-20260926/facts.json) · [최종 코드](demo/ghcp-live/final/) · [촬영 상태](production/ghcp-live/retake-20260926/run.json) · [촬영 절차](docs/ghcp-live-recording.md)
+
+합성 견적·모의 전송이며 운영 채택·배포는 수행하지 않았습니다. 제작 당시에는 로컬 전달만 했으며, 이후 사용자 요청으로 비공개 GitHub 저장소에 커밋·푸시하는 범위를 승인받았습니다. 로컬 경로가 보이는 터미널 화면이 있으므로 공개 공유 전 개인정보 검수를 하세요. 영상 길이는 개발 소요시간이나 ROI 지표가 아닙니다.
+
+**저장소 포함 범위:** 소스·테스트·최종 산출물·편집 입력·검사 요약을 포함합니다. 제어 토큰, 전체 원본 녹화와 Copilot 원본 세션/도구 로그(`raw/`, `native-session/`), 임시 브라우저 파일은 로컬에만 보존합니다. `facts.json`·`timeline.json`의 원본 참조와 해시는 변경하지 않았으므로, 일부 참조는 클론에 존재하지 않습니다. 최종 파일 열람과 앱 테스트는 가능하지만 원본 기반 재생성·전체 근거 검증은 해당 로컬 원본이 필요합니다.
+
+## 이전 작업 기록
+
+첫 headless 촬영은 저장 실패와 UI 예외 경로 1건으로 초안을 남겼습니다. [당시 기록](production/ghcp-live/run.json)과 [별도 수정본 검증](evidence/ghcp-live/repair-verification/resolution.json)은 역사적 자료입니다. 별도 수정본의 62개 테스트와 새 재촬영의 55개 테스트는 서로 다른 실행이며 합산하지 않습니다.
+
+아래는 **이전 제작본**의 안내와 검증 결과입니다. 최신 파일은 위 표를 사용하고, 과거 수치·근거와 섞지 않습니다.
+
+## 이전 제작본 발표하기
 
 **[5분 영상 MP4](deliverables/ghcp-cxo-demo-ko.mp4)를 다운로드해 전체 화면으로 재생하세요.** 한국어 합성 내레이션과 화면 자막이 포함돼 있어 인터넷 없이 상영할 수 있습니다. GitHub 미리보기가 지원되지 않으면 파일 페이지의 다운로드 버튼을 사용하세요.
 
 | 파일 | 용도 |
 | --- | --- |
 | [발표 영상](deliverables/ghcp-cxo-demo-ko.mp4) | 정확히 5분 · 1080p · H.264/AAC |
-| [편집 가능한 PPT](deliverables/ghcp-agentic-development.pptx) | 한국어 슬라이드 12장·발표자 노트 |
-| [슬라이드 PDF](deliverables/ghcp-agentic-development.pdf) | 글꼴 차이의 영향을 줄인 열람본 |
+| 이전 PPT·PDF | 사용자 요청으로 삭제. 위의 최신 16장 자료만 유지 |
 | [SRT 자막](deliverables/ghcp-cxo-demo-ko.srt) | 별도 자막 파일 |
 | [발표자 가이드](docs/presenter-guide.md) | 준비·화면별 멘트·라이브 시연·장애 대응 |
 | [최종 검사와 한계](docs/production-status.md) | 실제 수행한 검사와 남은 확인 사항 |

@@ -1,0 +1,162 @@
+{
+  "voice": "Yuna",
+  "rate": 185,
+  "measurements": [
+    {
+      "scene": "opening",
+      "needed": 9.408,
+      "available": 14,
+      "fits": true,
+      "minimumFrames": 283
+    },
+    {
+      "scene": "before-motion",
+      "needed": 3.438,
+      "available": 6.6,
+      "fits": true,
+      "minimumFrames": 104
+    },
+    {
+      "scene": "before-detail",
+      "needed": 8.751,
+      "available": 13.4,
+      "fits": true,
+      "minimumFrames": 263
+    },
+    {
+      "scene": "policy",
+      "needed": 11.688,
+      "available": 16,
+      "fits": true,
+      "minimumFrames": 351
+    },
+    {
+      "scene": "analysis",
+      "needed": 10.143,
+      "available": 16,
+      "fits": true,
+      "minimumFrames": 305
+    },
+    {
+      "scene": "approval",
+      "needed": 11.437,
+      "available": 16,
+      "fits": true,
+      "minimumFrames": 344
+    },
+    {
+      "scene": "process",
+      "needed": 10.343,
+      "available": 14,
+      "fits": true,
+      "minimumFrames": 311
+    },
+    {
+      "scene": "implementation",
+      "needed": 8.759,
+      "available": 14,
+      "fits": true,
+      "minimumFrames": 263
+    },
+    {
+      "scene": "red-green",
+      "needed": 12.813,
+      "available": 18,
+      "fits": true,
+      "minimumFrames": 385
+    },
+    {
+      "scene": "tests",
+      "needed": 10.77,
+      "available": 14,
+      "fits": true,
+      "minimumFrames": 324
+    },
+    {
+      "scene": "blocked-motion",
+      "needed": 3.241,
+      "available": 5.2,
+      "fits": true,
+      "minimumFrames": 98
+    },
+    {
+      "scene": "blocked-detail",
+      "needed": 9.018,
+      "available": 14.8,
+      "fits": true,
+      "minimumFrames": 271
+    },
+    {
+      "scene": "allowed-motion",
+      "needed": 5.101,
+      "available": 7.4,
+      "fits": true,
+      "minimumFrames": 154
+    },
+    {
+      "scene": "allowed-detail",
+      "needed": 9.893,
+      "available": 12.6,
+      "fits": true,
+      "minimumFrames": 297
+    },
+    {
+      "scene": "exact-boundary",
+      "needed": 0,
+      "available": 4.2,
+      "fits": true,
+      "minimumFrames": 0
+    },
+    {
+      "scene": "rounded-boundary",
+      "needed": 0,
+      "available": 4.2,
+      "fits": true,
+      "minimumFrames": 0
+    },
+    {
+      "scene": "boundary-detail",
+      "needed": 11.385,
+      "available": 15.6,
+      "fits": true,
+      "minimumFrames": 342
+    },
+    {
+      "scene": "async-check",
+      "needed": 9.416,
+      "available": 14,
+      "fits": true,
+      "minimumFrames": 283
+    },
+    {
+      "scene": "review",
+      "needed": 8.957,
+      "available": 16,
+      "fits": true,
+      "minimumFrames": 269
+    },
+    {
+      "scene": "open-finding",
+      "needed": 15.221,
+      "available": 25,
+      "fits": true,
+      "minimumFrames": 457
+    },
+    {
+      "scene": "capture-limit",
+      "needed": 12.621,
+      "available": 18,
+      "fits": true,
+      "minimumFrames": 379
+    },
+    {
+      "scene": "pilot",
+      "needed": 15.599,
+      "available": 21,
+      "fits": true,
+      "minimumFrames": 468
+    }
+  ],
+  "allFit": true,
+  "humanListeningPerformed": false
+}

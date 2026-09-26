@@ -43,3 +43,23 @@ __pycache__/
 
 # Local packaging/QA scratch space
 /production/release-work/
+
+# New live-demo originals and machine-specific preparation state stay local.
+/evidence/ghcp-live/raw/
+/production/ghcp-live/run.json
+/production/ghcp-live/audio/
+/production/ghcp-live/frames/
+/production/ghcp-live/segments/
+/production/ghcp-live/clips/raw/
+
+# Apply the same local-only boundary to retakes and nested capture folders.
+/evidence/ghcp-live/**/raw/
+/evidence/ghcp-live/**/native-session/
+/evidence/ghcp-live/**/browser-temp/
+/evidence/ghcp-live/**/raw-video/
+/evidence/ghcp-live/**/control.json
+/production/ghcp-live/**/audio/
+/production/ghcp-live/**/frames/
+/production/ghcp-live/**/segments/
+/production/ghcp-live/**/inspection/
+/production/ghcp-live/**/source-inspection/

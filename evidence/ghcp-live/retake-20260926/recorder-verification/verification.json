@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "pythonPassed": 23,
+  "nodePassed": 21,
+  "failed": 0,
+  "scope": "Recorder fixtures only; not actual Copilot footage",
+  "fixtureVideoHashAndFullDecode": "passed",
+  "fixtureOriginalAndCopyPreserved": true,
+  "codeHashes": {
+    "scripts/record-ghcp-live.mjs": "b71c500dc9f86115595a434a72d2c798cdf6e6211411ea8ade81b2ca1be64c8d",
+    "test/recorder-failures.test.mjs": "0adfec168d91504551aa5e283118ecbe1467877350683544af764d69510603cd"
+  }
+}

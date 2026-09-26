@@ -1,0 +1,44 @@
+{
+  "kind": "preparation-browser-check",
+  "executor": "production-session-playwright",
+  "observedAt": "2026-09-26T02:31:52Z",
+  "phase": "before-implementation",
+  "sourceHashes": "baseline-hashes.json",
+  "ui": {
+    "quoteId": "Q-1001",
+    "discountPercent": "10",
+    "netAmount": "9,000,000원",
+    "profitAmount": "1,000,000원",
+    "displayedMargin": "11.11%",
+    "sendButtonEnabled": true,
+    "action": "Clicked the actual simulated-send button",
+    "feedback": "모의 전송 완료 — 외부 발송 없음"
+  },
+  "request": {
+    "method": "POST",
+    "path": "/api/send",
+    "body": { "quoteId": "Q-1001", "discountBps": 1000 }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "sent": true,
+      "simulation": true,
+      "message": "모의 전송 완료 — 외부 발송 없음",
+      "quote": {
+        "quoteId": "Q-1001",
+        "title": "업무 시스템 구축",
+        "customer": "가상 고객 A",
+        "listPriceWon": 10000000,
+        "costWon": 8000000,
+        "discountBps": 1000,
+        "netWon": 9000000,
+        "profitWon": 1000000,
+        "marginPercent": 11.11111111111111
+      }
+    }
+  },
+  "browserConsoleErrors": 0,
+  "screenshot": "production/ghcp-live/screenshots/baseline-preflight.png",
+  "note": "Actual browser interaction and captured request/response during production preparation. Not a filmed Copilot execution, implementation approval, or final validation. No external quotation was sent."
+}

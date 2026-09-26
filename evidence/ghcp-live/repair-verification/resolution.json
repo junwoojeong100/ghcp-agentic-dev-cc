@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "status": "fixed-and-verified-in-separate-copy",
+  "scope": "HTTP 422 response body failures must invalidate the previous allowed preview",
+  "executor": "Claude production session outside filmed Copilot",
+  "workspace": "demo/ghcp-live/repaired",
+  "originalPreserved": "demo/ghcp-live/run",
+  "changedFiles": ["public/app.js", "test/margin.test.mjs"],
+  "fix": "Save the HTTP status immediately after fetch resolves and preserve it when body-reading failures are converted to user-facing errors.",
+  "regression": {
+    "before": {"passed": 3, "failed": 3, "exitCode": 1},
+    "after": {"passed": 62, "failed": 0, "skipped": 0, "exitCode": 0},
+    "casesAdded": "Malformed JSON, disconnected body and timeout, each for current and stale send responses"
+  },
+  "browser": {
+    "status": "passed",
+    "scope": "Real Chromium with HTTP 422 malformed, disconnected and stalled bodies injected by a local proxy; lock, no resend, blocked preview, allowed recovery, normal simulated send and direct server policy checked",
+    "screenshotInspected": "evidence/ghcp-live/repair-verification/browser/timeout-locked.png"
+  },
+  "evidence": [
+    "evidence/ghcp-live/repair-verification/red-record.json",
+    "evidence/ghcp-live/repair-verification/red-output.txt",
+    "evidence/ghcp-live/repair-verification/green-record.json",
+    "evidence/ghcp-live/repair-verification/green-output.txt",
+    "evidence/ghcp-live/repair-verification/browser/report.json"
+  ],
+  "finalAdoption": "not-approved",
+  "note": "This resolves the recorded defect in the separate repaired copy only. It does not modify the old filmed code, rewrite the historical review, establish a newly filmed Copilot repair, or complete the missing approval footage."
+}

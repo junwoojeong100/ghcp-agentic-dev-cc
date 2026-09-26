@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light">
+  <title>견적 워크스페이스</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="masthead">
+      <span class="workspace-name">견적 워크스페이스</span>
+      <span class="demo-badge">합성 데이터 · 모의 전송</span>
+    </header>
+
+    <main>
+      <section class="introduction" aria-labelledby="page-title">
+        <p class="editorial-label" lang="en">Quotation desk</p>
+        <h1 id="page-title">이 견적, 보내도 될까요?</h1>
+        <p class="introduction-copy">할인율을 조정하고, 최종 금액과 예상 수익을 확인하세요.</p>
+      </section>
+
+      <form id="quote-form" class="quote-sheet" novalidate>
+        <section class="quote-details" aria-labelledby="details-heading">
+          <div class="section-heading">
+            <h2 id="details-heading">견적 작성</h2>
+            <span class="utility-label">KRW · 원</span>
+          </div>
+
+          <div class="field">
+            <label for="quote-id">견적 선택</label>
+            <select id="quote-id" name="quoteId" disabled>
+              <option value="">견적을 불러오는 중입니다</option>
+            </select>
+          </div>
+
+          <div class="quote-identity">
+            <span id="quote-reference" class="quote-reference">—</span>
+            <h3 id="quote-title">견적 정보를 불러오고 있습니다</h3>
+            <p id="quote-customer">모든 고객과 금액은 데모용으로 만든 데이터입니다.</p>
+          </div>
+
+          <dl class="source-amounts">
+            <div>
+              <dt>기준 견적 금액</dt>
+              <dd id="list-amount">—</dd>
+            </div>
+            <div>
+              <dt>예상 원가</dt>
+              <dd id="cost-amount">—</dd>
+            </div>
+          </dl>
+
+          <div class="discount-field">
+            <div class="discount-description">
+              <label for="discount">할인율</label>
+              <p id="discount-hint">0.01% 단위로 조정할 수 있어요.</p>
+            </div>
+            <div class="percentage-input">
+              <input id="discount" name="discount" type="number" min="0" max="100" step="0.01" value="10" inputmode="decimal" required aria-describedby="discount-hint feedback" disabled>
+              <span aria-hidden="true">%</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="quote-summary" aria-labelledby="summary-heading" aria-busy="true" id="quote-summary">
+          <div class="section-heading">
+            <h2 id="summary-heading">견적 미리보기</h2>
+            <span id="preview-label" class="utility-label">계산 중</span>
+          </div>
+
+          <dl class="calculated-amounts">
+            <div class="net-row">
+              <dt>최종 견적 금액</dt>
+              <dd id="net-amount">—</dd>
+            </div>
+            <div>
+              <dt>예상 수익</dt>
+              <dd id="profit-amount">—</dd>
+            </div>
+            <div>
+              <dt>매출총이익률</dt>
+              <dd id="margin-value">—</dd>
+            </div>
+          </dl>
+          <p class="calculation-note">예상 수익 = 최종 견적 금액 − 원가<br>매출총이익률 = 예상 수익 ÷ 최종 견적 금액 × 100<br>표시 비율은 반올림되며, 실제 금액으로 전송 가능 여부를 판정합니다.</p>
+
+          <div class="send-area">
+            <p id="quote-status" class="quote-status">견적 정보를 불러오고 있습니다.</p>
+            <button id="send-quote" class="primary-button" type="submit" aria-describedby="quote-status feedback" disabled>
+              <span>견적 보내기</span><span aria-hidden="true">→</span>
+            </button>
+            <p class="simulation-note">모의 전송만 실행하며, 외부로 발송하지 않습니다.</p>
+            <div id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true"></div>
+            <button id="retry-load" class="retry-button" type="button" hidden>견적 다시 불러오기</button>
+          </div>
+        </section>
+      </form>
+
+      <footer class="page-footer">
+        <p>데모 전용 화면 · 실제 고객 정보 및 실제 발송 기능 없음</p>
+        <p>금액은 원 단위로 반올림합니다.</p>
+      </footer>
+      <noscript><p class="noscript-note">이 데모를 사용하려면 브라우저에서 JavaScript를 켜 주세요.</p></noscript>
+    </main>
+  </div>
+</body>
+</html>

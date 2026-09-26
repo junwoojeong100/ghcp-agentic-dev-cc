@@ -1,0 +1,8 @@
+{
+  "sha256": {
+    "cxo-review.agent.md": "e6df03c39fc5706bf1d23f3d09849a332919b51aa568e501c871fa3de9c8d4f7",
+    "cxo-server-analysis.agent.md": "edc89480f22fda9a8a4ac48984c4d2621b41cde1cb5b5457589f53bac80eda50",
+    "cxo-ui-analysis.agent.md": "e1501e071e17966ded130889d860e8cdf1b79d5cff1ddfbf43626b7cefcc4190"
+  },
+  "note": "Prepared read/search-only custom roles. Actual CLI loading and delegation remain unverified."
+}

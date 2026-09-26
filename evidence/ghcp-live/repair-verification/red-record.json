@@ -1,0 +1,13 @@
+{
+  "executor": "Claude production session; not filmed Copilot",
+  "command": [
+    "node",
+    "--test",
+    "--test-name-pattern=422 response body",
+    "test/margin.test.mjs"
+  ],
+  "exitCode": 1,
+  "at": "2026-09-26T10:02:40.009729+00:00",
+  "appSha256": "519ce298b4c5974c3d1d6877550c72a2db3f34abdee518a27b95202eae1822ba",
+  "testSha256": "f029bc782d4d3327bceeefc3c601516c3980b3af8d4bc0397ab319c50b5e114b"
+}

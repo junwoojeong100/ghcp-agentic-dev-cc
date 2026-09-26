@@ -1,0 +1,149 @@
+
+> test:recorder
+> python3 -B -m unittest discover -s test -p 'test_*pty*.py' && node --test test/headless-recording.test.mjs test/terminal-rendering.test.mjs test/recorder-failures.test.mjs
+
+.......................
+----------------------------------------------------------------------
+Ran 23 tests in 3.505s
+
+OK
+TAP version 13
+# Fixture capture retained for visual QA: /var/folders/f8/0kmxhvhd2sv0r29schsswphm0000gn/T/headless-fixture-9QpzpZ/video/capture.webm
+# Subtest: real PTY fixture records Korean, rejects stale/duplicate input and finalizes playable video
+ok 1 - real PTY fixture records Korean, rejects stale/duplicate input and finalizes playable video
+  ---
+  duration_ms: 3385.542875
+  type: 'test'
+  ...
+# Subtest: loopback read capability cannot control CLI; bad origins and stream reconnect fail closed
+ok 2 - loopback read capability cannot control CLI; bad origins and stream reconnect fail closed
+  ---
+  duration_ms: 1023.985833
+  type: 'test'
+  ...
+# Subtest: stopping a waiting CLI closes queued input immediately and remains incomplete
+ok 3 - stopping a waiting CLI closes queued input immediately and remains incomplete
+  ---
+  duration_ms: 729.801917
+  type: 'test'
+  ...
+# Subtest: renderer failure automatically closes PTY, browser encoder and server
+ok 4 - renderer failure automatically closes PTY, browser encoder and server
+  ---
+  duration_ms: 803.610791
+  type: 'test'
+  ...
+# Subtest: failed evidence append sends no input and still writes an incomplete manifest
+ok 5 - failed evidence append sends no input and still writes an incomplete manifest
+  ---
+  duration_ms: 850.028417
+  type: 'test'
+  ...
+# Subtest: uncertain input acknowledgement closes the whole take, not only its snapshot
+ok 6 - uncertain input acknowledgement closes the whole take, not only its snapshot
+  ---
+  duration_ms: 1251.619458
+  type: 'test'
+  ...
+# Subtest: bridge startup error finishes without starting a browser or CLI
+ok 7 - bridge startup error finishes without starting a browser or CLI
+  ---
+  duration_ms: 57.131958
+  type: 'test'
+  ...
+# Subtest: multiline text requires the actual terminal bracketed paste mode
+ok 8 - multiline text requires the actual terminal bracketed paste mode
+  ---
+  duration_ms: 1060.95975
+  type: 'test'
+  ...
+# Subtest: recorder command exits nonzero for an incomplete fixture recording
+ok 9 - recorder command exits nonzero for an incomplete fixture recording
+  ---
+  duration_ms: 1652.312292
+  type: 'test'
+  ...
+# Delayed-save successful fixture manifest: /var/folders/f8/0kmxhvhd2sv0r29schsswphm0000gn/T/recorder-failure-fixture-PZ0pMp/capture.json
+# Subtest: video save beyond the old eight-second deadline finishes before browser teardown
+ok 10 - video save beyond the old eight-second deadline finishes before browser teardown
+  ---
+  duration_ms: 10297.254958
+  type: 'test'
+  ...
+# Subtest: video save rejection preserves source and cannot publish a successful capture
+ok 11 - video save rejection preserves source and cannot publish a successful capture
+  ---
+  duration_ms: 1146.135916
+  type: 'test'
+  ...
+# Subtest: video save timeout preserves source and cannot publish a successful capture
+ok 12 - video save timeout preserves source and cannot publish a successful capture
+  ---
+  duration_ms: 1321.370709
+  type: 'test'
+  ...
+# Subtest: video save corrupt copy preserves source and cannot publish a successful capture
+ok 13 - video save corrupt copy preserves source and cannot publish a successful capture
+  ---
+  duration_ms: 1218.151292
+  type: 'test'
+  ...
+# Subtest: encoder finalization rejection closes resources without false success
+ok 14 - encoder finalization rejection closes resources without false success
+  ---
+  duration_ms: 6321.742708
+  type: 'test'
+  ...
+# Subtest: encoder finalization late rejection after timeout closes resources without false success
+ok 15 - encoder finalization late rejection after timeout closes resources without false success
+  ---
+  duration_ms: 6344.2695
+  type: 'test'
+  ...
+# Subtest: video fault hooks remain unavailable to actual recorder mode
+ok 16 - video fault hooks remain unavailable to actual recorder mode
+  ---
+  duration_ms: 2.616958
+  type: 'test'
+  ...
+# Subtest: renderer failure automatically finalizes and closes input
+ok 17 - renderer failure automatically finalizes and closes input
+  ---
+  duration_ms: 726.049167
+  type: 'test'
+  ...
+# Subtest: lost input acknowledgement prevents a second attempt and finalizes
+ok 18 - lost input acknowledgement prevents a second attempt and finalizes
+  ---
+  duration_ms: 961.251083
+  type: 'test'
+  ...
+# Subtest: evidence failure blocks the pending input and still writes an incomplete manifest
+ok 19 - evidence failure blocks the pending input and still writes an incomplete manifest
+  ---
+  duration_ms: 903.446709
+  type: 'test'
+  ...
+# Subtest: DOM keyboard and paste events cannot send fixture acceptance
+ok 20 - DOM keyboard and paste events cannot send fixture acceptance
+  ---
+  duration_ms: 1082.696083
+  type: 'test'
+  ...
+# Subtest: startup device replies and synchronized frames remain separate from operator input
+ok 21 - startup device replies and synchronized frames remain separate from operator input
+  ---
+  duration_ms: 3119.411958
+  type: 'test'
+  ...
+1..21
+# tests 21
+# suites 0
+# pass 21
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 32387.45575
+
+[exited with code 0]

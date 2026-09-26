@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 1,
+  "title": "사업 요청에서 검증까지 · 검토용 초안",
+  "builtAt": "2026-09-26T09:51:58.041015+00:00",
+  "facts": "production/ghcp-live/facts.json",
+  "factsSha256": "8cc03969750cc04f594a495f620cb4269827b8f65d178fdbdd334fc81be4d4dc",
+  "editList": "production/ghcp-live/edit-list.json",
+  "editListSha256": "bb3bc5c9410d737a32c65f0f5d62fc5c4a9207092df59c3211ec5e7875b5933c",
+  "duration": 300.0,
+  "targetSeconds": 300,
+  "targetDeltaSeconds": 0.0,
+  "width": 1920,
+  "height": 1080,
+  "fps": 30,
+  "audio": {
+    "voice": "Yuna",
+    "rate": 185,
+    "synthetic": true,
+    "originalSourceAudioIncluded": false
+  },
+  "limitations": [
+    "보완 필요 1건 · 운영 적용 보류. 422 본문 읽기 실패 때 이전 허용 상태가 남는 코드상 결함이며 실행 재현은 미검증입니다. 서버 차단 우회는 아닙니다.",
+    "촬영 불완전: 승인 연속 영상 미확보. 검토용 초안은 실제 터미널 PNG와 별도 앱 영상만 사용하며 잘린 터미널 영상은 제외합니다.",
+    "실제 CLI를 브라우저 터미널로 중계했습니다. 사용자 선택은 대화에서 확인 후 전달했으며 직접 CLI 키 입력이 아닙니다.",
+    "합성 견적·모의 전송 사례입니다. 운영 채택·외부 발송·배포는 승인되지 않았습니다.",
+    "실제 캡처 정지 화면과 별도 앱 영상을 편집한 검토용 초안입니다. 승인 요청–응답–후속 실행의 연속 영상은 없습니다.",
+    "남은 로컬 검증은 사용자 일괄 승인 범위에서 대행했습니다. 각각의 도구 호출을 사용자가 직접 승인한 것으로 표현하지 않습니다.",
+    "첫 Playwright 검사는 URL 전역 객체 오류로 실패했습니다. 수정된 검증 호출은 통과했고 실패 기록도 보존했습니다.",
+    "브라우저 콘솔의 HTTP 400 한 건은 순매출 0원 입력을 검사하며 발생한 예상 응답입니다. 콘솔 오류가 전혀 없었다고 주장하지 않습니다.",
+    "앱 결과 화면은 촬영 밖 제작 세션에서 같은 코드로 별도 녹화했습니다. Copilot 자체 화면 녹화와 구분됩니다.",
+    "한국어 내레이션은 합성 음성입니다. 사람의 청취 검수와 PowerPoint에서 실제 링크 재생은 미검증입니다.",
+    "시간·비용·생산성 효과는 측정하지 않았습니다. 영상 길이는 개발 소요시간이 아닙니다."
+  ],
+  "production": {
+    "status": "review-draft",
+    "captureComplete": false,
+    "evidence": [
+      "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json"
+    ]
+  },
+  "requirementsSatisfied": false,
+  "finalAdoption": "not-approved",
+  "provenanceLimits": "Producer-attested execution/consent and app authenticity; original snapshot metadata, capture or failure evidence and file hashes checked.",
+  "sourceEvidence": [
+    {
+      "path": "evidence/ghcp-live/baseline-test-record.json",
+      "sha256": "d2f12beeac83bc4bf7bf771e3cbce62976954781354a398b29fea4a5c7bf5135"
+    },
+    {
+      "path": "evidence/ghcp-live/native-session/browser_run_code_unsafe-756cc3ef-8eaf-4571-88f8-63d087c90da6.json",
+      "sha256": "c1692ee661df62d2739c6adde663346a573d3fa54e8df9ec7d879bb2181bd3e3"
+    },
+    {
+      "path": "evidence/ghcp-live/native-session/browser_run_code_unsafe-f4757425-392d-4108-b3d2-6dfd8ae5a804.json",
+      "sha256": "a820e92317508f5e61b592d673a35b564df04a1c2cc610477b69e97e5fb6f7f7"
+    },
+    {
+      "path": "evidence/ghcp-live/native-session/cxo-review-607ee6f6-9e5d-4482-bfec-78ac26c9ce3e.json",
+      "sha256": "bf70a784a31fde35fc0784b3a31f870480ea474ceec2681227492c7809ce9c3f"
+    },
+    {
+      "path": "evidence/ghcp-live/native-session/cxo-server-analysis-5cb0c094-152d-48cf-b7e8-31f71c57328d.json",
+      "sha256": "64e4ae971d18648763ca628df383c1651a12921e53325f3b9914c88ccf234517"
+    },
+    {
+      "path": "evidence/ghcp-live/native-session/cxo-ui-analysis-b7fc27cc-5747-4239-a76d-567c1dc1a1a2.json",
+      "sha256": "7def933e3fa50a01fe77fee84576fe4748ed69ed4e09a5fa996f0fd40a36fd34"
+    },
+    {
+      "path": "evidence/ghcp-live/native-session/green-tests-da92ccd2-df7c-46f9-afb4-234eb92d4c25.json",
+      "sha256": "1d0aad799d7787817fe2e434aec9b24c73d1daac084507c140d95c1f8432b3dd"
+    },
+    {
+      "path": "evidence/ghcp-live/native-session/red-tests-19f6046c-e2e3-4677-9695-aeb3999cbf5b.json",
+      "sha256": "3bac1b564b834916b1114cdf095ba86ade9d3743262ff38925af6b7f65ea7379"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/01-baseline-q1001-10-send.webm",
+      "sha256": "dc52644392e4fbb8a00d77c2580217b036d1d4f22ca77ffdc7655f6ed6979f73"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/02-baseline-q1001-10-sent.png",
+      "sha256": "6235b0053421c44fa86fac05af53141391970496ba39d4fe9882556f91725ef2"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/02-final-q1001-10-blocked.webm",
+      "sha256": "9b6db70b133ff633eb7c3fee864e9e2536b2a93cd62fd75ec9dab30e7e77fc1e"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/03-final-q1001-0-allowed-sent.webm",
+      "sha256": "b70cfc811bce6cfc0f3773011d1fce757bfbe2641d3791dd8bb94d80c1190d9a"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/03-final-q1001-10-blocked.png",
+      "sha256": "fdc32dcf9ccce63af5525b9336ad27f927d74406785bbea92c2c6e350349ed10"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/04-final-q1500-exact15-allowed.webm",
+      "sha256": "9df6245cbd72f0fc5bf20a23062e6e6f418edc071a4b6c6c70e529c947d35922"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1001-0-sent.png",
+      "sha256": "03017aa8fcba28ac6d015ec316792dd4dbf2bbd4d8126aed0766712fd03b4d08"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1499-rounded15-blocked.png",
+      "sha256": "9abfeeeea76789d0019fa903f8afeff45a41ab9bebca17f1763ccfaa6a41bbb7"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1499-rounded15-blocked.webm",
+      "sha256": "364305acc8f0060bdb60a16f6f5aeab57c68dde6a3c4c134e7aec494979a7405"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/12-final-stale-preview-ignored.png",
+      "sha256": "ed87c3e6831333d66cc62959904e5c9db8d36d9c77211b66353cb59fb2cd5684"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/manifest.json",
+      "sha256": "6970f2bcc05cf854e70417740ef8017289e029ee199b0998d8d1f11201a38df7"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/implementation-record.json",
+      "sha256": "065edae9873bb1536fff05c738840085a2ee1310a6f3cad154498280fcf264bf"
+    },
+    {
+      "path": "evidence/ghcp-live/producer-verification/terminal-recovery/failure.json",
+      "sha256": "e7041d35fb78774cd3a69a6a88e956e33b900c6e0f9002e95ec3af49135c280a"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/implementation-approval.json",
+      "sha256": "4a3c23e4e3234af6d754cc3ffab3fad8f379ca5fceaec94e5d5e143a16dd3d1c"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a278fe75-a803-4da6-9eff-f397946ba9d4.json",
+      "sha256": "b5edc36ec160e4aef7b0b77031d440c45bf0765638f39e7084d020f34b122f7c"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a278fe75-a803-4da6-9eff-f397946ba9d4.png",
+      "sha256": "8263f81e61c453fbc845201b2f4a8a77d865478032df6084c414e7a407468ccc"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a6e96364-ca54-4650-a343-853072be68fd.json",
+      "sha256": "5457bed796dab6ebc338cccbbe48487227306ea3bb037d3fecc20f579cd9f83f"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a6e96364-ca54-4650-a343-853072be68fd.png",
+      "sha256": "7fdd55e64a3e9c20d94bbab2663444d13136623e87304e61dc9cc86af9721e50"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d08e1e04-27e9-47d8-aaae-820c4c66305d.json",
+      "sha256": "13f3ecbb394fb1e10008580b0af4445d82e804ad3c43917678a6fc439114deec"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d08e1e04-27e9-47d8-aaae-820c4c66305d.png",
+      "sha256": "3516906a936659ac66eb9afd703f3d6a550f5cce57db18836fcd244c91e2c107"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d0c289d3-789a-40d3-945f-0cfde2216913.json",
+      "sha256": "316fed7e1cdb1c075cb1e87748e690dd784627339b78397c189d79130a573dae"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d0c289d3-789a-40d3-945f-0cfde2216913.png",
+      "sha256": "a4f2e1f10dd300b655d91fd74529c53369dcc4284563264b01b1a87e3a47a5f4"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/ef542e73-13a8-47a5-9dc6-9716af1926fd.json",
+      "sha256": "93bb52c81419e05d814cd4e3a35e04537479b4787232dda2ad10bef8eb935031"
+    },
+    {
+      "path": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/ef542e73-13a8-47a5-9dc6-9716af1926fd.png",
+      "sha256": "9673f1573594f03676ffc5506b40cdb870026a1cbf73cd292379c88e66eaf9ca"
+    },
+    {
+      "path": "production/ghcp-live/edit-list.json",
+      "sha256": "bb3bc5c9410d737a32c65f0f5d62fc5c4a9207092df59c3211ec5e7875b5933c"
+    },
+    {
+      "path": "production/ghcp-live/facts.json",
+      "sha256": "8cc03969750cc04f594a495f620cb4269827b8f65d178fdbdd334fc81be4d4dc"
+    }
+  ],
+  "video": {
+    "path": "deliverables/ghcp-live/ghcp-cxo-demo-ko.mp4",
+    "sha256": "849af2e0edef12ed0e2338c9d6ef001cc473a5c7721663e1aa2737406a057d17"
+  },
+  "scenes": [
+    {
+      "id": "opening",
+      "title": "사업 요청에서 검증까지\n검토용 데모",
+      "narration": "기존 견적 업무에 이익률 정책을 적용한 실제 개발 사례입니다. 테스트 결과와 검토에서 발견한 보완 사항을 함께 보여 드립니다.",
+      "duration": 14.0,
+      "kind": "card",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "",
+      "source": null,
+      "displayedLabel": "설명 카드 · 녹화 화면 아님",
+      "frames": 420,
+      "start": 0.0,
+      "end": 14.0,
+      "index": 0,
+      "in": null,
+      "out": null,
+      "sourceSha256": null
+    },
+    {
+      "id": "before-motion",
+      "title": "변경 전 · 기준 미달 견적도 모의 전송",
+      "narration": "변경 전에는 이 견적도 모의 전송됩니다.",
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/01-baseline-q1001-10-send.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "in": 0,
+      "out": 6.6,
+      "editLabel": "촬영 밖 제작 세션의 실제 앱",
+      "displayedLabel": "실제 녹화 · 원본 구간 외 생략 · 정속 · 촬영 밖 제작 세션의 실제 앱",
+      "duration": 6.6,
+      "frames": 198,
+      "start": 14.0,
+      "end": 20.6,
+      "index": 1,
+      "sourceSha256": "dc52644392e4fbb8a00d77c2580217b036d1d4f22ca77ffdc7655f6ed6979f73"
+    },
+    {
+      "id": "before-detail",
+      "title": "할인 10% · 매출총이익률 11.11%",
+      "narration": "순매출 구백만 원에 예상 이익 백만 원입니다. 이익은 남지만, 회사가 정한 최소 십오 퍼센트 기준에는 미달합니다.",
+      "duration": 13.4,
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/02-baseline-q1001-10-sent.png",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 앱 캡처",
+      "displayedLabel": "실제 캡처 · 정지 화면 13.4초 · 별도 앱 캡처",
+      "frames": 402,
+      "start": 20.6,
+      "end": 34.0,
+      "index": 2,
+      "in": null,
+      "out": null,
+      "sourceSha256": "6235b0053421c44fa86fac05af53141391970496ba39d4fe9882556f91725ef2"
+    },
+    {
+      "id": "policy",
+      "title": "15% 미만 차단\n정확히 15%는 허용",
+      "narration": "정책은 단순합니다. 기준 미달 견적의 전송은 막고, 정상 견적은 그대로 처리합니다. 화면뿐 아니라 직접 호출한 서버에도 같은 기준을 적용합니다.",
+      "duration": 16.0,
+      "kind": "card",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "",
+      "source": null,
+      "displayedLabel": "설명 카드 · 녹화 화면 아님",
+      "frames": 480,
+      "start": 34.0,
+      "end": 50.0,
+      "index": 3,
+      "in": null,
+      "out": null,
+      "sourceSha256": null
+    },
+    {
+      "id": "analysis",
+      "title": "서버와 화면 조사를 병렬 위임",
+      "narration": "코파일럿이 서버와 화면 조사를 두 역할에 나눴습니다. 실제 호출과 보고서 반환이 기록돼 있습니다. 화면은 당시 정지 캡처입니다.",
+      "duration": 16.0,
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d08e1e04-27e9-47d8-aaae-820c4c66305d.png",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "촬영 당시 정지 캡처",
+      "displayedLabel": "실제 캡처 · 정지 화면 16초 · 촬영 당시 정지 캡처",
+      "frames": 480,
+      "start": 50.0,
+      "end": 66.0,
+      "index": 4,
+      "in": null,
+      "out": null,
+      "sourceSha256": "3516906a936659ac66eb9afd703f3d6a550f5cce57db18836fcd244c91e2c107"
+    },
+    {
+      "id": "approval",
+      "title": "구현 계획 승인 · 당시 정지 캡처",
+      "narration": "사용자가 대화에서 구현 범위를 승인하고 제작자가 전달했습니다. 승인 연속 영상은 저장 오류로 확보하지 못했습니다. 이 화면은 정지 캡처입니다.",
+      "duration": 16.0,
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/ef542e73-13a8-47a5-9dc6-9716af1926fd.png",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "촬영 당시 정지 캡처",
+      "displayedLabel": "실제 캡처 · 정지 화면 16초 · 촬영 당시 정지 캡처",
+      "frames": 480,
+      "start": 66.0,
+      "end": 82.0,
+      "index": 5,
+      "in": null,
+      "out": null,
+      "sourceSha256": "9673f1573594f03676ffc5506b40cdb870026a1cbf73cd292379c88e66eaf9ca"
+    },
+    {
+      "id": "process",
+      "title": "구현 범위는 제한\n검증 결과는 보존",
+      "narration": "기존 테스트와 의존성은 유지했습니다. 이후 로컬 검증은 일괄 승인 범위에서 진행했습니다. 운영 적용이나 외부 발송은 승인하지 않았습니다.",
+      "duration": 14.0,
+      "kind": "card",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "",
+      "source": null,
+      "displayedLabel": "설명 카드 · 녹화 화면 아님",
+      "frames": 420,
+      "start": 82.0,
+      "end": 96.0,
+      "index": 6,
+      "in": null,
+      "out": null,
+      "sourceSha256": null
+    },
+    {
+      "id": "implementation",
+      "title": "표시 비율 대신 실제 금액으로 판정",
+      "narration": "서버는 이익과 순매출을 정수 금액으로 비교합니다. 반올림된 화면 숫자만으로 전송 가능 여부를 결정하지 않습니다.",
+      "duration": 14.0,
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a6e96364-ca54-4650-a343-853072be68fd.png",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "촬영 당시 정지 캡처",
+      "displayedLabel": "실제 캡처 · 정지 화면 14초 · 촬영 당시 정지 캡처",
+      "frames": 420,
+      "start": 96.0,
+      "end": 110.0,
+      "index": 7,
+      "in": null,
+      "out": null,
+      "sourceSha256": "7fdd55e64a3e9c20d94bbab2663444d13136623e87304e61dc9cc86af9721e50"
+    },
+    {
+      "id": "red-green",
+      "title": "변경 전 2건 실패\n변경 후 56건 통과",
+      "narration": "새 회귀 테스트는 변경 전 두 사례에서 실제로 실패했습니다. 예상한 차단 대신 성공 응답이 나왔기 때문입니다. 변경 후에는 기존 테스트를 포함한 쉰여섯 건이 통과했습니다.",
+      "duration": 18.0,
+      "kind": "card",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "",
+      "source": null,
+      "displayedLabel": "설명 카드 · 녹화 화면 아님",
+      "frames": 540,
+      "start": 110.0,
+      "end": 128.0,
+      "index": 8,
+      "in": null,
+      "out": null,
+      "sourceSha256": null
+    },
+    {
+      "id": "tests",
+      "title": "테스트 통과가 검토를 대신하지 않습니다",
+      "narration": "실제 실행 로그와 종료 코드를 보존했습니다. 테스트가 모두 통과해도, 빠진 예외 경로는 있을 수 있습니다. 그래서 별도 검토를 진행했습니다.",
+      "duration": 14.0,
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/a278fe75-a803-4da6-9eff-f397946ba9d4.png",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "촬영 당시 정지 캡처",
+      "displayedLabel": "실제 캡처 · 정지 화면 14초 · 촬영 당시 정지 캡처",
+      "frames": 420,
+      "start": 128.0,
+      "end": 142.0,
+      "index": 9,
+      "in": null,
+      "out": null,
+      "sourceSha256": "8263f81e61c453fbc845201b2f4a8a77d865478032df6084c414e7a407468ccc"
+    },
+    {
+      "id": "blocked-motion",
+      "title": "변경 후 · 같은 입력의 전송 차단",
+      "narration": "같은 견적은 이제 전송할 수 없습니다.",
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/02-final-q1001-10-blocked.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "in": 0,
+      "out": 5.2,
+      "editLabel": "촬영 밖 제작 세션의 실제 앱",
+      "displayedLabel": "실제 녹화 · 원본 구간 외 생략 · 정속 · 촬영 밖 제작 세션의 실제 앱",
+      "duration": 5.2,
+      "frames": 156,
+      "start": 142.0,
+      "end": 147.2,
+      "index": 10,
+      "sourceSha256": "9b6db70b133ff633eb7c3fee864e9e2536b2a93cd62fd75ec9dab30e7e77fc1e"
+    },
+    {
+      "id": "blocked-detail",
+      "title": "화면에는 이유 · 직접 API에는 HTTP 422",
+      "narration": "차단 이유가 화면에 표시됩니다. 버튼을 거치지 않고 서버를 직접 호출해도 이익률 미달 응답을 반환하는 것을 확인했습니다.",
+      "duration": 14.8,
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/03-final-q1001-10-blocked.png",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 앱 캡처",
+      "displayedLabel": "실제 캡처 · 정지 화면 14.8초 · 별도 앱 캡처",
+      "frames": 444,
+      "start": 147.2,
+      "end": 162.0,
+      "index": 11,
+      "in": null,
+      "out": null,
+      "sourceSha256": "fdc32dcf9ccce63af5525b9336ad27f927d74406785bbea92c2c6e350349ed10"
+    },
+    {
+      "id": "allowed-motion",
+      "title": "정상 견적 · 모의 전송 유지",
+      "narration": "할인을 없애면 기준을 충족하고 정상적으로 모의 전송됩니다.",
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/03-final-q1001-0-allowed-sent.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "in": 0,
+      "out": 7.4,
+      "editLabel": "촬영 밖 제작 세션의 실제 앱",
+      "displayedLabel": "실제 녹화 · 원본 구간 외 생략 · 정속 · 촬영 밖 제작 세션의 실제 앱",
+      "duration": 7.4,
+      "frames": 222,
+      "start": 162.0,
+      "end": 169.4,
+      "index": 12,
+      "sourceSha256": "b70cfc811bce6cfc0f3773011d1fce757bfbe2641d3791dd8bb94d80c1190d9a"
+    },
+    {
+      "id": "allowed-detail",
+      "title": "20% 견적의 정상 업무는 유지",
+      "narration": "차단만 추가한 것이 아닙니다. 기준을 충족한 견적의 정상 흐름도 확인했습니다. 이 사례의 전송은 외부 발송 없는 모의 처리입니다.",
+      "duration": 12.6,
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1001-0-sent.png",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 앱 캡처",
+      "displayedLabel": "실제 캡처 · 정지 화면 12.6초 · 별도 앱 캡처",
+      "frames": 378,
+      "start": 169.4,
+      "end": 182.0,
+      "index": 13,
+      "in": null,
+      "out": null,
+      "sourceSha256": "03017aa8fcba28ac6d015ec316792dd4dbf2bbd4d8126aed0766712fd03b4d08"
+    },
+    {
+      "id": "exact-boundary",
+      "title": "정확히 15% · 허용",
+      "narration": "",
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/04-final-q1500-exact15-allowed.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "in": 0,
+      "out": 4.2,
+      "editLabel": "촬영 밖 제작 세션의 실제 앱",
+      "displayedLabel": "실제 녹화 · 정속 · 촬영 밖 제작 세션의 실제 앱",
+      "duration": 4.2,
+      "frames": 126,
+      "start": 182.0,
+      "end": 186.2,
+      "index": 14,
+      "sourceSha256": "9df6245cbd72f0fc5bf20a23062e6e6f418edc071a4b6c6c70e529c947d35922"
+    },
+    {
+      "id": "rounded-boundary",
+      "title": "표시는 15.0% · 실제 기준 미달이면 차단",
+      "narration": "",
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1499-rounded15-blocked.webm",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "in": 0,
+      "out": 4.2,
+      "editLabel": "촬영 밖 제작 세션의 실제 앱",
+      "displayedLabel": "실제 녹화 · 원본 구간 외 생략 · 정속 · 촬영 밖 제작 세션의 실제 앱",
+      "duration": 4.2,
+      "frames": 126,
+      "start": 186.2,
+      "end": 190.4,
+      "index": 15,
+      "sourceSha256": "364305acc8f0060bdb60a16f6f5aeab57c68dde6a3c4c134e7aec494979a7405"
+    },
+    {
+      "id": "boundary-detail",
+      "title": "원가 1원 차이도 판정에 반영",
+      "narration": "두 견적 모두 화면에는 십오 퍼센트로 보일 수 있습니다. 하지만 원가가 경계보다 일 원 높으면 실제 이익률은 기준 미달입니다. 서버가 이 차이를 구분합니다.",
+      "duration": 15.6,
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/05-final-q1499-rounded15-blocked.png",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 앱 캡처",
+      "displayedLabel": "실제 캡처 · 정지 화면 15.6초 · 별도 앱 캡처",
+      "frames": 468,
+      "start": 190.4,
+      "end": 206.0,
+      "index": 16,
+      "in": null,
+      "out": null,
+      "sourceSha256": "9abfeeeea76789d0019fa903f8afeff45a41ab9bebca17f1763ccfaa6a41bbb7"
+    },
+    {
+      "id": "async-check",
+      "title": "입력 변경과 늦은 응답도 검사",
+      "narration": "응답이 늦게 도착해도 이전 허용 상태가 최신 차단 상태를 덮지 않는지 검사했습니다. 잘못된 할인과 작은 화면도 확인했습니다.",
+      "duration": 14.0,
+      "source": "evidence/ghcp-live/producer-verification/app/2026-09-26T09-15-54-621Z-4237d4a4/12-final-stale-preview-ignored.png",
+      "kind": "app",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "별도 앱 캡처",
+      "displayedLabel": "실제 캡처 · 정지 화면 14초 · 별도 앱 캡처",
+      "frames": 420,
+      "start": 206.0,
+      "end": 220.0,
+      "index": 17,
+      "in": null,
+      "out": null,
+      "sourceSha256": "ed87c3e6831333d66cc62959904e5c9db8d36d9c77211b66353cb59fb2cd5684"
+    },
+    {
+      "id": "review",
+      "title": "읽기 전용 검토 · 보완 사항 발견",
+      "narration": "검토 역할이 코드와 실행 결과를 대조했습니다. 이 과정에서 테스트가 다루지 않은 응답 본문 오류 경로 한 건이 발견됐습니다.",
+      "duration": 16.0,
+      "source": "evidence/ghcp-live/raw/headless.GuKDBv/snapshots/d0c289d3-789a-40d3-945f-0cfde2216913.png",
+      "kind": "terminal",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "촬영 당시 정지 캡처",
+      "displayedLabel": "실제 캡처 · 정지 화면 16초 · 촬영 당시 정지 캡처",
+      "frames": 480,
+      "start": 220.0,
+      "end": 236.0,
+      "index": 18,
+      "in": null,
+      "out": null,
+      "sourceSha256": "a4f2e1f10dd300b655d91fd74529c53369dcc4284563264b01b1a87e3a47a5f4"
+    },
+    {
+      "id": "open-finding",
+      "title": "보완 필요 1건\n운영 적용 보류",
+      "narration": "서버가 차단 응답을 보냈어도 본문을 읽지 못하면, 화면의 전송 버튼이 다시 켜질 수 있습니다. 서버의 이익률 차단을 우회하는 문제는 아닙니다. 코드 검토에서 발견했으며 실행 재현과 수정은 남아 있습니다.",
+      "duration": 25.0,
+      "kind": "card",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "",
+      "source": null,
+      "displayedLabel": "설명 카드 · 녹화 화면 아님",
+      "frames": 750,
+      "start": 236.0,
+      "end": 261.0,
+      "index": 19,
+      "in": null,
+      "out": null,
+      "sourceSha256": null
+    },
+    {
+      "id": "capture-limit",
+      "title": "촬영 종료 오류\n승인 연속 영상 미확보",
+      "narration": "코파일럿은 정상 종료했지만 녹화 파일 저장이 실패했습니다. 이 초안은 보존된 실제 정지 캡처와 별도로 녹화한 앱 동영상을 사용합니다. 완전한 촬영본은 아닙니다.",
+      "duration": 18.0,
+      "kind": "card",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "",
+      "source": null,
+      "displayedLabel": "설명 카드 · 녹화 화면 아님",
+      "frames": 540,
+      "start": 261.0,
+      "end": 279.0,
+      "index": 20,
+      "in": null,
+      "out": null,
+      "sourceSha256": null
+    },
+    {
+      "id": "pilot",
+      "title": "업무 하나로 파일럿\n효과는 측정 후 판단",
+      "narration": "다음 단계는 보완 사항을 수정하고 다시 검증하는 것입니다. 파일럿에서는 업무 하나와 책임자를 정하고, 리드타임과 검토 시간, 재작업을 비교하세요. 이번 데모로 생산성이나 비용 절감 효과를 보장하지 않습니다.",
+      "duration": 21.0,
+      "kind": "card",
+      "approval": false,
+      "speed": 1,
+      "editLabel": "",
+      "source": null,
+      "displayedLabel": "설명 카드 · 녹화 화면 아님",
+      "frames": 630,
+      "start": 279.0,
+      "end": 300.0,
+      "index": 21,
+      "in": null,
+      "out": null,
+      "sourceSha256": null
+    }
+  ]
+}
