@@ -1,0 +1,186 @@
+[
+  {
+    "index": 0,
+    "start": 0.0,
+    "end": 11.266666666666667,
+    "kind": "title",
+    "source": null,
+    "title": "이 견적,\n보내도 됩니까?"
+  },
+  {
+    "index": 1,
+    "start": 11.266666666666667,
+    "end": 22.3,
+    "kind": "video",
+    "source": "blocked",
+    "title": "같은 견적. 달라진 결과."
+  },
+  {
+    "index": 2,
+    "start": 22.3,
+    "end": 34.93333333333334,
+    "kind": "business",
+    "source": null,
+    "title": "매출은 생겨도,\n기준에 못 미칠 수 있습니다."
+  },
+  {
+    "index": 3,
+    "start": 34.93333333333334,
+    "end": 46.7,
+    "kind": "video",
+    "source": "before",
+    "title": "변경 전에는 전송됩니다."
+  },
+  {
+    "index": 4,
+    "start": 46.7,
+    "end": 60.400000000000006,
+    "kind": "request",
+    "source": null,
+    "title": "요청은 한 문장입니다."
+  },
+  {
+    "index": 5,
+    "start": 60.400000000000006,
+    "end": 72.26666666666668,
+    "kind": "scope",
+    "source": null,
+    "title": "새 앱을 만드는 요청이 아닙니다."
+  },
+  {
+    "index": 6,
+    "start": 72.26666666666668,
+    "end": 85.9,
+    "kind": "log",
+    "source": "plan",
+    "title": "먼저 관련 코드와 변경 계획을 확인합니다."
+  },
+  {
+    "index": 7,
+    "start": 85.9,
+    "end": 99.03333333333333,
+    "kind": "policy",
+    "source": null,
+    "title": "사람이 정한 범위 안에서."
+  },
+  {
+    "index": 8,
+    "start": 99.03333333333333,
+    "end": 111.7,
+    "kind": "flow",
+    "source": null,
+    "title": "작업 결과를 다음 역할로 전달합니다."
+  },
+  {
+    "index": 9,
+    "start": 111.7,
+    "end": 125.23333333333333,
+    "kind": "log",
+    "source": "implement",
+    "title": "실제 파일이 바뀝니다."
+  },
+  {
+    "index": 10,
+    "start": 125.23333333333333,
+    "end": 137.6,
+    "kind": "log",
+    "source": "diff",
+    "title": "변경은 검토할 수 있는 형태로 남습니다."
+  },
+  {
+    "index": 11,
+    "start": 137.6,
+    "end": 149.86666666666667,
+    "kind": "log",
+    "source": "tests",
+    "title": "완료라는 말보다, 실행한 테스트."
+  },
+  {
+    "index": 12,
+    "start": 149.86666666666667,
+    "end": 163.36666666666667,
+    "kind": "boundary",
+    "source": null,
+    "title": "15.0%로 보인다고\n항상 통과하면 안 됩니다."
+  },
+  {
+    "index": 13,
+    "start": 163.36666666666667,
+    "end": 175.63333333333335,
+    "kind": "video",
+    "source": "blocked",
+    "title": "11.1% 견적은 차단."
+  },
+  {
+    "index": 14,
+    "start": 175.63333333333335,
+    "end": 188.8,
+    "kind": "video",
+    "source": "allowed",
+    "title": "20% 견적은 정상 전송."
+  },
+  {
+    "index": 15,
+    "start": 188.8,
+    "end": 201.70000000000002,
+    "kind": "video",
+    "source": "boundary",
+    "title": "경계값까지 확인합니다."
+  },
+  {
+    "index": 16,
+    "start": 201.70000000000002,
+    "end": 214.60000000000002,
+    "kind": "log",
+    "source": "api",
+    "title": "화면을 거치지 않아도 차단."
+  },
+  {
+    "index": 17,
+    "start": 214.60000000000002,
+    "end": 230.00000000000003,
+    "kind": "handoff",
+    "source": null,
+    "title": "성공 요약만 넘기지 않습니다."
+  },
+  {
+    "index": 18,
+    "start": 230.00000000000003,
+    "end": 242.8666666666667,
+    "kind": "log",
+    "source": "review",
+    "title": "별도 검토 역할의 의견을 확인합니다."
+  },
+  {
+    "index": 19,
+    "start": 242.8666666666667,
+    "end": 257.1,
+    "kind": "decision",
+    "source": null,
+    "title": "최종 채택 판단은\n사람에게 남습니다."
+  },
+  {
+    "index": 20,
+    "start": 257.1,
+    "end": 271.0,
+    "kind": "pilot",
+    "source": null,
+    "title": "첫 파일럿은 작고 분명하게."
+  },
+  {
+    "index": 21,
+    "start": 271.0,
+    "end": 286.2,
+    "kind": "closing",
+    "source": null,
+    "title": "사업의 결정을 코드로.\n변경의 근거를 테스트로."
+  },
+  {
+    "index": 22,
+    "start": 286.2,
+    "end": 300.0,
+    "kind": "credits",
+    "source": null,
+    "title": "실제 실행을 바탕으로 만든\n사전 제작 데모입니다."
+  }
+]

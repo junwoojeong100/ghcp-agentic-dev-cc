@@ -1,0 +1,37 @@
+{
+  "copilotImplementation": true,
+  "copilotReview": true,
+  "copilotTestExecution": "blocked",
+  "testExecutor": "별도 로컬 실행 (사용자 승인)",
+  "tests": {
+    "passed": 26,
+    "failed": 0,
+    "skipped": 0
+  },
+  "baselineTests": {
+    "passed": 22,
+    "failed": 0
+  },
+  "browserChecks": {
+    "passed": 22,
+    "label": "브라우저·API 확인"
+  },
+  "codeHash": "087d5bd8fce0df5366ed2146ac5b0299c51ae9fe884cae2c3b52bfe4823e3631",
+  "reviewStatus": "정적 검토에서 구체적 결함 미발견 · 채택 판단 대기",
+  "evidenceDir": "evidence/copilot-run",
+  "changedFiles": [
+    "public/app.js",
+    "src/quote.mjs",
+    "src/server.mjs",
+    "test/margin.test.mjs"
+  ],
+  "limitations": [
+    "Copilot의 node --test는 권한 거절로 미실행. 사용자 별도 승인 뒤 로컬 테스트와 브라우저·API 검증을 실행했다.",
+    "읽기 전용 Copilot 검토는 독립 감사나 사람의 최종 승인이 아니다. 결과 채택과 운영 배포는 승인되지 않았다.",
+    "합성 데이터·localhost·모의 전송 데모이며 실제 발송, DB, 인증, 운영 배포는 없다.",
+    "실제 앱 녹화와 실제 로그 발췌를 편집했다. 한국어 음성은 합성이며 영상 길이는 개발 소요시간이 아니다.",
+    "VS Code UI, Copilot Studio, A2A 통신 프로토콜은 시연·검증하지 않았다.",
+    "브라우저 기본 경로와 모바일 확인은 통과했지만 지연 응답 경쟁 조건의 브라우저 자동 검증과 전체 접근성 감사는 수행하지 않았다.",
+    "촬영 전후 파일 해시를 대조했다. 시작 앱의 후속 favicon 수정은 별도 기록했고 촬영에는 해시가 일치하는 원본 스냅샷을 사용했다."
+  ]
+}

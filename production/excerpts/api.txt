@@ -1,0 +1,10 @@
+POST /api/send
+{"quoteId": "Q-1001", "discountBps": 1000}
+
+HTTP 422
+{
+  "error": {
+    "code": "MARGIN_BELOW_MINIMUM",
+    "message": "최저 매출총이익률 15%에 미달하여 모의 전송할 수 없습니다."
+  }
+}

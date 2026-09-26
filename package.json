@@ -1,0 +1,13 @@
+{
+  "name": "ghcp-cxo-demo-production",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm --prefix demo/run test",
+    "demo": "npm --prefix demo/run start",
+    "capture": "node scripts/capture-demo.mjs",
+    "video": "python3 scripts/build-video.py",
+    "slides": "python3 scripts/build-deck.py"
+  },
+  "devDependencies": {"playwright": "1.63.0"}
+}

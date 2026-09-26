@@ -1,0 +1,11 @@
+{
+  "README.md": "e7a35311a47dd8fc058918552024795d71215b9d4a86c76e42cf65b48de314a6",
+  "package.json": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805",
+  "public/app.js": "a35948c375901f55ed909ebf710919ef9df82f13b11494d3c1bde41a4482a1b0",
+  "public/index.html": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41",
+  "public/style.css": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b",
+  "src/quote.mjs": "e6eab853413324ac0281495b19e7f6fcdcfe2aa9b5323342779035a36b40f6fc",
+  "src/server.mjs": "a1b2ec8b9cb709bc5ba8ffbb3c94109c942d4b919550c99e48340114b162d8a2",
+  "test/quote.test.mjs": "394818c115f8fef1b0c7612af26501fb741dc08cf27085565e10bb7f19631a3a",
+  "test/server.test.mjs": "6a96aa935ce4d099258652db7d3e11c1f239b5c57a4da1b045cd87f6d273fd28"
+}

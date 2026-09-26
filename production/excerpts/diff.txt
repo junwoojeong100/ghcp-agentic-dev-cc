@@ -1,0 +1,12 @@
+--- baseline/src/server.mjs
++++ run/src/server.mjs
+
++        if (!policy.sendAllowed) {
++          sendJson(response, 422, {
++            error: {
++              code: 'MARGIN_BELOW_MINIMUM',
++              message: policy.blockReason,
++            },
++          });
++          return;
++        }

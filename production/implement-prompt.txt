@@ -1,0 +1,7 @@
+사용자가 승인한 로컬 데모 제작 범위에 따라 change-request.md의 변경을 구현하세요. 먼저 handoff/plan.log에 기록된 읽기 전용 계획과 실제 src/public/test 코드를 확인하세요. 이전 계획은 별도 사람의 결과 수용이나 배포 승인을 의미하지 않습니다.
+
+기존 calculateQuote(), parseQuoteInput(), UI의 request revision/입력 검증을 보존하세요. 최저 기준 1500 basis point의 서버 판정 함수를 추가하고, POST /api/preview에는 기존 계산 필드에 더해 sendAllowed, minimumMarginBps, 차단 사유를 반환하세요. POST /api/send는 같은 판정으로 미달을 HTTP 422 및 MARGIN_BELOW_MINIMUM으로 거절하세요. 허용 응답의 기존 quote 계산 객체 형식과 기존 테스트를 유지하세요. UI는 서버 판정으로 버튼 상태/이유를 표시하고, 미달 상태에서 전송 실패 후 버튼을 다시 켜지 않아야 합니다.
+
+허용 파일: src/quote.mjs, src/server.mjs, public/index.html, public/app.js, public/style.css, test/margin.test.mjs. 필요 없는 파일은 수정하지 마세요. 기존 테스트/의존성/설정/문서 수정 금지. test/margin.test.mjs에 요구사항의 경계, 직접 서버 전송, 위조 추가 필드와 기존 입력 검증 테스트를 추가하세요. shell은 node --test 실행에만 사용하고 명령에 cd나 리다이렉션을 추가하지 마세요. 실제 테스트 결과를 확인하고 실패하면 허용 파일 안에서 수정 후 다시 실행하세요. 도구 허가가 거절되면 우회하지 말고 중단해 보고하세요.
+
+최종 응답은 수정한 실제 파일, 실행 명령/실제 통과·실패 수, 미검증 항목을 한국어로 간결히 보고하세요. 외부 발송/배포/commit/push/GitHub 작업은 하지 마세요.

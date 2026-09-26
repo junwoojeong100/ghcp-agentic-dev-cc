@@ -1,0 +1,15 @@
+{
+  "videoSha256": "1ae421a32106f60c4b6ee584ab38973a5eb68aa962adb4f6a95427a318c1c28c",
+  "reviewMethod": "Coordinator inspected four contact sheets covering one sampled frame from each of 23 scenes.",
+  "sampledScenes": 23,
+  "observations": [
+    "Korean titles and captions render without visible clipping or collisions in the sampled frames.",
+    "Actual application captures show the blocked, allowed and boundary cases; no unrelated browser content appears.",
+    "Implementation excerpts show the denied Copilot test command; local test results are separately labeled.",
+    "Review and final adoption are distinguished. Prepared data, synthetic narration and editing are disclosed."
+  ],
+  "limitations": [
+    "This is sampled visual inspection, not an uninterrupted human viewing of the full film.",
+    "Korean narration has not been listened to by a human. Audio encoding and level checks passed; verify pronunciation and volume on the presentation computer."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "purpose": "Shareable redacted copies, not original execution transcripts.",
+  "redactions": [
+    "Project absolute path -> <PROJECT_ROOT>",
+    "Home directory prefix -> <HOME>",
+    "Session UUID -> <REDACTED_SESSION_ID>"
+  ],
+  "hashNote": "Original hashes remain unchanged in historical records and excerpt-manifest.json. They identify local originals, not these redacted copies. Nested path/content hashes in copied records are also historical, not recomputed.",
+  "files": [
+    {
+      "source": "evidence/copilot-run/plan.log",
+      "publishedCopy": "evidence/shareable/copilot-run/plan.log",
+      "originalSha256": "2155bde65af07f5dc6b48474f7c09dc5380ebc9448aa36510b044ed2f6323786",
+      "publishedSha256": "b04e280cb765d71746f43760401ed670383adf79c81842127272922e9633dd73",
+      "redactionsApplied": true
+    },
+    {
+      "source": "evidence/copilot-run/implement.log",
+      "publishedCopy": "evidence/shareable/copilot-run/implement.log",
+      "originalSha256": "6d3900b45ec5dba190d1042f94a67121a1067d1581fca6c2da70b3607a4af1cf",
+      "publishedSha256": "2a25fdd59aee1ab650549132d8092b7301e0d97bf3e35af447b8275315a9c258",
+      "redactionsApplied": true
+    },
+    {
+      "source": "evidence/copilot-run/review.log",
+      "publishedCopy": "evidence/shareable/copilot-run/review.log",
+      "originalSha256": "16dc5d1fd2327f6d8036dd8ceb092ebe358b1cf2526c2ad23b58f774507d1640",
+      "publishedSha256": "4c8503c57e19fba5b2b60452b8f900e2d0c494a237b402c01baf5e47394bc0e4",
+      "redactionsApplied": true
+    },
+    {
+      "source": "evidence/copilot-run/plan-record.json",
+      "publishedCopy": "evidence/shareable/copilot-run/plan-record.json",
+      "originalSha256": "6f56b6c515720767205cf80b686f867771bc9616f3cb9549b8d8b557f91a5347",
+      "publishedSha256": "809a16e3efa69c1762fcafa09c2de0b50bec35762747ce3e862c45ac0ea06878",
+      "redactionsApplied": true
+    },
+    {
+      "source": "evidence/copilot-run/implement-record.json",
+      "publishedCopy": "evidence/shareable/copilot-run/implement-record.json",
+      "originalSha256": "95ec47cc0f87f157ab3238a88416e75f36e1c3344cd8b9f1ce4f3f225e1a7de1",
+      "publishedSha256": "71baf79731090ea33056c8af5eafcec513550eaca0e58aad8e872d15da810dd8",
+      "redactionsApplied": true
+    },
+    {
+      "source": "evidence/copilot-run/review-record.json",
+      "publishedCopy": "evidence/shareable/copilot-run/review-record.json",
+      "originalSha256": "0cec8b47f2ce2b23eb244b8686e2a8a2aa82e8a7ee9eef748d3cc7693b736e7b",
+      "publishedSha256": "77c2300285bb4c49f42976bc5fe58b7b60d936aca644d63e22211f36cf92304f",
+      "redactionsApplied": true
+    },
+    {
+      "source": "evidence/copilot-run/local-test-record.json",
+      "publishedCopy": "evidence/shareable/copilot-run/local-test-record.json",
+      "originalSha256": "9d350fb28cb0885e27575d84a71342a046372de3c51debc9944151d903972d29",
+      "publishedSha256": "9d350fb28cb0885e27575d84a71342a046372de3c51debc9944151d903972d29",
+      "redactionsApplied": false
+    },
+    {
+      "source": "production/deck-qa/qa-report.json",
+      "publishedCopy": "evidence/shareable/qa/deck-report.json",
+      "originalSha256": "0478bb4c2d303800662d0f65137a543ff5b96b6eebf149570ec23ccee3e03c1c",
+      "publishedSha256": "107285da7740c0689b10052e7da1f0d3d0085263c5c2ea05f8062c40a5b0be14",
+      "redactionsApplied": true
+    },
+    {
+      "source": "production/video-qa/metadata.json",
+      "publishedCopy": "evidence/shareable/qa/video-metadata.json",
+      "originalSha256": "8b2c8cebefb0cf50e51d278f21016db267c31f6627fe10d0c52f1891dd8aca68",
+      "publishedSha256": "5dc9b2c625c6115e01ca799162fae66948d8a474dd4ba386a7400e8a8e66d2f2",
+      "redactionsApplied": true
+    }
+  ]
+}

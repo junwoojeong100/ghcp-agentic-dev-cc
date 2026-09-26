@@ -1,0 +1,10 @@
+ok 1 - evaluates the minimum margin with exact integer boundaries
+ok 2 - returns server-owned decisions and reasons from preview
+ok 3 - rejects a below-minimum direct send and preserves the allowed response shape
+ok 4 - rejects forged policy fields and preserves existing input validation
+
+# tests 26
+# pass 26
+# fail 0
+# cancelled 0
+# skipped 0

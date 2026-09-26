@@ -1,0 +1,9 @@
+● Edit
+  │ Edit src/quote.mjs
+  │ Edit src/server.mjs
+  │ Edit public/app.js
+  └ Create test/margin.test.mjs
+
+✗ Run all Node tests (shell)
+  │ node --test
+  └ Permission denied and could not request permission from user

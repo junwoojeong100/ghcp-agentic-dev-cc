@@ -1,0 +1,23 @@
+{
+  "command": [
+    "node",
+    "--test"
+  ],
+  "cwd": "demo/run",
+  "startedAt": "2026-09-25T23:40:14.118991+00:00",
+  "endedAt": "2026-09-25T23:40:14.256108+00:00",
+  "exitCode": 0,
+  "executor": "Separate local verification authorized by user after Copilot tool denial",
+  "codeHashes": {
+    "package.json": "7b69c5cba1a1d08d1d2f781b7353fd14910f2eb0b944d78009ab53faee4b7805",
+    "public/app.js": "0b9fb34995afc3610ce6f00709a2f868e1166357cb3b2440d65d6b04c2ce9a09",
+    "public/index.html": "c2bab3a2fd127e0da221a7960111b5cdfa4a3d0040eebbcce88dec80c4e25b41",
+    "public/style.css": "cce194d2fdce92174dda09899849b341398f05492eee701d7ad257e124868a2b",
+    "src/quote.mjs": "a495b21505e8069821c03dc5080f250cd0fb669bd0f93aa7e94b3b36810519f4",
+    "src/server.mjs": "bb8549c57f122f28f61e81061c20522b13cd2aa1d3237bf59d909bf7bf24ec0d",
+    "test/margin.test.mjs": "5c9ff8cb05ff389b62554932cb977f4ef47c7233363313bbe4dba02fb64face7",
+    "test/quote.test.mjs": "394818c115f8fef1b0c7612af26501fb741dc08cf27085565e10bb7f19631a3a",
+    "test/server.test.mjs": "6a96aa935ce4d099258652db7d3e11c1f239b5c57a4da1b045cd87f6d273fd28"
+  },
+  "codeHash": "087d5bd8fce0df5366ed2146ac5b0299c51ae9fe884cae2c3b52bfe4823e3631"
+}

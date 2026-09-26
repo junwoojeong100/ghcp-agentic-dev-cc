@@ -1,0 +1,274 @@
+--- baseline/src/quote.mjs
++++ run/src/quote.mjs
+@@ -29,6 +29,9 @@
+     costWon: 8_499_999,
+   }),
+ ]);
++
++export const MINIMUM_MARGIN_BPS = 1_500;
++const MARGIN_BELOW_MINIMUM_MESSAGE = '최저 매출총이익률 15%에 미달하여 모의 전송할 수 없습니다.';
+ 
+ export class InvalidInputError extends Error {
+   constructor(message) {
+@@ -101,3 +104,20 @@
+     marginPercent: profitWon / netWon * 100,
+   };
+ }
++
++export function evaluateSendPolicy(calculation) {
++  if (
++    calculation === null || typeof calculation !== 'object' || Array.isArray(calculation) ||
++    !Number.isSafeInteger(calculation.netWon) || calculation.netWon <= 0 ||
++    !Number.isSafeInteger(calculation.profitWon)
++  ) {
++    throw new InvalidInputError('올바른 견적 계산 결과가 필요합니다.');
++  }
++
++  const sendAllowed = calculation.profitWon * 10_000 >= calculation.netWon * MINIMUM_MARGIN_BPS;
++  return {
++    sendAllowed,
++    minimumMarginBps: MINIMUM_MARGIN_BPS,
++    blockReason: sendAllowed ? null : MARGIN_BELOW_MINIMUM_MESSAGE,
++  };
++}
+--- baseline/src/server.mjs
++++ run/src/server.mjs
+@@ -2,7 +2,13 @@
+ import { readFile } from 'node:fs/promises';
+ import { resolve } from 'node:path';
+ import { fileURLToPath } from 'node:url';
+-import { QUOTES, calculateQuote, parseQuoteInput, InvalidInputError } from './quote.mjs';
++import {
++  QUOTES,
++  calculateQuote,
++  evaluateSendPolicy,
++  parseQuoteInput,
++  InvalidInputError,
++} from './quote.mjs';
+ 
+ const MAX_BODY_BYTES = 16 * 1024;
+ const STATIC_FILES = new Map([
+@@ -82,7 +88,21 @@
+         }
+         // Always calculate from the server's quote data; never trust client amounts.
+         const calculation = calculateQuote(quote, discountBps);
+-        sendJson(response, 200, pathname === '/api/preview' ? calculation : {
++        const policy = evaluateSendPolicy(calculation);
++        if (pathname === '/api/preview') {
++          sendJson(response, 200, { ...calculation, ...policy });
++          return;
++        }
++        if (!policy.sendAllowed) {
++          sendJson(response, 422, {
++            error: {
++              code: 'MARGIN_BELOW_MINIMUM',
++              message: policy.blockReason,
++            },
++          });
++          return;
++        }
++        sendJson(response, 200, {
+           sent: true,
+           simulation: true,
+           message: '모의 전송 완료 — 외부 발송 없음',
+--- baseline/public/app.js
++++ run/public/app.js
+@@ -45,7 +45,9 @@
+     });
+     const result = await response.json();
+     if (!response.ok) {
+-      throw new Error(result.error?.message ?? '요청을 처리하지 못했습니다. 다시 시도해 주세요.');
++      const error = new Error(result.error?.message ?? '요청을 처리하지 못했습니다. 다시 시도해 주세요.');
++      error.code = result.error?.code;
++      throw error;
+     }
+     return result;
+   } catch (error) {
+@@ -117,8 +119,12 @@
+     previewInput = input;
+     displayCalculation(calculation);
+     previewLabel.textContent = '현재 입력 기준';
+-    status.textContent = '금액을 확인한 뒤 모의 전송을 실행하세요.';
+-    sendButton.disabled = false;
++    if (calculation.sendAllowed === true) {
++      status.textContent = '금액을 확인한 뒤 모의 전송을 실행하세요.';
++      sendButton.disabled = false;
++    } else {
++      status.textContent = calculation.blockReason ?? '서버의 전송 기준을 충족하지 않아 모의 전송할 수 없습니다.';
++    }
+   } catch (error) {
+     if (token !== revision) return;
+     previewLabel.textContent = '확인 필요';
+@@ -137,7 +143,7 @@
+ 
+ form.addEventListener('submit', async (event) => {
+   event.preventDefault();
+-  if (sending || !preview || sendButton.disabled) return;
++  if (sending || !preview || preview.sendAllowed !== true || sendButton.disabled) return;
+   let input;
+   try {
+     input = readInput();
+@@ -168,12 +174,17 @@
+     setFeedback(result.message, 'success');
+   } catch (error) {
+     if (token !== revision) return;
+-    status.textContent = '모의 전송을 완료하지 못했습니다.';
++    if (error.code === 'MARGIN_BELOW_MINIMUM') {
++      preview = { ...preview, sendAllowed: false, blockReason: error.message };
++      status.textContent = error.message;
++    } else {
++      status.textContent = '모의 전송을 완료하지 못했습니다.';
++    }
+     setFeedback(error.message, 'error');
+   } finally {
+     if (token === revision) {
+       sending = false;
+-      sendButton.disabled = false;
++      sendButton.disabled = preview?.sendAllowed !== true;
+       sendButton.firstElementChild.textContent = '견적 보내기';
+       summary.setAttribute('aria-busy', 'false');
+     }
+--- baseline/test/margin.test.mjs
++++ run/test/margin.test.mjs
+@@ -0,0 +1,141 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { once } from 'node:events';
++import { createAppServer } from '../src/server.mjs';
++import {
++  MINIMUM_MARGIN_BPS,
++  QUOTES,
++  calculateQuote,
++  evaluateSendPolicy,
++} from '../src/quote.mjs';
++
++async function startServer(t) {
++  const server = createAppServer();
++  server.listen(0, '127.0.0.1');
++  await once(server, 'listening');
++  t.after(() => new Promise((resolve, reject) => {
++    server.close((error) => error ? reject(error) : resolve());
++    server.closeAllConnections();
++  }));
++  return `http://127.0.0.1:${server.address().port}`;
++}
++
++function post(base, path, body) {
++  return fetch(`${base}${path}`, {
++    method: 'POST',
++    headers: { 'Content-Type': 'application/json' },
++    body: JSON.stringify(body),
++  });
++}
++
++test('evaluates the minimum margin with exact integer boundaries', () => {
++  const cases = [
++    ['Q-1001', 1000, 9_000_000, 1_000_000, false],
++    ['Q-1001', 0, 10_000_000, 2_000_000, true],
++    ['Q-1500', 0, 10_000_000, 1_500_000, true],
++    ['Q-1499', 0, 10_000_000, 1_499_999, false],
++    ['Q-1501', 0, 10_000_000, 1_500_001, true],
++  ];
++
++  assert.equal(MINIMUM_MARGIN_BPS, 1500);
++  for (const [quoteId, discountBps, netWon, profitWon, sendAllowed] of cases) {
++    const calculation = calculateQuote(QUOTES.find((quote) => quote.id === quoteId), discountBps);
++    assert.equal(calculation.netWon, netWon);
++    assert.equal(calculation.profitWon, profitWon);
++    const policy = evaluateSendPolicy(calculation);
++    assert.equal(policy.sendAllowed, sendAllowed);
++    assert.equal(policy.minimumMarginBps, 1500);
++    assert.equal(policy.blockReason === null, sendAllowed);
++  }
++
++  const roundedBoundary = calculateQuote(QUOTES.find((quote) => quote.id === 'Q-1499'), 0);
++  assert.equal(roundedBoundary.marginPercent.toFixed(1), '15.0');
++  assert.equal(evaluateSendPolicy(roundedBoundary).sendAllowed, false);
++});
++
++test('returns server-owned decisions and reasons from preview', async (t) => {
++  const base = await startServer(t);
++  for (const [quoteId, discountBps, sendAllowed] of [
++    ['Q-1001', 1000, false],
++    ['Q-1001', 0, true],
++    ['Q-1500', 0, true],
++    ['Q-1499', 0, false],
++    ['Q-1501', 0, true],
++  ]) {
++    const response = await post(base, '/api/preview', { quoteId, discountBps });
++    assert.equal(response.status, 200);
++    const body = await response.json();
++    assert.equal(body.sendAllowed, sendAllowed);
++    assert.equal(body.minimumMarginBps, 1500);
++    if (sendAllowed) {
++      assert.equal(body.blockReason, null);
++    } else {
++      assert.equal(typeof body.blockReason, 'string');
++      assert.ok(body.blockReason.length > 0);
++    }
++  }
++});
++
++test('rejects a below-minimum direct send and preserves the allowed response shape', async (t) => {
++  const base = await startServer(t);
++  const blockedResponse = await post(base, '/api/send', { quoteId: 'Q-1001', discountBps: 1000 });
++  assert.equal(blockedResponse.status, 422);
++  assert.equal(blockedResponse.headers.get('cache-control'), 'no-store');
++  const blocked = await blockedResponse.json();
++  assert.equal(blocked.error.code, 'MARGIN_BELOW_MINIMUM');
++  assert.equal(typeof blocked.error.message, 'string');
++  assert.ok(blocked.error.message.length > 0);
++
++  const allowedResponse = await post(base, '/api/send', { quoteId: 'Q-1500', discountBps: 0 });
++  assert.equal(allowedResponse.status, 200);
++  const allowed = await allowedResponse.json();
++  assert.equal(allowed.sent, true);
++  assert.equal(allowed.simulation, true);
++  assert.deepEqual(Object.keys(allowed.quote), [
++    'quoteId',
++    'title',
++    'customer',
++    'listPriceWon',
++    'costWon',
++    'discountBps',
++    'netWon',
++    'profitWon',
++    'marginPercent',
++  ]);
++});
++
++test('rejects forged policy fields and preserves existing input validation', async (t) => {
++  const base = await startServer(t);
++  for (const path of ['/api/preview', '/api/send']) {
++    for (const extra of [
++      { listPriceWon: 100_000_000 },
++      { costWon: 1 },
++      { netWon: 100_000_000 },
++      { profitWon: 100_000_000 },
++      { marginPercent: 100 },
++      { sendAllowed: true },
++      { minimumMarginBps: 0 },
++      { blockReason: null },
++    ]) {
++      const response = await post(base, path, { quoteId: 'Q-1001', discountBps: 1000, ...extra });
++      assert.equal(response.status, 400);
++      assert.equal((await response.json()).error.code, 'INVALID_INPUT');
++    }
++
++    for (const body of [
++      { quoteId: 'Q-1001', discountBps: -1 },
++      { quoteId: 'Q-1001', discountBps: 10_001 },
++      { quoteId: 'Q-1001', discountBps: 0.5 },
++      { quoteId: 'Q-1001', discountBps: '1000' },
++      { quoteId: 'Q-1001', discountBps: 10_000 },
++    ]) {
++      const response = await post(base, path, body);
++      assert.equal(response.status, 400);
++      assert.equal((await response.json()).error.code, 'INVALID_INPUT');
++    }
++
++    const unknown = await post(base, path, { quoteId: 'UNKNOWN', discountBps: 0 });
++    assert.equal(unknown.status, 404);
++    assert.equal((await unknown.json()).error.code, 'QUOTE_NOT_FOUND');
++  }
++});

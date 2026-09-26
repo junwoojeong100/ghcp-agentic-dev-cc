@@ -1,0 +1,146 @@
+
+> synthetic-quote-starter@1.0.0 test
+> node --test
+
+TAP version 13
+# Subtest: the prepared fixtures contain only named synthetic customers
+ok 1 - the prepared fixtures contain only named synthetic customers
+  ---
+  duration_ms: 1.258667
+  type: 'test'
+  ...
+# Subtest: calculates the complete undiscounted quotation without changing its source
+ok 2 - calculates the complete undiscounted quotation without changing its source
+  ---
+  duration_ms: 0.160167
+  type: 'test'
+  ...
+# Subtest: calculates the editable discount and descriptive margin
+ok 3 - calculates the editable discount and descriptive margin
+  ---
+  duration_ms: 0.053708
+  type: 'test'
+  ...
+# Subtest: rounds exact half-won values upward and values below a half downward
+ok 4 - rounds exact half-won values upward and values below a half downward
+  ---
+  duration_ms: 0.107167
+  type: 'test'
+  ...
+# Subtest: supports the documented upper money bound and negative calculated profit
+ok 5 - supports the documented upper money bound and negative calculated profit
+  ---
+  duration_ms: 0.057417
+  type: 'test'
+  ...
+# Subtest: rejects a zero net amount including values rounded down to zero
+ok 6 - rejects a zero net amount including values rounded down to zero
+  ---
+  duration_ms: 0.170084
+  type: 'test'
+  ...
+# Subtest: requires positive bounded safe integer money for both amounts
+ok 7 - requires positive bounded safe integer money for both amounts
+  ---
+  duration_ms: 0.656333
+  type: 'test'
+  ...
+# Subtest: rejects invalid discount types and ranges in both input and calculation
+ok 8 - rejects invalid discount types and ranges in both input and calculation
+  ---
+  duration_ms: 0.174916
+  type: 'test'
+  ...
+# Subtest: parses only the exact two-field request schema and copies the input
+ok 9 - parses only the exact two-field request schema and copies the input
+  ---
+  duration_ms: 0.293416
+  type: 'test'
+  ...
+# Subtest: requires an actual quote with string identity fields
+ok 10 - requires an actual quote with string identity fields
+  ---
+  duration_ms: 0.297708
+  type: 'test'
+  ...
+# Subtest: the server factory does not listen automatically
+ok 11 - the server factory does not listen automatically
+  ---
+  duration_ms: 0.594417
+  type: 'test'
+  ...
+# Subtest: lists synthetic quotes as uncached JSON
+ok 12 - lists synthetic quotes as uncached JSON
+  ---
+  duration_ms: 14.090542
+  type: 'test'
+  ...
+# Subtest: previews the server-calculated quote for a decimal percentage
+ok 13 - previews the server-calculated quote for a decimal percentage
+  ---
+  duration_ms: 5.720917
+  type: 'test'
+  ...
+# Subtest: simulates sending an undiscounted quotation without an external dispatch
+ok 14 - simulates sending an undiscounted quotation without an external dispatch
+  ---
+  duration_ms: 3.170083
+  type: 'test'
+  ...
+# Subtest: uses injected server data for calculations
+ok 15 - uses injected server data for calculations
+  ---
+  duration_ms: 2.009584
+  type: 'test'
+  ...
+# Subtest: rejects malformed JSON and non-object payloads with structured input errors
+ok 16 - rejects malformed JSON and non-object payloads with structured input errors
+  ---
+  duration_ms: 9.506042
+  type: 'test'
+  ...
+# Subtest: rejects wrong types, extra client amounts, and zero-net input on both POST routes
+ok 17 - rejects wrong types, extra client amounts, and zero-net input on both POST routes
+  ---
+  duration_ms: 11.516958
+  type: 'test'
+  ...
+# Subtest: returns 404 JSON for unknown quotes and unknown routes
+ok 18 - returns 404 JSON for unknown quotes and unknown routes
+  ---
+  duration_ms: 4.506542
+  type: 'test'
+  ...
+# Subtest: serves only the explicit static allowlist with content types and security headers
+ok 19 - serves only the explicit static allowlist with content types and security headers
+  ---
+  duration_ms: 3.839667
+  type: 'test'
+  ...
+# Subtest: accepts the 16KB limit and rejects an oversized body without stopping the server
+ok 20 - accepts the 16KB limit and rejects an oversized body without stopping the server
+  ---
+  duration_ms: 3.229375
+  type: 'test'
+  ...
+# Subtest: applies the size limit to chunked uploads as well
+ok 21 - applies the size limit to chunked uploads as well
+  ---
+  duration_ms: 2.30525
+  type: 'test'
+  ...
+# Subtest: survives a disconnected upload and still answers the next request
+ok 22 - survives a disconnected upload and still answers the next request
+  ---
+  duration_ms: 1.708458
+  type: 'test'
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 110.185

@@ -1,0 +1,14 @@
+{
+  "name": "synthetic-quote-starter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Prepared synthetic quotation demo baseline with simulated sending only.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test"
+  }
+}

@@ -1,0 +1,196 @@
+[
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/send",
+      "body": {
+        "quoteId": "Q-1001",
+        "discountBps": 1000
+      }
+    },
+    "status": 200,
+    "response": {
+      "sent": true,
+      "simulation": true,
+      "message": "모의 전송 완료 — 외부 발송 없음",
+      "quote": {
+        "quoteId": "Q-1001",
+        "title": "업무 시스템 구축",
+        "customer": "가상 고객 A",
+        "listPriceWon": 10000000,
+        "costWon": 8000000,
+        "discountBps": 1000,
+        "netWon": 9000000,
+        "profitWon": 1000000,
+        "marginPercent": 11.11111111111111
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/send",
+      "body": {
+        "quoteId": "Q-1001",
+        "discountBps": 1000
+      }
+    },
+    "status": 422,
+    "response": {
+      "error": {
+        "code": "MARGIN_BELOW_MINIMUM",
+        "message": "최저 매출총이익률 15%에 미달하여 모의 전송할 수 없습니다."
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/send",
+      "body": {
+        "quoteId": "Q-1001",
+        "discountBps": 0
+      }
+    },
+    "status": 200,
+    "response": {
+      "sent": true,
+      "simulation": true,
+      "message": "모의 전송 완료 — 외부 발송 없음",
+      "quote": {
+        "quoteId": "Q-1001",
+        "title": "업무 시스템 구축",
+        "customer": "가상 고객 A",
+        "listPriceWon": 10000000,
+        "costWon": 8000000,
+        "discountBps": 0,
+        "netWon": 10000000,
+        "profitWon": 2000000,
+        "marginPercent": 20
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/send",
+      "body": {
+        "quoteId": "Q-1500",
+        "discountBps": 0
+      }
+    },
+    "status": 200,
+    "response": {
+      "sent": true,
+      "simulation": true,
+      "message": "모의 전송 완료 — 외부 발송 없음",
+      "quote": {
+        "quoteId": "Q-1500",
+        "title": "사내 포털 구축",
+        "customer": "가상 고객 B",
+        "listPriceWon": 10000000,
+        "costWon": 8500000,
+        "discountBps": 0,
+        "netWon": 10000000,
+        "profitWon": 1500000,
+        "marginPercent": 15
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/send",
+      "body": {
+        "quoteId": "Q-1499",
+        "discountBps": 0
+      }
+    },
+    "status": 422,
+    "response": {
+      "error": {
+        "code": "MARGIN_BELOW_MINIMUM",
+        "message": "최저 매출총이익률 15%에 미달하여 모의 전송할 수 없습니다."
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/send",
+      "body": {
+        "quoteId": "Q-1501",
+        "discountBps": 0
+      }
+    },
+    "status": 200,
+    "response": {
+      "sent": true,
+      "simulation": true,
+      "message": "모의 전송 완료 — 외부 발송 없음",
+      "quote": {
+        "quoteId": "Q-1501",
+        "title": "협업 시스템 구축",
+        "customer": "가상 고객 D",
+        "listPriceWon": 10000000,
+        "costWon": 8499999,
+        "discountBps": 0,
+        "netWon": 10000000,
+        "profitWon": 1500001,
+        "marginPercent": 15.00001
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/send",
+      "body": {
+        "quoteId": "Q-1001",
+        "discountBps": 1000,
+        "costWon": 1
+      }
+    },
+    "status": 400,
+    "response": {
+      "error": {
+        "code": "INVALID_INPUT",
+        "message": "quoteId와 discountBps 두 필드만 보내 주세요."
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/send",
+      "body": {
+        "quoteId": "Q-1001",
+        "discountBps": 10000
+      }
+    },
+    "status": 400,
+    "response": {
+      "error": {
+        "code": "INVALID_INPUT",
+        "message": "최종 견적 금액이 1원 이상이 되도록 할인율을 낮춰 주세요."
+      }
+    }
+  },
+  {
+    "request": {
+      "method": "POST",
+      "path": "/api/send",
+      "body": {
+        "quoteId": "Q-1001",
+        "discountBps": -1
+      }
+    },
+    "status": 400,
+    "response": {
+      "error": {
+        "code": "INVALID_INPUT",
+        "message": "할인율은 0%부터 100%까지 0.01% 단위로 입력해 주세요."
+      }
+    }
+  }
+]

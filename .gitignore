@@ -1,0 +1,45 @@
+# Local credentials, harness configuration, caches and unrelated captures
+.claude/
+.playwright-mcp/
+node_modules/
+__pycache__/
+*.py[cod]
+.DS_Store
+.env
+.env.*
+*.pem
+*.key
+/baseline-final-smoke.png
+/demo/starter/baseline-1920.png
+
+# Frozen original execution evidence stays local. Sanitized copies live in
+# evidence/shareable; the explicitly allowed originals below contain no identifiers.
+/evidence/copilot-run/*
+!/evidence/copilot-run/README.md
+!/evidence/copilot-run/baseline-snapshot/
+!/evidence/copilot-run/baseline-hashes.json
+!/evidence/copilot-run/baseline-provenance.json
+!/evidence/copilot-run/baseline-tests.log
+!/evidence/copilot-run/local-tests.log
+!/evidence/copilot-run/changes.diff
+!/evidence/copilot-run/browser-checks.json
+!/evidence/copilot-run/api-responses.json
+/demo/run/handoff/
+/demo/run/README.md
+
+# Intermediate media can be regenerated. Keep the four trimmed source clips,
+# screenshots, storyboard, excerpts and facts needed to rebuild final media.
+/production/audio/
+/production/frames/
+/production/segments/
+/production/clips/raw/
+/production/render-video.log
+/production/deck-qa/*
+!/production/deck-qa/contact-sheet.png
+/production/video-qa/*
+!/production/video-qa/report.json
+!/production/video-qa/playback-report.json
+!/production/video-qa/visual-review.json
+
+# Local packaging/QA scratch space
+/production/release-work/

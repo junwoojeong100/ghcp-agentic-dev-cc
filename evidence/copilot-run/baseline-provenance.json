@@ -1,0 +1,4 @@
+{
+  "note": "Starter server CSP received a later favicon correction. Archived original baseline reconstructed by removing only img-src data:; every archived file matches the recorded pre-implementation SHA256. Current starter remains unchanged.",
+  "verifiedAgainst": "implement-before.json"
+}

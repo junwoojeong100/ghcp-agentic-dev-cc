@@ -1,0 +1,19 @@
+{
+  "durationSeconds": 300.0,
+  "resolution": "1920x1080",
+  "videoCodec": "h264",
+  "pixelFormat": "yuv420p",
+  "frameRate": "30/1",
+  "videoFrames": 9000,
+  "audioCodec": "aac",
+  "meanVolumeDb": -16.4,
+  "peakVolumeDb": -1.5,
+  "faststart": true,
+  "decodeErrors": 0,
+  "blackFrameIntervals": 0,
+  "subtitleCues": 63,
+  "timelineScenes": 23,
+  "sha256": "1ae421a32106f60c4b6ee584ab38973a5eb68aa962adb4f6a95427a318c1c28c",
+  "visualReview": "Contact sheets prepared; coordinator inspection recorded separately.",
+  "audioListening": "Not performed by this automated check; check narration on the presentation computer."
+}

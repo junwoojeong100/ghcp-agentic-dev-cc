@@ -1,0 +1,94 @@
+{
+  "passed": 22,
+  "checks": [
+    {
+      "name": "Baseline discount 10% may send",
+      "passed": true
+    },
+    {
+      "name": "Baseline mock send succeeds",
+      "passed": true
+    },
+    {
+      "name": "Low margin send disabled",
+      "passed": true
+    },
+    {
+      "name": "Low margin amount correct",
+      "passed": true
+    },
+    {
+      "name": "Block reason visible",
+      "passed": true
+    },
+    {
+      "name": "20% margin send enabled",
+      "passed": true
+    },
+    {
+      "name": "20% displayed",
+      "passed": true
+    },
+    {
+      "name": "Allowed mock send succeeds",
+      "passed": true
+    },
+    {
+      "name": "Exact 15% UI allows send",
+      "passed": true
+    },
+    {
+      "name": "One-won-below boundary UI blocks",
+      "passed": true
+    },
+    {
+      "name": "Baseline direct send allowed",
+      "passed": true
+    },
+    {
+      "name": "Direct low margin send 422",
+      "passed": true
+    },
+    {
+      "name": "Direct normal send 200",
+      "passed": true
+    },
+    {
+      "name": "Exact boundary API 200",
+      "passed": true
+    },
+    {
+      "name": "One-won-below boundary API 422",
+      "passed": true
+    },
+    {
+      "name": "Above boundary API 200",
+      "passed": true
+    },
+    {
+      "name": "Forged server-owned cost rejected",
+      "passed": true
+    },
+    {
+      "name": "Zero net rejected",
+      "passed": true
+    },
+    {
+      "name": "Negative discount rejected",
+      "passed": true
+    },
+    {
+      "name": "Mobile page has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "Mobile normal send enabled",
+      "passed": true
+    },
+    {
+      "name": "No browser JS exceptions",
+      "passed": true
+    }
+  ],
+  "pageErrors": []
+}

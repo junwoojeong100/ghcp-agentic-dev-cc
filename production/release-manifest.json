@@ -1,0 +1,31 @@
+{
+  "purpose": "Release-time consistency hashes for completed media and retained rendering inputs; not an independent authenticity signature.",
+  "sha256": {
+    "deliverables/ghcp-agentic-development.pdf": "4cb0d1764111247a887a5e764916881f03a09199a7725a939bc47c88a5f2b76a",
+    "deliverables/ghcp-agentic-development.pptx": "f142dd9d50721666c64ddbe981b9c4a985c3a86a5c2a0d2698615fbcf47c5daa",
+    "deliverables/ghcp-cxo-demo-ko.mp4": "1ae421a32106f60c4b6ee584ab38973a5eb68aa962adb4f6a95427a318c1c28c",
+    "deliverables/ghcp-cxo-demo-ko.srt": "5aa8c5bfcaa9a1bc2d4667c3ada3b88651a86845f993f075916754ff98d70dc0",
+    "production/captions-ko.srt": "5aa8c5bfcaa9a1bc2d4667c3ada3b88651a86845f993f075916754ff98d70dc0",
+    "production/clips/allowed.mp4": "d48a64e7e77c5334c993840a94a3d105f1ba9f4aa443b6a6f428a266f82eb309",
+    "production/clips/before.mp4": "293b5abfafa2540b7b2d70ef773adb7cc30569c814a2d347237230653218fef4",
+    "production/clips/blocked.mp4": "188835c3f41ec39bff47b55574b584150a765ce623444985dd9093b15e49d355",
+    "production/clips/boundary.mp4": "97e05563818d457bface1d160e977412dc4f173700de1315abadeb5bb4f4e3aa",
+    "production/deck-qa/contact-sheet.png": "e6f1bb204a7249a65b96a9abb0aa1f579adf9f088481c49ee251adaf9970e619",
+    "production/excerpt-manifest.json": "7c7e17bde5aeda143828a36307ec0af7f7b5a98b32d1df6ca126b1daaa0b17f8",
+    "production/excerpts/api.txt": "607a1fbe4f9abb1ef2160a31e50dce64c417bc7db9ccb7c9a8d94de4174b2e12",
+    "production/excerpts/diff.txt": "238f06a3ee65d695b6a530d9bcef391706131ab0e6c7834fca2efb80f07adc03",
+    "production/excerpts/implement.txt": "366a71221dcdc1576dae7e431c9cf0063414ce8688ec6352917210ff5a0469be",
+    "production/excerpts/plan.txt": "d7aa2029d6cceb91318709ee88fa43116cd3f224345099d96cc805d670cd1fbf",
+    "production/excerpts/review.txt": "bcea2903abb4f347ce878af44bc5269943ea946f0301f650a076a5d54b2bf2b0",
+    "production/excerpts/tests.txt": "132afacdbc7ddfc699dea2059ffb517be177345cf56414172c1363850d8f0861",
+    "production/facts.json": "b8ddc818061b4af4c26502a1bb8237c5d1c2184eb2c2483647d4024966af783a",
+    "production/narration-ko.txt": "d06ce6639107cb10b6b5ab067d17990d0b86419360a06a8920c61f2402b3edf7",
+    "production/screenshots/allowed.png": "9454bd9b2f36d40bb37f1a515deabca906f7a1402d79e9c4e3648044fef59c6f",
+    "production/screenshots/before.png": "e20b40bc03ff705ff67e66d238e548b293a32188e6d081ba1f1b108dd8b66cb5",
+    "production/screenshots/blocked.png": "02d5a1f1706843b4fd6f94e1377dacbe8641fd9f45ef398d34f27be3f0fe1b05",
+    "production/screenshots/boundary.png": "df75a7e45113668d3ce1c3978fd0f7501ffb03714ff010bd364eed0c2883086b",
+    "production/screenshots/mobile.png": "deb86ba32b18a3c3a13a31150d47a0c1e852da657c4246fb841da6eb3c50e7c7",
+    "production/storyboard.json": "a26f838402ded1685f1cca58e9690b8cb8d253f3d606d15b985f2dd6d95ad8d8",
+    "production/timeline.json": "a3ccfb53d7f950493a6a6836ccb411646d897e73828afd97ced15c0a39f931de"
+  }
+}

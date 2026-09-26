@@ -1,0 +1,38 @@
+{
+  "plan": {
+    "source": "evidence/copilot-run/plan.log",
+    "transformation": "Three verbatim read-operation blocks selected; omitted intervening output.",
+    "sourceSha256": "2155bde65af07f5dc6b48474f7c09dc5380ebc9448aa36510b044ed2f6323786",
+    "excerptSha256": "d7aa2029d6cceb91318709ee88fa43116cd3f224345099d96cc805d670cd1fbf"
+  },
+  "implement": {
+    "source": "evidence/copilot-run/implement.log",
+    "transformation": "Verbatim edit block and denied-test block; omitted intervening output.",
+    "sourceSha256": "6d3900b45ec5dba190d1042f94a67121a1067d1581fca6c2da70b3607a4af1cf",
+    "excerptSha256": "366a71221dcdc1576dae7e431c9cf0063414ce8688ec6352917210ff5a0469be"
+  },
+  "diff": {
+    "source": "evidence/copilot-run/changes.diff",
+    "transformation": "Verbatim server diff headers and blocking branch; omitted other hunks.",
+    "sourceSha256": "2f747e7838ddb504800436a89e3ca3ce17c7b23998f9613983a317f4367d65e5",
+    "excerptSha256": "238f06a3ee65d695b6a530d9bcef391706131ab0e6c7834fca2efb80f07adc03"
+  },
+  "tests": {
+    "source": "evidence/copilot-run/local-tests.log",
+    "transformation": "Verbatim first four test outcomes and TAP totals; other tests retained in full source.",
+    "sourceSha256": "365e5fc05306f4b1f91b3aaf87af86c179cc55b670c8340d52a4734d85f8b746",
+    "excerptSha256": "132afacdbc7ddfc699dea2059ffb517be177345cf56414172c1363850d8f0861"
+  },
+  "api": {
+    "source": "evidence/copilot-run/api-responses.json",
+    "transformation": "Formatting of the second recorded request/response object; no values changed.",
+    "sourceSha256": "1a49c44a1ae51550a758a97a21ea459d20b4951f31eca1c3fcb8b94e5f4ff8b1",
+    "excerptSha256": "607a1fbe4f9abb1ef2160a31e50dce64c417bc7db9ccb7c9a8d94de4174b2e12"
+  },
+  "review": {
+    "source": "evidence/copilot-run/review.log",
+    "transformation": "Two verbatim sentences selected and reflowed for screen width; full reasoning and limits in source.",
+    "sourceSha256": "16dc5d1fd2327f6d8036dd8ceb092ebe358b1cf2526c2ad23b58f774507d1640",
+    "excerptSha256": "bcea2903abb4f347ce878af44bc5269943ea946f0301f650a076a5d54b2bf2b0"
+  }
+}
