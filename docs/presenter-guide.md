@@ -1,5 +1,7 @@
 # 발표자 가이드 — GitHub Copilot
 
+> **초기 제작본의 역사적 가이드입니다.** 최신 발표·검수·재생성 안내는 [최종 가이드](../deliverables/ghcp-live/final/READ-ME-FIRST.txt)를 사용하세요. 아래의 구 파일 경로와 명령은 [초기 릴리스 아카이브](https://github.com/junwoojeong100/ghcp-agentic-dev-cc/tree/fd819fb7183a3baab71c17e3cf4f82e06330852f)를 별도 복사본에 복원한 환경 기준이며, 현재 트리의 실행·배포 안내가 아닙니다.
+
 ## 먼저 MP4를 여세요
 
 **가장 쉬운 진행 방법은 `deliverables/ghcp-cxo-demo-ko.mp4`를 열어 전체 화면으로 재생하는 것입니다.** 약 5분의 한국어 사전 제작 영상이며, 현장에서 Copilot 구현을 다시 기다릴 필요가 없습니다.

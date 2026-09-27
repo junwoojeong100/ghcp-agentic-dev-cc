@@ -1,5 +1,9 @@
 최신 제작본은 final/ 폴더를 사용하세요.
 
+이 폴더의 이전 ghcp-cxo-demo-ko.mp4와 .srt는 현재 트리에서 삭제하고 Git 이력에 보존했습니다.
+당시 파일 아카이브: https://github.com/junwoojeong100/ghcp-agentic-dev-cc/tree/45004c14e7209eea99a72608844d8d755763b8a7/deliverables/ghcp-live
+아래 '파일 안내'의 구 MP4·SRT 설명은 역사적 기록이며 현재 파일 목록이나 배포 안내가 아닙니다.
+
 - final/ghcp-agentic-development.pptx 및 .pdf: 새 재촬영 결과를 반영한 소개 포함 16장.
 - final/ghcp-cxo-demo-ko.mp4: 5분 본편. SRT 및 계획 승인 연속 보충 영상도 같은 폴더에 있습니다.
 - 사용법·검증 결과·한계는 final/READ-ME-FIRST.txt를 읽으세요.

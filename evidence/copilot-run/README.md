@@ -16,8 +16,10 @@
 
 [영상 발췌 목록](../../production/excerpt-manifest.json)의 sourceSha256은 원본 로그를 가리킨다. 가림 사본의 해시로 이를 바꾸지 않았다. 공유 검증 스크립트는 변환 목록을 통해 관계를 확인하지만, 누락된 원본의 내용을 재구성하거나 독립적으로 진위 인증하지는 못한다.
 
+**실행 전 복원 조건:** 아래 검증은 **초기 릴리스의 원래 산출물**을 대상으로 한다. 별도 복사본에서 [초기 릴리스 아카이브](https://github.com/junwoojeong100/ghcp-agentic-dev-cc/tree/fd819fb7183a3baab71c17e3cf4f82e06330852f/deliverables)의 구 MP4·SRT(`ghcp-cxo-demo-ko.mp4`, `.srt`)와 이미 삭제된 PPTX·PDF(`ghcp-agentic-development.pptx`, `.pdf`)를 `deliverables/` 아래 원래 경로에 복원한 뒤 실행한다. 현재 트리 그대로는 이 파일들이 없어 통과할 수 없다. 이후 headless 초안의 MP4·SRT는 이 검사의 대상이 아니다.
+
 ```sh
-# 프로젝트 최상위에서, 표준 Python만 필요
+# 복원한 별도 복사본의 프로젝트 최상위에서, 표준 Python만 필요
 python3 scripts/verify-shareable-evidence.py
 ```
 
