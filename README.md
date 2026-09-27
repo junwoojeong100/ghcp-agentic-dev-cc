@@ -15,7 +15,7 @@ CXO 대상 한국어 발표 자료입니다. 작은 견적 기능 하나를 실�
 | [계획 승인 보충 영상](deliverables/ghcp-live/final/ghcp-plan-approval-continuous.mp4) | 6분 20초 · 대기 포함 연속·정속 · 음성 없음 |
 | [발표·검수 안내](deliverables/ghcp-live/final/READ-ME-FIRST.txt) | 파일 사용법·검증 범위·한계·재생성 |
 
-PPT와 본편 MP4는 같은 폴더에 두세요. **PPT·PDF는 최신 한 쌍만 남겼습니다.** 이전 영상과 원본 근거는 보존했습니다.
+PPT와 본편 MP4는 같은 폴더에 두세요. **PPT·PDF는 최신 한 쌍만 남겼습니다.** 이전 배포 영상·자막은 현재 트리에서 삭제하고 Git 이력에 보존했습니다. 원본 근거의 기존 보존 범위는 유지합니다.
 
 - 새 Copilot 실행: 변경 전 회귀 **17건 실패** → 변경 후 신규 33건 통과, 기존 22건을 포함한 **전체 55건 통과**. 실패·건너뜀 0.
 - Chromium: 6개 화면 폭의 **36개 상태** 확인. 촬영 후 별도 실제 브라우저 검사에서 422 JSON 오류·본문 단절·타임아웃의 잠금 유지와 복구도 확인했습니다.
@@ -34,17 +34,19 @@ PPT와 본편 MP4는 같은 폴더에 두세요. **PPT·PDF는 최신 한 쌍만
 
 첫 headless 촬영은 저장 실패와 UI 예외 경로 1건으로 초안을 남겼습니다. [당시 기록](production/ghcp-live/run.json)과 [별도 수정본 검증](evidence/ghcp-live/repair-verification/resolution.json)은 역사적 자료입니다. 별도 수정본의 62개 테스트와 새 재촬영의 55개 테스트는 서로 다른 실행이며 합산하지 않습니다.
 
-아래는 **이전 제작본**의 안내와 검증 결과입니다. 최신 파일은 위 표를 사용하고, 과거 수치·근거와 섞지 않습니다.
+실패한 headless 초안의 구 배포 파일은 [당시 MP4](https://github.com/junwoojeong100/ghcp-agentic-dev-cc/blob/45004c14e7209eea99a72608844d8d755763b8a7/deliverables/ghcp-live/ghcp-cxo-demo-ko.mp4)와 [당시 SRT](https://github.com/junwoojeong100/ghcp-agentic-dev-cc/blob/45004c14e7209eea99a72608844d8d755763b8a7/deliverables/ghcp-live/ghcp-cxo-demo-ko.srt)에 보관돼 있습니다. 현재 트리에는 없으며 최신 배포용이 아닙니다.
 
-## 이전 제작본 발표하기
+아래는 **초기 제작본의 역사적 안내**와 검증 결과입니다. 최신 파일은 위 표를 사용하고, 과거 수치·근거와 섞지 않습니다. 구 파일의 열람·검증·재생성 절차는 최신 배포용 안내가 아닙니다.
 
-**[5분 영상 MP4](deliverables/ghcp-cxo-demo-ko.mp4)를 다운로드해 전체 화면으로 재생하세요.** 한국어 합성 내레이션과 화면 자막이 포함돼 있어 인터넷 없이 상영할 수 있습니다. GitHub 미리보기가 지원되지 않으면 파일 페이지의 다운로드 버튼을 사용하세요.
+## 초기 제작본 열람 · Git 보관본
+
+초기 제작본을 확인할 때만 **[5분 영상 MP4](https://github.com/junwoojeong100/ghcp-agentic-dev-cc/blob/fd819fb7183a3baab71c17e3cf4f82e06330852f/deliverables/ghcp-cxo-demo-ko.mp4)를 다운로드해 전체 화면으로 재생하세요.** 한국어 합성 내레이션과 화면 자막이 포함돼 있어 인터넷 없이 상영할 수 있습니다. GitHub 미리보기가 지원되지 않으면 파일 페이지의 다운로드 버튼을 사용하세요.
 
 | 파일 | 용도 |
 | --- | --- |
-| [발표 영상](deliverables/ghcp-cxo-demo-ko.mp4) | 정확히 5분 · 1080p · H.264/AAC |
+| [발표 영상](https://github.com/junwoojeong100/ghcp-agentic-dev-cc/blob/fd819fb7183a3baab71c17e3cf4f82e06330852f/deliverables/ghcp-cxo-demo-ko.mp4) | 정확히 5분 · 1080p · H.264/AAC |
 | 이전 PPT·PDF | 사용자 요청으로 삭제. 위의 최신 16장 자료만 유지 |
-| [SRT 자막](deliverables/ghcp-cxo-demo-ko.srt) | 별도 자막 파일 |
+| [SRT 자막](https://github.com/junwoojeong100/ghcp-agentic-dev-cc/blob/fd819fb7183a3baab71c17e3cf4f82e06330852f/deliverables/ghcp-cxo-demo-ko.srt) | 별도 자막 파일 |
 | [발표자 가이드](docs/presenter-guide.md) | 준비·화면별 멘트·라이브 시연·장애 대응 |
 | [최종 검사와 한계](docs/production-status.md) | 실제 수행한 검사와 남은 확인 사항 |
 
@@ -87,16 +89,23 @@ PORT=4411 npm --prefix demo/run start
 
 ```sh
 npm --prefix demo/run test
+```
+
+위 명령은 현재 코드에서 테스트를 **새로 실행**합니다. 아래 `verify-shareable-evidence.py`는 **초기 릴리스의 원래 산출물**을 확인하는 역사적 검증입니다. **별도 복사본에서 [초기 릴리스 아카이브](https://github.com/junwoojeong100/ghcp-agentic-dev-cc/tree/fd819fb7183a3baab71c17e3cf4f82e06330852f/deliverables)의 구 MP4·SRT와 이미 삭제된 PPTX·PDF를 원래 경로에 복원한 뒤 실행하세요.** 현재 트리 그대로는 원래 파일들이 없어 통과할 수 없으며, 이후 headless 초안의 MP4·SRT는 이 검사의 대상이 아닙니다.
+
+```sh
 python3 scripts/verify-shareable-evidence.py
 ```
 
-첫 명령은 현재 코드에서 테스트를 **새로 실행**하고, 두 번째는 기록된 코드·발췌·공유 사본·최종 파일의 해시를 **읽기 전용으로 확인**합니다. 과거의 실행 기록을 덮어쓰지 않습니다.
+이 검사는 기록된 코드·발췌·공유 사본·초기 최종 파일의 해시를 **읽기 전용으로 확인**하며, 과거의 실행 기록을 덮어쓰지 않습니다.
 
 촬영에는 [원본 스냅샷](evidence/copilot-run/baseline-snapshot/)을 사용했습니다. 현재 `demo/starter`에는 이후의 favicon CSP 수정이 있어 정확한 구현 diff의 기준은 스냅샷입니다. [보존 경위](evidence/copilot-run/baseline-provenance.json)를 함께 남겼습니다.
 
-## 클론에서 자료 재생성
+## 초기 제작본 재생성 · 과거 절차
 
-최종 파일·화면 캡처·편집된 원본 클립·스크립트가 포함돼 있습니다. 음성 중간 파일과 원본 세션 로그는 포함하지 않았습니다. 아래 명령은 같은 이름의 산출물을 덮어쓰므로 수작업 편집본은 먼저 다른 이름으로 보존하세요.
+최신 제작본의 재생성은 [최종 안내](deliverables/ghcp-live/final/READ-ME-FIRST.txt)를 따르세요. 아래 루트의 `scripts/build-video.py`·`scripts/build-deck.py`는 **초기 제작본 전용**이며, 실행하면 삭제한 구 산출물을 다시 만들 수 있습니다. 과거 제작 재현은 별도 복사본에서 진행하고 현재 배포용 파일 생성 절차로 사용하지 마세요.
+
+화면 캡처·편집된 원본 클립·스크립트가 포함돼 있습니다. 음성 중간 파일과 원본 세션 로그는 포함하지 않았습니다. 아래 명령은 같은 이름의 산출물을 덮어쓰므로 수작업 편집본은 먼저 다른 이름으로 보존하세요.
 
 ```sh
 # 기존 근거와 캡처로 PPT 재생성
@@ -110,6 +119,6 @@ python3 scripts/verify-video.py
 - PPT: Python, `python-pptx==1.0.2`, Pillow. 글꼴이 다르면 `--font "Malgun Gothic"`을 지정하고 줄바꿈을 확인하세요.
 - 영상: macOS 한국어 Yuna 음성·Apple SD Gothic Neo, FFmpeg(H.264/AAC), Pillow. 환경별로 다시 만든 영상의 해시는 달라질 수 있습니다.
 - 녹화 또는 브라우저 재생 검사를 다시 할 때: `npm ci`, `npx playwright install chromium` 후 해당 스크립트를 실행하세요. `capture-demo.mjs`는 기존 캡처와 브라우저·API 기록을 덮어쓰므로 별도 복사본에서 실행합니다. 새 녹화는 과거 실행 자체의 재현 증거가 아닙니다.
-- `assemble-evidence.py`와 `prepare-shareable-evidence.py`는 **원본 로그가 있는 제작 환경 전용**입니다. 클론에서 누락된 원본을 가림 처리한 사본으로 대체해 실행하지 마세요. 클론 확인에는 `verify-shareable-evidence.py`를 사용합니다.
+- `assemble-evidence.py`와 `prepare-shareable-evidence.py`는 **원본 로그가 있는 제작 환경 전용**입니다. 클론에서 누락된 원본을 가림 처리한 사본으로 대체해 실행하지 마세요. 초기 제작본의 공유 근거 확인에는 위의 원래 산출물 복원 조건을 충족한 별도 복사본에서 `verify-shareable-evidence.py`를 사용합니다.
 
 [공유 근거 안내](evidence/copilot-run/README.md)에 포함·제외 파일과 해시 검증의 한계를 설명했습니다. 영상과 PPT를 열어 보는 데는 제작 도구가 필요 없습니다.
